@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8dc39351a039cc64f9ec013b6b089a08, type: 3}
+  m_Name: SwitchTileData
+  m_EditorClassIdentifier: 
+  tiles:
+  - {fileID: 11400000, guid: 8668fa4dfb201c642a0fc8ac8ed444a2, type: 2}
+  Prefab: {fileID: 1534774155973693069, guid: e186cffe82226dd499ec9dd0c9437f3e, type: 3}

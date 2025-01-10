@@ -1,0 +1,12 @@
+﻿{
+    "name": "Tests",
+	"references": [
+        "UnityEngine.CoreModule",
+        "UnityEngine.TestFramework",
+		"Unity.InputSystem",
+        "ScriptsAssembly"
+    ],
+    "optionalUnityReferences": [
+        "TestAssemblies"
+    ]
+}

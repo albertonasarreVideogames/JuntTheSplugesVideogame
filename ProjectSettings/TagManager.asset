@@ -1,0 +1,66 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Pincho
+  - Bloc
+  - Enemy
+  - MainPlayer
+  - PinkBloc
+  - GreenPincho
+  - BluePincho
+  - OrangeBloc
+  - PinkPincho
+  - GreenBloc
+  - Persistent
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - 
+  - 
+  - foreground
+  - lava
+  - OrangeSwitch
+  - BlueSwitch
+  - Player
+  - Enemy
+  - PinkSwitch
+  - GreenSwitch
+  - PinkSwitchPulse
+  - BlueSwitchPulse
+  - OrangeSwitchPulse
+  - GreenSwitchPulse
+  - post
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: background
+    uniqueID: 1048288943
+    locked: 0
+  - name: objects
+    uniqueID: 1652438219
+    locked: 0
+  - name: foreground
+    uniqueID: 1730443739
+    locked: 0
+  - name: player
+    uniqueID: 3314532657
+    locked: 0

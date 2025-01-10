@@ -1,0 +1,41 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class PinkBlocs : IBloc
+{
+    private static Status currentStatus = Status.FREE;
+    public override void updatePulseState()
+    {
+
+        if (currentStatus == Status.FREE)
+        {
+            if (gameObject.layer == LayerMask.NameToLayer("foreground"))
+            {
+                myAnimator.SetBool("Down", true);
+                gameObject.layer = LayerMask.NameToLayer("Default");
+                initialStatus = changeInitialState(initialStatus);
+
+            }
+            else if (gameObject.layer == LayerMask.NameToLayer("Default"))
+            {
+                myAnimator.SetBool("Down", false);
+                gameObject.layer = LayerMask.NameToLayer("foreground");
+                initialStatus = changeInitialState(initialStatus);
+            }
+        }
+
+
+
+    }
+
+    public override void ChangeStatusToFree()
+    {
+        currentStatus = Status.FREE;
+    }
+
+    public override void ChangeStatusToBlock()
+    {
+        currentStatus = Status.BLOCKED;
+    }
+}
