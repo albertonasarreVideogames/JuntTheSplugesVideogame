@@ -73,8 +73,8 @@ public class MapLoader : MonoBehaviour
         // Asegúrate de que el material no sea compartido
         spriteRenderer.material = new Material(spriteRenderer.material);
 
-        spriteRenderer.material.SetFloat("_RandomSeed", pincho.transform.position.x * 10f);
-        spriteRenderer.material.SetFloat("_RandomSeed2", pincho.transform.position.y * 10f);
+        spriteRenderer.material.SetFloat("_RandomSeed", pincho.transform.position.x * 100f);
+        spriteRenderer.material.SetFloat("_RandomSeed2", pincho.transform.position.y * 100f);
 
         if (pincho.initialStatus == Ipinchos.InitialStatus.DOWN) { spriteRenderer.material.SetFloat("_Power", 0); }
 
