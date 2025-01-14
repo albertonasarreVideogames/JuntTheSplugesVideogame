@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -1332,6 +1332,41 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Tiles.Array.data[5].second.m_ColliderType
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5609512882682112744, guid: 3a124dd410741fb4e98320b7ef6b308b,
+        type: 3}
+      propertyPath: m_Tiles.Array.data[4].first.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5609512882682112744, guid: 3a124dd410741fb4e98320b7ef6b308b,
+        type: 3}
+      propertyPath: m_Tiles.Array.data[6].first.x
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5609512882682112744, guid: 3a124dd410741fb4e98320b7ef6b308b,
+        type: 3}
+      propertyPath: m_Tiles.Array.data[7].first.x
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5609512882682112744, guid: 3a124dd410741fb4e98320b7ef6b308b,
+        type: 3}
+      propertyPath: m_Tiles.Array.data[7].first.y
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5609512882682112744, guid: 3a124dd410741fb4e98320b7ef6b308b,
+        type: 3}
+      propertyPath: m_Tiles.Array.data[7].second.m_TileObjectToInstantiateIndex
+      value: 65535
+      objectReference: {fileID: 0}
+    - target: {fileID: 5609512882682112744, guid: 3a124dd410741fb4e98320b7ef6b308b,
+        type: 3}
+      propertyPath: m_Tiles.Array.data[7].second.m_AllTileFlags
+      value: 1073741825
+      objectReference: {fileID: 0}
+    - target: {fileID: 5609512882682112744, guid: 3a124dd410741fb4e98320b7ef6b308b,
+        type: 3}
+      propertyPath: m_Tiles.Array.data[2].first.x
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5609512882682112747, guid: 3a124dd410741fb4e98320b7ef6b308b,
         type: 3}
