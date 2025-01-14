@@ -17,10 +17,12 @@ public abstract class Ipinchos : MonoBehaviour, ISwitchKeeperObjetiveElement, IS
 
     public InitialStatus initialStatus;
     protected Animator myAnimator;
+    protected SpriteRenderer spriteRenderer;
     // Start is called before the first frame update
     void Start()
     {
         myAnimator = GetComponent<Animator>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
         if (initialStatus == InitialStatus.DOWN)
         {
             myAnimator.SetBool("Down", true);
@@ -34,11 +36,15 @@ public abstract class Ipinchos : MonoBehaviour, ISwitchKeeperObjetiveElement, IS
         if (setLikeoriginal)
         {
             myAnimator.SetBool("Down", initialStatus == InitialStatus.DOWN);
+            spriteRenderer.material.SetFloat("_Power", initialStatus == InitialStatus.DOWN ? 0 : 10);
+
             gameObject.layer = LayerMask.NameToLayer(initialStatus == InitialStatus.DOWN ? "Default" : "lava");
         }
         else
         {
             myAnimator.SetBool("Down", initialStatus != InitialStatus.DOWN);
+            spriteRenderer.material.SetFloat("_Power", initialStatus == InitialStatus.DOWN ? 10 : 0);
+
             gameObject.layer = LayerMask.NameToLayer(initialStatus != InitialStatus.DOWN ? "Default" : "lava");
         }
     }
