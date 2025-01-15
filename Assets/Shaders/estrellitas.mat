@@ -21,7 +21,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs: []
     m_Floats:
-    - _BlinkingSpeed: 0.001
+    - _BlinkingSpeed: 0.003
     - _StartDensity: 500
     - _StartsPower: 300
     m_Colors:
