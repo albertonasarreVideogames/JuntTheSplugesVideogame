@@ -64,6 +64,7 @@ public class MapLoader : MonoBehaviour
         // hide objects layer
         map.GetComponent<TilemapRenderer>().sortingLayerName = "Default";
         SwitchManager.Initialize();
+        CheckAndRemoveOverlappingTiles();
     }
 
     private void updateShaderOptions(Ipinchos pincho)
@@ -103,5 +104,31 @@ public class MapLoader : MonoBehaviour
         {
             NumberKindPlayers = playerNumber;
         }
+    }
+
+    private void CheckAndRemoveOverlappingTiles()
+    {
+        Tilemap backgroundTilemap = GameObject.Find("Background").GetComponent<Tilemap>(); ;
+        Tilemap lavaTilemap = GameObject.Find("Lava").GetComponent<Tilemap>(); ;
+        // Obtener todas las posiciones con tiles en el Tilemap de Lava
+        BoundsInt bounds = lavaTilemap.cellBounds;
+            for (int x = bounds.xMin; x < bounds.xMax; x++)
+            {
+                for (int y = bounds.yMin; y < bounds.yMax; y++)
+                {
+                    Vector3Int position = new Vector3Int(x, y, 0);
+
+                    // Comprobar si hay un tile en ambas Tilemaps
+                    if (lavaTilemap.HasTile(position) && backgroundTilemap.HasTile(position))
+                    {
+                        // Eliminar el tile del background si hay uno en la misma posición en el lava
+                        backgroundTilemap.SetTile(position, null);
+                    Debug.Log("Tile eliminado en la posición: " + position);
+
+                    }
+                }
+            }
+
+        lavaTilemap.GetComponent<TilemapRenderer>().enabled = false;
     }
 }
