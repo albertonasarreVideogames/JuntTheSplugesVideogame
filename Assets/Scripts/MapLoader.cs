@@ -8,7 +8,10 @@ public class MapLoader : MonoBehaviour
 {
     public static MapLoader Instance;
     public int NumberKindPlayers = 1;
+    public GameObject StartsBackgound;
     private Tilemap map;
+    private Tilemap backgroundTilemap;
+    private Tilemap lavaTilemap;
 
     [SerializeField]
     private List<TileInfo> tiledatas;
@@ -42,6 +45,7 @@ public class MapLoader : MonoBehaviour
 
     public void LoadLevel()
     {
+        Instantiate(StartsBackgound, Vector3.zero, Quaternion.identity);
         NumberKindPlayers = 1;
         map = GameObject.Find("objects").GetComponent<Tilemap>();
         //full map with gameobjects
@@ -108,8 +112,8 @@ public class MapLoader : MonoBehaviour
 
     private void CheckAndRemoveOverlappingTiles()
     {
-        Tilemap backgroundTilemap = GameObject.Find("Background").GetComponent<Tilemap>(); ;
-        Tilemap lavaTilemap = GameObject.Find("Lava").GetComponent<Tilemap>(); ;
+        backgroundTilemap = GameObject.Find("Background").GetComponent<Tilemap>();
+        lavaTilemap = GameObject.Find("Lava").GetComponent<Tilemap>();
         // Obtener todas las posiciones con tiles en el Tilemap de Lava
         BoundsInt bounds = lavaTilemap.cellBounds;
             for (int x = bounds.xMin; x < bounds.xMax; x++)
