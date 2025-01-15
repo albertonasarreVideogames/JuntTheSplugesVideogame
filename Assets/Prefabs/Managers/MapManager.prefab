@@ -46,6 +46,8 @@ MonoBehaviour:
   NumberKindPlayers: 1
   StartsBackgound: {fileID: 1795443981027098327, guid: ee432b0a35e843847932fb9a9a812bec,
     type: 3}
+  GlobalVolume: {fileID: 8430458370487052760, guid: 7bce8a341ff39664e869392fbeff7e7b,
+    type: 3}
   tiledatas:
   - {fileID: 11400000, guid: 8a8382305e2769a4cb0c6707f67e5a09, type: 2}
   - {fileID: 11400000, guid: 48bf60bbf8e1d9f45a0c3ad4fa95079b, type: 2}

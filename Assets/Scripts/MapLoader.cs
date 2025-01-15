@@ -9,6 +9,7 @@ public class MapLoader : MonoBehaviour
     public static MapLoader Instance;
     public int NumberKindPlayers = 1;
     public GameObject StartsBackgound;
+    public GameObject GlobalVolume;
     private Tilemap map;
     private Tilemap backgroundTilemap;
     private Tilemap lavaTilemap;
@@ -46,6 +47,7 @@ public class MapLoader : MonoBehaviour
     public void LoadLevel()
     {
         Instantiate(StartsBackgound, Vector3.zero, Quaternion.identity);
+        Instantiate(GlobalVolume, Vector3.zero, Quaternion.identity);
         NumberKindPlayers = 1;
         map = GameObject.Find("objects").GetComponent<Tilemap>();
         //full map with gameobjects
