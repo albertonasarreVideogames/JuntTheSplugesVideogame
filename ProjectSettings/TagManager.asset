@@ -73,3 +73,12 @@ TagManager:
   - name: player
     uniqueID: 3314532657
     locked: 0
+  - name: player2
+    uniqueID: 2778948535
+    locked: 0
+  - name: player3
+    uniqueID: 1292278085
+    locked: 0
+  - name: mainPlayer
+    uniqueID: 2223291745
+    locked: 0
