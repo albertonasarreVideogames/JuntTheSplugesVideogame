@@ -53,6 +53,13 @@ public class Player : MonoBehaviour
         myAnimator = GetComponent<Animator>();
         movePoint.parent = null;
         movePointCheker.parent = null;
+
+        // orden de renderizado segun el typo de player, esto es para cuando se superponen
+
+        float zPosition = -(float)(int)playerType;
+        transform.position = new Vector3(transform.position.x, transform.position.y, zPosition);
+        movePoint.position = new Vector3(movePoint.position.x, movePoint.position.y, zPosition);
+        movePointCheker.position = new Vector3(movePointCheker.position.x, movePointCheker.position.y, zPosition);
     }
 
     // Update is called once per frame
