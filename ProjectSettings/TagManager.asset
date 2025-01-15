@@ -52,6 +52,15 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: lava
+    uniqueID: 2646739275
+    locked: 0
+  - name: BlackBackgound
+    uniqueID: 337491303
+    locked: 0
+  - name: estrellitas
+    uniqueID: 753856321
+    locked: 0
   - name: background
     uniqueID: 1048288943
     locked: 0
