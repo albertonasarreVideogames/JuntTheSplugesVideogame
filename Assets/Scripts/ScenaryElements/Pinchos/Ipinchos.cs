@@ -35,14 +35,14 @@ public abstract class Ipinchos : MonoBehaviour, ISwitchKeeperObjetiveElement, IS
     {
         if (setLikeoriginal)
         {
-            myAnimator.SetBool("Down", initialStatus == InitialStatus.DOWN);
+            //myAnimator.SetBool("Down", initialStatus == InitialStatus.DOWN);
             spriteRenderer.material.SetFloat("_Power", initialStatus == InitialStatus.DOWN ? 0 : 10);
 
             gameObject.layer = LayerMask.NameToLayer(initialStatus == InitialStatus.DOWN ? "Default" : "lava");
         }
         else
         {
-            myAnimator.SetBool("Down", initialStatus != InitialStatus.DOWN);
+            //myAnimator.SetBool("Down", initialStatus != InitialStatus.DOWN);
             spriteRenderer.material.SetFloat("_Power", initialStatus == InitialStatus.DOWN ? 10 : 0);
 
             gameObject.layer = LayerMask.NameToLayer(initialStatus != InitialStatus.DOWN ? "Default" : "lava");

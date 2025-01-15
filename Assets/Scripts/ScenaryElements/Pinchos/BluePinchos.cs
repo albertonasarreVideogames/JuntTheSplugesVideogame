@@ -12,7 +12,7 @@ public class BluePinchos : Ipinchos
         {
             if (gameObject.layer == LayerMask.NameToLayer("lava"))
             {
-                myAnimator.SetBool("Down", true);
+                //myAnimator.SetBool("Down", true);
                 spriteRenderer.material.SetFloat("_Power", 0);
 
                 gameObject.layer = LayerMask.NameToLayer("Default");
@@ -21,7 +21,7 @@ public class BluePinchos : Ipinchos
             }
             else if (gameObject.layer == LayerMask.NameToLayer("Default"))
             {
-                myAnimator.SetBool("Down", false);
+                //myAnimator.SetBool("Down", false);
                 spriteRenderer.material.SetFloat("_Power", 10);
 
                 gameObject.layer = LayerMask.NameToLayer("lava");
