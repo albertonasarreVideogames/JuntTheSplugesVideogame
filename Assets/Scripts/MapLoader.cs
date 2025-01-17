@@ -86,19 +86,19 @@ public class MapLoader : MonoBehaviour
         if (pincho.initialStatus == Ipinchos.InitialStatus.DOWN) { spriteRenderer.material.SetFloat("_Power", 0); }
 
         if (pincho.GetType() == typeof(Pinchos)) {
-            Color hdrColor = new Color(1.0f, 0.5f, 0.0f) * 3f;
+            Color hdrColor = new Color(1.0f, 0.5f, 0.0f) * 2f;
             spriteRenderer.material.SetColor("_Color", hdrColor); 
         }
 
         if (pincho.GetType() == typeof(PinkPinchos))
         {
-            Color hdrColor = new Color(1.0f, 0.0f, 1.0f) * 2f;
+            Color hdrColor = new Color(1.0f, 0.0f, 1.0f) * 1.5f;
             spriteRenderer.material.SetColor("_Color", hdrColor);
         }
 
         if (pincho.GetType() == typeof(GreenPinchos))
         {
-            Color hdrColor = new Color(0.0f, 1.0f, 0.0f) * 3f;
+            Color hdrColor = new Color(0.0f, 1.0f, 0.0f) * 2f;
             spriteRenderer.material.SetColor("_Color", hdrColor);
         }
     }
