@@ -5,6 +5,7 @@ using UnityEngine;
 public class GreenPinchos : Ipinchos
 {
     private static Status currentStatus = Status.FREE;
+    private Color hdrColor = new Color(0.0f, 1.0f, 0.0f) * 2f;
     public override void updatePulseState()
     {
 
@@ -39,5 +40,11 @@ public class GreenPinchos : Ipinchos
     public override void ChangeStatusToBlock()
     {
         currentStatus = Status.BLOCKED;
+    }
+
+    public override void SetShaderColor()
+    {
+        base.SetShaderColor();
+        spriteRenderer.material.SetColor("_Color", hdrColor);
     }
 }

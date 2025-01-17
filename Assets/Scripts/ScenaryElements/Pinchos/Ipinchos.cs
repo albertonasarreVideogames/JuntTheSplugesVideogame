@@ -22,7 +22,6 @@ public abstract class Ipinchos : MonoBehaviour, ISwitchKeeperObjetiveElement, IS
     void Start()
     {
         myAnimator = GetComponent<Animator>();
-        spriteRenderer = GetComponent<SpriteRenderer>();
         if (initialStatus == InitialStatus.DOWN)
         {
             myAnimator.SetBool("Down", true);
@@ -59,6 +58,18 @@ public abstract class Ipinchos : MonoBehaviour, ISwitchKeeperObjetiveElement, IS
     public virtual void ChangeStatusToFree() { }
 
     public virtual void ChangeStatusToBlock() { }
+
+    public virtual void SetShaderColor() {
+
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        spriteRenderer.material = new Material(spriteRenderer.material);
+
+        spriteRenderer.material.SetFloat("_RandomSeed", transform.position.x * 100f);
+        spriteRenderer.material.SetFloat("_RandomSeed2", transform.position.y * 100f);
+
+        if (initialStatus == InitialStatus.DOWN) { spriteRenderer.material.SetFloat("_Power", 0); }
+
+    }
 
     protected InitialStatus changeInitialState(InitialStatus estadoActual)
     {

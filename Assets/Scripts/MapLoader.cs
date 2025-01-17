@@ -64,43 +64,13 @@ public class MapLoader : MonoBehaviour
             Player player = dataFromTiles[clickedTile].Prefab.GetComponent<Player>();
             Ipinchos pincho = instance.GetComponent<Ipinchos>();
             if (player != null) { updateNumberPLayersOnLevel(player); }
-            if( pincho != null) { updateShaderOptions(pincho); }
+            if( pincho != null) { pincho.SetShaderColor(); }
 
         }
         // hide objects layer
         map.GetComponent<TilemapRenderer>().sortingLayerName = "Default";
         SwitchManager.Initialize();
         CheckAndRemoveOverlappingTiles();
-    }
-
-    private void updateShaderOptions(Ipinchos pincho)
-    {
-        SpriteRenderer spriteRenderer = pincho.GetComponent<SpriteRenderer>();
-
-        // Asegúrate de que el material no sea compartido
-        spriteRenderer.material = new Material(spriteRenderer.material);
-
-        spriteRenderer.material.SetFloat("_RandomSeed", pincho.transform.position.x * 100f);
-        spriteRenderer.material.SetFloat("_RandomSeed2", pincho.transform.position.y * 100f);
-
-        if (pincho.initialStatus == Ipinchos.InitialStatus.DOWN) { spriteRenderer.material.SetFloat("_Power", 0); }
-
-        if (pincho.GetType() == typeof(Pinchos)) {
-            Color hdrColor = new Color(1.0f, 0.5f, 0.0f) * 2f;
-            spriteRenderer.material.SetColor("_Color", hdrColor); 
-        }
-
-        if (pincho.GetType() == typeof(PinkPinchos))
-        {
-            Color hdrColor = new Color(1.0f, 0.0f, 1.0f) * 1.5f;
-            spriteRenderer.material.SetColor("_Color", hdrColor);
-        }
-
-        if (pincho.GetType() == typeof(GreenPinchos))
-        {
-            Color hdrColor = new Color(0.0f, 1.0f, 0.0f) * 2f;
-            spriteRenderer.material.SetColor("_Color", hdrColor);
-        }
     }
 
     private void updateNumberPLayersOnLevel(Player player)
@@ -129,7 +99,6 @@ public class MapLoader : MonoBehaviour
                     {
                         // Eliminar el tile del background si hay uno en la misma posición en el lava
                         backgroundTilemap.SetTile(position, null);
-                    Debug.Log("Tile eliminado en la posición: " + position);
 
                     }
                 }

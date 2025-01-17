@@ -40,4 +40,9 @@ public class BluePinchos : Ipinchos
     {
         currentStatus = Status.BLOCKED;
     }
+
+    public override void SetShaderColor()
+    {
+        base.SetShaderColor();
+    }
 }

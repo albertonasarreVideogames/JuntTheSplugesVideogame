@@ -61,7 +61,7 @@ public static class SwitchManager
         }
         else
         {
-            Debug.LogWarning($"No se encontraron switches en la capa {layerName}.");
+            //Debug.LogWarning($"No se encontraron switches en la capa {layerName}.");
         }
     }
 }
