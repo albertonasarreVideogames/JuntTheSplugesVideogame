@@ -19,15 +19,18 @@ public abstract class IBloc : MonoBehaviour, ISwitchKeeperObjetiveElement , ISwi
     public InitialStatus initialStatus;
 
     protected Animator myAnimator;
+    private SpriteRenderer spriteRenderer;
     // Start is called before the first frame update
     void Start()
     {
         myAnimator = GetComponent<Animator>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
         if (initialStatus == InitialStatus.DOWN)
         {
             myAnimator.SetBool("Down", true);
             gameObject.layer = LayerMask.NameToLayer("Default");
         }
+        UpdateSortingOrder();
     }
 
     public void updateSwitchKeepeState(bool setLikeoriginal)
@@ -81,5 +84,11 @@ public abstract class IBloc : MonoBehaviour, ISwitchKeeperObjetiveElement , ISwi
         {
             return InitialStatus.UP;
         }
+    }
+
+    private void UpdateSortingOrder()
+    {
+        // Invertimos el valor de Y para que el más bajo esté encima.
+        spriteRenderer.sortingOrder = Mathf.RoundToInt(-transform.position.y * 100);
     }
 }
