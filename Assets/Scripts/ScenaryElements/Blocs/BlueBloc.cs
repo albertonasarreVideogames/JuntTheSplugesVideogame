@@ -15,6 +15,7 @@ public class BlueBloc : IBloc
                 myAnimator.SetBool("Down", true);
                 gameObject.layer = LayerMask.NameToLayer("Default");
                 initialStatus = changeInitialState(initialStatus);
+                GetComponent<SpriteRenderer>().sortingLayerName = "BlocsDown";
 
             }
             else if (gameObject.layer == LayerMask.NameToLayer("Default"))
@@ -22,6 +23,7 @@ public class BlueBloc : IBloc
                 myAnimator.SetBool("Down", false);
                 gameObject.layer = LayerMask.NameToLayer("foreground");
                 initialStatus = changeInitialState(initialStatus);
+                GetComponent<SpriteRenderer>().sortingLayerName = "Blocs";
             }
         }
 
