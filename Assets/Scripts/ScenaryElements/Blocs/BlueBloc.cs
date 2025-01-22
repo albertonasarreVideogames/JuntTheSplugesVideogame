@@ -16,6 +16,7 @@ public class BlueBloc : IBloc
                 gameObject.layer = LayerMask.NameToLayer("Default");
                 initialStatus = changeInitialState(initialStatus);
                 GetComponent<SpriteRenderer>().sortingLayerName = "BlocsDown";
+                spriteRenderer.material.SetInt("_EnableColor", 0);
 
             }
             else if (gameObject.layer == LayerMask.NameToLayer("Default"))
@@ -24,6 +25,7 @@ public class BlueBloc : IBloc
                 gameObject.layer = LayerMask.NameToLayer("foreground");
                 initialStatus = changeInitialState(initialStatus);
                 GetComponent<SpriteRenderer>().sortingLayerName = "Blocs";
+                spriteRenderer.material.SetInt("_EnableColor", 1);
             }
         }
 

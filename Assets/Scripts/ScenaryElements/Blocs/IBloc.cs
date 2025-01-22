@@ -19,7 +19,7 @@ public abstract class IBloc : MonoBehaviour, ISwitchKeeperObjetiveElement , ISwi
     public InitialStatus initialStatus;
 
     protected Animator myAnimator;
-    private SpriteRenderer spriteRenderer;
+    protected SpriteRenderer spriteRenderer;
     // Start is called before the first frame update
     void Start()
     {
@@ -40,12 +40,14 @@ public abstract class IBloc : MonoBehaviour, ISwitchKeeperObjetiveElement , ISwi
             myAnimator.SetBool("Down", initialStatus == InitialStatus.DOWN);
             gameObject.layer = LayerMask.NameToLayer(initialStatus == InitialStatus.DOWN ? "Default" : "foreground");
             GetComponent<SpriteRenderer>().sortingLayerName = initialStatus == InitialStatus.DOWN ? "BlocsDown" : "Blocs";
+            spriteRenderer.material.SetInt("_EnableColor", initialStatus == InitialStatus.DOWN ? 0 : 1); // Pensar si mantener esto lo hace mejor, ya que el azul te indica que es temporal
         }
         else
         {
             myAnimator.SetBool("Down", initialStatus != InitialStatus.DOWN);
             gameObject.layer = LayerMask.NameToLayer(initialStatus != InitialStatus.DOWN ? "Default" : "foreground");
             GetComponent<SpriteRenderer>().sortingLayerName = initialStatus != InitialStatus.DOWN ? "BlocsDown" : "Blocs";
+            spriteRenderer.material.SetInt("_EnableColor", initialStatus != InitialStatus.DOWN ? 0 : 1); // Pensar si mantener esto lo hace mejor, ya que el azul te indica que es temporal
         }
     }
 
