@@ -28,6 +28,7 @@ public abstract class IBloc : MonoBehaviour, ISwitchKeeperObjetiveElement , ISwi
         if (initialStatus == InitialStatus.DOWN)
         {
             myAnimator.SetBool("Down", true);
+            spriteRenderer.material.SetInt("_EnableColor", 0);
             gameObject.layer = LayerMask.NameToLayer("Default");
         }
         UpdateSortingOrder();
