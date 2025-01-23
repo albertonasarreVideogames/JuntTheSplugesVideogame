@@ -59,6 +59,7 @@ public abstract class IBloc : MonoBehaviour, ISwitchKeeperObjetiveElement , ISwi
             // Update the vertical level of the player;
             Player player = players[i];
             player.ChangeFloorLevel(Player.PlayerFloorLevel.Down);
+            player.GetComponent<SpriteRenderer>().sortingLayerName = "playerBehindBlocs";
             if (player.CkeckLayerContact("foreground")) { player.ChangeFloorLevel(Player.PlayerFloorLevel.Up); player.GetComponent<SpriteRenderer>().sortingLayerName = "player"; }
         }
         for (int i = 0; i < enemies.Length; i++)
