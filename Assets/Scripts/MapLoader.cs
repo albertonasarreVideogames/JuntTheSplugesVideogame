@@ -59,7 +59,13 @@ public class MapLoader : MonoBehaviour
             }
             // Tile is not empty; do stuff
             TileBase clickedTile = map.GetTile(position);
-            GameObject instance = Instantiate(dataFromTiles[clickedTile].Prefab, map.GetCellCenterWorld(position), Quaternion.identity);
+
+            GameObject prefab = dataFromTiles[clickedTile].Prefab;
+            Vector3 positionOnmap = map.GetCellCenterWorld(position);
+
+            if (prefab.GetComponent<IBloc>() != null) { positionOnmap += new Vector3(0, ((40 - 32) / 2f / map.cellSize.y) / 32, 0);  }
+
+            GameObject instance = Instantiate(prefab, positionOnmap, Quaternion.identity);
 
             Player player = dataFromTiles[clickedTile].Prefab.GetComponent<Player>();
             Ipinchos pincho = instance.GetComponent<Ipinchos>();

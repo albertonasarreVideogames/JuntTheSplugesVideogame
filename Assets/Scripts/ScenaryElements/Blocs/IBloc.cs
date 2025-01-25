@@ -19,15 +19,19 @@ public abstract class IBloc : MonoBehaviour, ISwitchKeeperObjetiveElement , ISwi
     public InitialStatus initialStatus;
 
     protected Animator myAnimator;
+    protected SpriteRenderer spriteRenderer;
     // Start is called before the first frame update
     void Start()
     {
         myAnimator = GetComponent<Animator>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
         if (initialStatus == InitialStatus.DOWN)
         {
             myAnimator.SetBool("Down", true);
+            spriteRenderer.material.SetInt("_EnableColor", 0);
             gameObject.layer = LayerMask.NameToLayer("Default");
         }
+        UpdateSortingOrder();
     }
 
     public void updateSwitchKeepeState(bool setLikeoriginal)
@@ -36,11 +40,15 @@ public abstract class IBloc : MonoBehaviour, ISwitchKeeperObjetiveElement , ISwi
         {
             myAnimator.SetBool("Down", initialStatus == InitialStatus.DOWN);
             gameObject.layer = LayerMask.NameToLayer(initialStatus == InitialStatus.DOWN ? "Default" : "foreground");
+            GetComponent<SpriteRenderer>().sortingLayerName = initialStatus == InitialStatus.DOWN ? "BlocsDown" : "Blocs";
+            spriteRenderer.material.SetInt("_EnableColor", initialStatus == InitialStatus.DOWN ? 0 : 1); // Pensar si mantener esto lo hace mejor, ya que el azul te indica que es temporal
         }
         else
         {
             myAnimator.SetBool("Down", initialStatus != InitialStatus.DOWN);
             gameObject.layer = LayerMask.NameToLayer(initialStatus != InitialStatus.DOWN ? "Default" : "foreground");
+            GetComponent<SpriteRenderer>().sortingLayerName = initialStatus != InitialStatus.DOWN ? "BlocsDown" : "Blocs";
+            spriteRenderer.material.SetInt("_EnableColor", initialStatus != InitialStatus.DOWN ? 0 : 1); // Pensar si mantener esto lo hace mejor, ya que el azul te indica que es temporal
         }
     }
 
@@ -52,7 +60,8 @@ public abstract class IBloc : MonoBehaviour, ISwitchKeeperObjetiveElement , ISwi
             // Update the vertical level of the player;
             Player player = players[i];
             player.ChangeFloorLevel(Player.PlayerFloorLevel.Down);
-            if (player.CkeckLayerContact("foreground")) { player.ChangeFloorLevel(Player.PlayerFloorLevel.Up); }
+            player.GetComponent<SpriteRenderer>().sortingLayerName = "playerBehindBlocs";
+            if (player.CkeckLayerContact("foreground")) { player.ChangeFloorLevel(Player.PlayerFloorLevel.Up); player.GetComponent<SpriteRenderer>().sortingLayerName = "player"; }
         }
         for (int i = 0; i < enemies.Length; i++)
         {
@@ -81,5 +90,11 @@ public abstract class IBloc : MonoBehaviour, ISwitchKeeperObjetiveElement , ISwi
         {
             return InitialStatus.UP;
         }
+    }
+
+    private void UpdateSortingOrder()
+    {
+        // Invertimos el valor de Y para que el más bajo esté encima.
+        spriteRenderer.sortingOrder = Mathf.RoundToInt(-transform.position.y * 100);
     }
 }
