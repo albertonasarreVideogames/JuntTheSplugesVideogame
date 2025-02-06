@@ -112,4 +112,31 @@ public class MapLoader : MonoBehaviour
 
         lavaTilemap.GetComponent<TilemapRenderer>().enabled = false;
     }
+
+   
+    
+    // funcion no que de momento no se usa para ajustar el tammaño de la celdas si cambia la resolucion. Tener en cuenta que los personajes se mueven segun el tamaño de las celdas, que por defecto es uno, asi que habria que cambiar eso tambnein
+    void AdjustCameraAndGrid()
+    {
+        int cellsX = 26; // Número de celdas en horizontal
+        int cellsY = 14; // Número de celdas en vertical
+
+        // Calcular la relación de aspecto de la pantalla
+        float aspectRatio = (float)Screen.width / Screen.height;
+
+        // Calculamos el tamaño visible en función de la relación de aspecto
+        // El tamaño de la cámara es tal que se ajusta al tamaño de las celdas
+        float desiredSize = Mathf.Max(cellsX / aspectRatio, cellsY) / 2;
+
+        // Ajustar el tamaño de la cámara
+        Camera.main.orthographicSize = desiredSize;
+
+        // Calculamos el tamaño de las celdas en base al tamaño de la cámara
+        float visibleWidth = 2 * Camera.main.orthographicSize * aspectRatio;
+        float cellSize = visibleWidth / cellsX;
+
+        // Ajustar el tamaño de las celdas
+        //gridLayout.cellSize = new Vector3(cellSize, cellSize, 1);
+    }
+
 }
