@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
+using UnityEngine.SceneManagement;
 
 public class MapLoader : MonoBehaviour
 {
@@ -42,6 +43,16 @@ public class MapLoader : MonoBehaviour
             }
         }
 
+    }
+
+    private void OnEnable()
+    {
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    private void OnDisable()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
     }
 
     public void LoadLevel()
@@ -136,7 +147,15 @@ public class MapLoader : MonoBehaviour
         float cellSize = visibleWidth / cellsX;
 
         // Ajustar el tamaño de las celdas
-        //gridLayout.cellSize = new Vector3(cellSize, cellSize, 1);
+        Grid gridLayout = GameObject.Find("Grid").GetComponent<Grid>();
+
+        gridLayout.cellSize = new Vector2(cellSize, cellSize);
+    }
+
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        // Cuando la escena esté cargada, llamamos a AdjustCameraAndGrid
+        AdjustCameraAndGrid();
     }
 
 }
