@@ -116,7 +116,7 @@ public class MapLoader : MonoBehaviour
    
     
     // funcion no que de momento no se usa para ajustar el tammaño de la celdas si cambia la resolucion. Tener en cuenta que los personajes se mueven segun el tamaño de las celdas, que por defecto es uno, asi que habria que cambiar eso tambnein
-    void AdjustCameraAndGrid()
+    private void AdjustCameraAndGrid()
     {
         int cellsX = 26; // Número de celdas en horizontal
         int cellsY = 14; // Número de celdas en vertical
