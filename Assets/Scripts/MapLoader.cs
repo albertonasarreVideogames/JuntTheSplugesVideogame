@@ -150,6 +150,7 @@ public class MapLoader : MonoBehaviour
         Grid gridLayout = GameObject.Find("Grid").GetComponent<Grid>();
 
         gridLayout.cellSize = new Vector2(cellSize, cellSize);
+        Camera.main.transform.position = new Vector3(Camera.main.transform.position.x, 0.35f, Camera.main.transform.position.z);
     }
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
