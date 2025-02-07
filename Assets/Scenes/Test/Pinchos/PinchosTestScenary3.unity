@@ -1039,6 +1039,11 @@ PrefabInstance:
       propertyPath: m_ChunkCullingBounds.y
       value: 0.016129017
       objectReference: {fileID: 0}
+    - target: {fileID: 4126044966567863534, guid: 3a124dd410741fb4e98320b7ef6b308b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4571107168225629066, guid: 3a124dd410741fb4e98320b7ef6b308b,
         type: 3}
       propertyPath: m_MaximumTileChangeCount
