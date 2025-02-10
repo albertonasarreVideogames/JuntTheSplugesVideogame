@@ -101,6 +101,7 @@ public class Player : MonoBehaviour
         {
             movePointCheker.position += new Vector3(Generalmovement.x, Generalmovement.y, 0f);
             myAnimator.SetBool("Run", true);
+            SoundManager.PlaySound(SoundType.SPLUNGES);
 
             if (Generalmovement.x > 0 && !facingRight)
             {
