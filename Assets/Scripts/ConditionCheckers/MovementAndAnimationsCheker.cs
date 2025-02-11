@@ -30,6 +30,9 @@ public class MovementAndAnimationsCheker : IConditionCheck
             players[i].GetComponent<Player>().updateMovePoint();
         }
 
+        PlayerAnimation.HasPlayedRunSound = false;
+        PlayerAnimation.HasPlayedHitSound = false;
+
         for (int i = 0; i < enemies.Length; i++)
         {
             enemies[i].GetComponent<Enemy>().updateMovePoint();

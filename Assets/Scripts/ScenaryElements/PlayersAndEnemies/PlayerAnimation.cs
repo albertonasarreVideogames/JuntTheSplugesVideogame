@@ -11,6 +11,9 @@ public class PlayerAnimation : MonoBehaviour, AnimationHandler.IAnimationManager
     public bool animationFinished = false;
 
     private AnimationHandler.AnimationState _nextAnimationTrigger;
+
+    public static bool HasPlayedRunSound = false;
+    public static bool HasPlayedHitSound = false;
     public AnimationHandler.AnimationState NextAnimationTrigger
     {
         get => _nextAnimationTrigger;
@@ -76,13 +79,21 @@ public class PlayerAnimation : MonoBehaviour, AnimationHandler.IAnimationManager
             case AnimationHandler.AnimationState.Running:
                 myAnimator.SetBool("Run", true);
                 SetNextAnimationTrigger(AnimationHandler.AnimationState.Idle);
-                SoundManager.PlaySound(SoundType.SPLUNGES); 
+                if (!HasPlayedRunSound)
+                {
+                    SoundManager.PlaySound(SoundType.SPLUNGES);
+                    HasPlayedRunSound = true;
+                }
                 break;
 
             case AnimationHandler.AnimationState.hit:
                 myAnimator.SetTrigger("Hit");
                 SetNextAnimationTrigger(AnimationHandler.AnimationState.Idle);
-                SoundManager.PlaySound(SoundType.SWITCH);
+                if (!HasPlayedHitSound)
+                {
+                    SoundManager.PlaySound(SoundType.SWITCH);
+                    HasPlayedRunSound = true;
+                }
                 break;
 
 
