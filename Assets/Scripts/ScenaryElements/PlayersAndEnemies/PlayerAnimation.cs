@@ -73,6 +73,20 @@ public class PlayerAnimation : MonoBehaviour, AnimationHandler.IAnimationManager
                 SetNextAnimationTrigger(AnimationHandler.AnimationState.DieOnHole);
                 break;
 
+            case AnimationHandler.AnimationState.Running:
+                myAnimator.SetBool("Run", true);
+                SetNextAnimationTrigger(AnimationHandler.AnimationState.Idle);
+                SoundManager.PlaySound(SoundType.SPLUNGES); 
+                break;
+
+            case AnimationHandler.AnimationState.hit:
+                myAnimator.SetTrigger("Hit");
+                SetNextAnimationTrigger(AnimationHandler.AnimationState.Idle);
+                SoundManager.PlaySound(SoundType.SWITCH);
+                break;
+
+
+
         }
 
     }

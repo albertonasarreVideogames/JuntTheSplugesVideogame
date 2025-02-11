@@ -14,7 +14,8 @@ namespace AnimationHandler
         Dying,
         Winning,
         AfterJump,
-        DieOnHole
+        DieOnHole,
+        hit
     }
 
     public interface IAnimationManager

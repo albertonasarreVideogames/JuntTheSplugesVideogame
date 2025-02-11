@@ -100,8 +100,8 @@ public class Player : MonoBehaviour
         if (playerType == currentAllowedType)
         {
             movePointCheker.position += new Vector3(Generalmovement.x, Generalmovement.y, 0f);
-            myAnimator.SetBool("Run", true);
-            SoundManager.PlaySound(SoundType.SPLUNGES);
+            playerAnimation.SetNextAnimationTrigger(AnimationHandler.AnimationState.Running);
+        
 
             if (Generalmovement.x > 0 && !facingRight)
             {
@@ -125,7 +125,7 @@ public class Player : MonoBehaviour
             if (collision)
             {
                 movePointCheker.position = this.transform.position;
-                if (checkIfPlayerIsNOTStrillMoveent()) { myAnimator.SetTrigger("Hit"); }
+                if (checkIfPlayerIsNOTStrillMoveent()) { playerAnimation.SetNextAnimationTrigger(AnimationHandler.AnimationState.hit); }
             }
 
         }
@@ -135,7 +135,7 @@ public class Player : MonoBehaviour
             if (!collision)
             {
                 movePointCheker.position = this.transform.position;
-                if (checkIfPlayerIsNOTStrillMoveent()) { myAnimator.SetTrigger("Hit"); }
+                if (checkIfPlayerIsNOTStrillMoveent()) { playerAnimation.SetNextAnimationTrigger(AnimationHandler.AnimationState.hit); }
             }
 
         }
