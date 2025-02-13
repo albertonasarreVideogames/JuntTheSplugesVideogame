@@ -81,7 +81,7 @@ public class PlayerAnimation : MonoBehaviour, AnimationHandler.IAnimationManager
                 SetNextAnimationTrigger(AnimationHandler.AnimationState.Idle);
                 if (!HasPlayedRunSound)
                 {
-                    SoundManager.PlaySound(SoundType.SPLUNGES);
+                    if (GameManager.Instance.State != GameState.Lose) { SoundManager.PlaySound(SoundType.SPLUNGES); }
                     HasPlayedRunSound = true;
                 }
                 break;
@@ -91,7 +91,7 @@ public class PlayerAnimation : MonoBehaviour, AnimationHandler.IAnimationManager
                 SetNextAnimationTrigger(AnimationHandler.AnimationState.Idle);
                 if (!HasPlayedHitSound)
                 {
-                    SoundManager.PlaySound(SoundType.SWITCH);
+                    if (GameManager.Instance.State != GameState.Lose) { SoundManager.PlaySound(SoundType.SWITCH); }
                     HasPlayedRunSound = true;
                 }
                 break;
