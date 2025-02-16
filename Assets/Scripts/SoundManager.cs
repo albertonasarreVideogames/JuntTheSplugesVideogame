@@ -76,7 +76,8 @@ public class SoundManager : MonoBehaviour
         // Reproducir todos los sonidos en el array
         foreach (SoundType sound in instance.soundstoPlayOntheNextturn)
         {
-            if (GameManager.Instance.State == GameState.Lose) { break; } 
+            if (sound == SoundType.SPLUNGESRUN && Array.Exists(instance.soundstoPlayOntheNextturn, thisSound => thisSound == SoundType.SPLUGEHITONWALL)) { continue; }
+            if (GameManager.Instance.State == GameState.Lose) { continue; } 
             PlaySound(sound);
         }
 
