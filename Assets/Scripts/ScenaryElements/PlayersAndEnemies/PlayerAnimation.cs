@@ -9,11 +9,8 @@ public class PlayerAnimation : MonoBehaviour, AnimationHandler.IAnimationManager
     public static List<PlayerAnimation> AllPlayersAnimation = new List<PlayerAnimation>();
 
     public bool animationFinished = false;
-
     private AnimationHandler.AnimationState _nextAnimationTrigger;
 
-    public static bool HasPlayedRunSound = false;
-    public static bool HasPlayedHitSound = false;
     public AnimationHandler.AnimationState NextAnimationTrigger
     {
         get => _nextAnimationTrigger;
@@ -78,22 +75,14 @@ public class PlayerAnimation : MonoBehaviour, AnimationHandler.IAnimationManager
 
             case AnimationHandler.AnimationState.Running:
                 myAnimator.SetBool("Run", true);
-                SetNextAnimationTrigger(AnimationHandler.AnimationState.Idle);
-                if (!HasPlayedRunSound)
-                {
-                    if (GameManager.Instance.State != GameState.Lose) { SoundManager.PlaySound(SoundType.SPLUNGES); }
-                    HasPlayedRunSound = true;
-                }
+                SetNextAnimationTrigger(AnimationHandler.AnimationState.Idle);                          
+                 SoundManager.AddSoundToNextTurn(SoundType.SPLUNGESRUN);                         
                 break;
 
             case AnimationHandler.AnimationState.hit:
                 myAnimator.SetTrigger("Hit");
-                SetNextAnimationTrigger(AnimationHandler.AnimationState.Idle);
-                if (!HasPlayedHitSound)
-                {
-                    if (GameManager.Instance.State != GameState.Lose) { SoundManager.PlaySound(SoundType.SWITCH); }
-                    HasPlayedRunSound = true;
-                }
+                SetNextAnimationTrigger(AnimationHandler.AnimationState.Idle);               
+                SoundManager.AddSoundToNextTurn(SoundType.SPLUGEHITONWALL);   
                 break;
 
 
