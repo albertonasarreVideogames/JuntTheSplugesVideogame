@@ -16,7 +16,7 @@ public class SoundManager : MonoBehaviour
     [SerializeField] private AudioClip[] soundList;
     private static SoundManager instance;
     private AudioSource audioSource;
-    private static SoundType[] soundstoPlayOntheNextturn;
+    private SoundType[] soundstoPlayOntheNextturn;
 
     private void Awake()
     {
@@ -50,7 +50,7 @@ public class SoundManager : MonoBehaviour
     public static void AddSoundToNextTurn(SoundType newSound)
     {
         // Verificar si el sonido ya está en el array
-        foreach (SoundType sound in soundstoPlayOntheNextturn)
+        foreach (SoundType sound in instance.soundstoPlayOntheNextturn)
         {
             if (sound == newSound)
             {
@@ -59,8 +59,8 @@ public class SoundManager : MonoBehaviour
         }
 
         // Si no estaba, agregarlo a un array más grande
-        Array.Resize(ref soundstoPlayOntheNextturn, soundstoPlayOntheNextturn.Length + 1);
-        soundstoPlayOntheNextturn[soundstoPlayOntheNextturn.Length - 1] = newSound;
+        Array.Resize(ref instance.soundstoPlayOntheNextturn, instance.soundstoPlayOntheNextturn.Length + 1);
+        instance.soundstoPlayOntheNextturn[instance.soundstoPlayOntheNextturn.Length - 1] = newSound;
     }
 
     public static void PlayTurnSound(SoundType sound, float volume = 1)
@@ -74,13 +74,13 @@ public class SoundManager : MonoBehaviour
     public static void PlayAllSoundsAndClear()
     {
         // Reproducir todos los sonidos en el array
-        foreach (SoundType sound in soundstoPlayOntheNextturn)
+        foreach (SoundType sound in instance.soundstoPlayOntheNextturn)
         {
             if (GameManager.Instance.State == GameState.Lose) { break; } 
             PlaySound(sound);
         }
 
         // Vaciar el array después de reproducir los sonidos
-        soundstoPlayOntheNextturn = new SoundType[0];
+        instance.soundstoPlayOntheNextturn = new SoundType[0];
     }
 }
