@@ -7,7 +7,8 @@ public enum SoundType
 {
     SPLUNGESRUN,
     SPLUGEHITONWALL,
-    SPUNGEJUMP
+    SPUNGEJUMP,
+    SPLINGEFALLING
 }
 
 [RequireComponent(typeof(AudioSource))]
@@ -18,6 +19,7 @@ public class SoundManager : MonoBehaviour
     private static SoundManager instance;
     private AudioSource audioSource;
     private SoundType[] soundstoPlayOntheNextturn;
+    private SoundType[] PlaySoundOnTimeBuffer;
 
     private void Awake()
     {
@@ -84,5 +86,35 @@ public class SoundManager : MonoBehaviour
 
         // Vaciar el array después de reproducir los sonidos
         instance.soundstoPlayOntheNextturn = new SoundType[0];
+    }
+
+    public static void PlaySoundONCE(SoundType sound, float volume = 1)
+    {
+        if (instance != null && !Array.Exists(instance.PlaySoundOnTimeBuffer, thisSound => thisSound == sound))
+        {
+            instance.audioSource.PlayOneShot(instance.soundList[(int)sound], volume);
+            AddSoundToBuffer(sound);
+        }
+    }
+
+    public static void cleanSoundToBuffer()
+    {
+        instance.PlaySoundOnTimeBuffer = new SoundType[0];
+    }
+
+    private static void AddSoundToBuffer(SoundType newSound)
+    {
+        // Verificar si el sonido ya está en el array
+        foreach (SoundType sound in instance.PlaySoundOnTimeBuffer)
+        {
+            if (sound == newSound)
+            {
+                return; // Si ya está, no lo agregamos
+            }
+        }
+
+        // Si no estaba, agregarlo a un array más grande
+        Array.Resize(ref instance.PlaySoundOnTimeBuffer, instance.PlaySoundOnTimeBuffer.Length + 1);
+        instance.PlaySoundOnTimeBuffer[instance.PlaySoundOnTimeBuffer.Length - 1] = newSound;
     }
 }

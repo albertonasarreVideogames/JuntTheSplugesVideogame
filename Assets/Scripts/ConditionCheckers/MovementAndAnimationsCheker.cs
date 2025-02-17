@@ -21,6 +21,8 @@ public class MovementAndAnimationsCheker : IConditionCheck
 
         if (GameManager.Instance.State == GameState.Gaming) { GameManager.Instance.UpdateGameState(GameState.Procesing); }
 
+        SoundManager.cleanSoundToBuffer();
+
         for (int i = 0; i < players.Length; i++)
         {
             // can put animation death here?

@@ -54,7 +54,7 @@ public class PlayerAnimation : MonoBehaviour, AnimationHandler.IAnimationManager
            };
        }
 
-        if (NextAnimationTrigger == AnimationHandler.AnimationState.DieOnHole) { myAnimator.SetTrigger("fallInHole"); SetNextAnimationTrigger(AnimationHandler.AnimationState.Idle); }
+        if (NextAnimationTrigger == AnimationHandler.AnimationState.DieOnHole) { myAnimator.SetTrigger("fallInHole"); SetNextAnimationTrigger(AnimationHandler.AnimationState.Idle); SoundManager.PlaySoundONCE(SoundType.SPLINGEFALLING); }
         if (NextAnimationTrigger == AnimationHandler.AnimationState.AfterJump) { SetNextAnimationTrigger(AnimationHandler.AnimationState.Idle); }
 
     }
