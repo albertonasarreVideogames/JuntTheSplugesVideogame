@@ -53,6 +53,8 @@ public class SoundManager : MonoBehaviour
 
     public static void AddSoundToNextTurn(SoundType newSound)
     {
+        if (instance == null) { return; }
+
         // Verificar si el sonido ya está en el array
         foreach (SoundType sound in instance.soundstoPlayOntheNextturn)
         {
@@ -77,6 +79,7 @@ public class SoundManager : MonoBehaviour
 
     public static void PlayAllSoundsAndClear()
     {
+        if (instance == null) { return; }
         // Reproducir todos los sonidos en el array
         foreach (SoundType sound in instance.soundstoPlayOntheNextturn)
         {
@@ -100,7 +103,9 @@ public class SoundManager : MonoBehaviour
 
     public static void cleanSoundToBuffer()
     {
+        if (instance != null) {
         instance.PlaySoundOnTimeBuffer = new SoundType[0];
+        }
     }
 
     private static void AddSoundToBuffer(SoundType newSound)
