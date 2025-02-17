@@ -66,17 +66,19 @@ public class PlayerAnimation : MonoBehaviour, AnimationHandler.IAnimationManager
             case AnimationHandler.AnimationState.Attacking:
                 myAnimator.SetTrigger("Attack");
                 SetNextAnimationTrigger(AnimationHandler.AnimationState.AfterJump);
+                SoundManager.AddSoundToNextTurn(SoundType.SPUNGEJUMP);
                 break;
 
             case AnimationHandler.AnimationState.DieOnHole:
                 myAnimator.SetTrigger("Attack");
                 SetNextAnimationTrigger(AnimationHandler.AnimationState.DieOnHole);
+                SoundManager.AddSoundToNextTurn(SoundType.SPUNGEJUMP);
                 break;
 
             case AnimationHandler.AnimationState.Running:
                 myAnimator.SetBool("Run", true);
                 SetNextAnimationTrigger(AnimationHandler.AnimationState.Idle);                          
-                 SoundManager.AddSoundToNextTurn(SoundType.SPLUNGESRUN);                         
+                SoundManager.AddSoundToNextTurn(SoundType.SPLUNGESRUN);                         
                 break;
 
             case AnimationHandler.AnimationState.hit:

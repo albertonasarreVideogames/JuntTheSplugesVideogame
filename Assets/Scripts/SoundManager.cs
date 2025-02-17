@@ -6,7 +6,8 @@ using UnityEngine;
 public enum SoundType
 {
     SPLUNGESRUN,
-    SPLUGEHITONWALL
+    SPLUGEHITONWALL,
+    SPUNGEJUMP
 }
 
 [RequireComponent(typeof(AudioSource))]
@@ -76,7 +77,7 @@ public class SoundManager : MonoBehaviour
         // Reproducir todos los sonidos en el array
         foreach (SoundType sound in instance.soundstoPlayOntheNextturn)
         {
-            if (sound == SoundType.SPLUNGESRUN && Array.Exists(instance.soundstoPlayOntheNextturn, thisSound => thisSound == SoundType.SPLUGEHITONWALL)) { continue; }
+            if (sound == SoundType.SPLUNGESRUN && (Array.Exists(instance.soundstoPlayOntheNextturn, thisSound => thisSound == SoundType.SPLUGEHITONWALL|| Array.Exists(instance.soundstoPlayOntheNextturn, thisSound2 => thisSound2 == SoundType.SPUNGEJUMP)))) { continue; }
             if (GameManager.Instance.State == GameState.Lose) { continue; } 
             PlaySound(sound);
         }
