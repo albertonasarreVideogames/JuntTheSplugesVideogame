@@ -25,5 +25,6 @@ public class Switch : MonoBehaviour
     public void OnSwitchDownAnimation()
     {
         spriteRenderer.material.SetInt("_EnableColor", 0);
+        SoundManager.PlaySoundONCE(SoundType.SWITCHDOWN);
     }
 }

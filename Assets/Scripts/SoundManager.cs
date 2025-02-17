@@ -8,7 +8,8 @@ public enum SoundType
     SPLUNGESRUN,
     SPLUGEHITONWALL,
     SPUNGEJUMP,
-    SPLINGEFALLING
+    SPLINGEFALLING,
+    SWITCHDOWN
 }
 
 [RequireComponent(typeof(AudioSource))]
