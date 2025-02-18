@@ -60,8 +60,15 @@ public abstract class IBloc : MonoBehaviour, ISwitchKeeperObjetiveElement , ISwi
             // Update the vertical level of the player;
             Player player = players[i];
             player.ChangeFloorLevel(Player.PlayerFloorLevel.Down);
-            player.GetComponent<SpriteRenderer>().sortingLayerName = "playerBehindBlocs";
-            if (player.CkeckLayerContact("foreground")) { player.ChangeFloorLevel(Player.PlayerFloorLevel.Up); player.GetComponent<SpriteRenderer>().sortingLayerName = "player"; }
+            if (player.playerType == Player.PlayerType.Type1) { player.GetComponent<SpriteRenderer>().sortingLayerName = "playerBehindBlocs"; }
+            if (player.playerType == Player.PlayerType.Type2) { player.GetComponent<SpriteRenderer>().sortingLayerName = "playerBehind2Blocs"; }
+            if (player.playerType == Player.PlayerType.Type3) { player.GetComponent<SpriteRenderer>().sortingLayerName = "playerBehind3Blocs"; }
+            if (player.CkeckLayerContact("foreground")) {
+                player.ChangeFloorLevel(Player.PlayerFloorLevel.Up);
+                if (player.playerType == Player.PlayerType.Type1) { player.GetComponent<SpriteRenderer>().sortingLayerName = "player"; }
+                if (player.playerType == Player.PlayerType.Type2) { player.GetComponent<SpriteRenderer>().sortingLayerName = "player2"; }
+                if (player.playerType == Player.PlayerType.Type3) { player.GetComponent<SpriteRenderer>().sortingLayerName = "player3"; }
+            }
         }
         for (int i = 0; i < enemies.Length; i++)
         {
