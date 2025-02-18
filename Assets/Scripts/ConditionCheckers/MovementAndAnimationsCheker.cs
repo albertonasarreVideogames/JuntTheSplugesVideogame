@@ -19,7 +19,7 @@ public class MovementAndAnimationsCheker : IConditionCheck
     {
         if (GameManager.Instance.State == GameState.Lose) { PlayerAnimation.SetAnimationForAllPlayers(AnimationHandler.AnimationState.Dying, player => player.NextAnimationTrigger != AnimationHandler.AnimationState.DieOnHole); }
 
-        if (GameManager.Instance.State == GameState.Gaming) { GameManager.Instance.UpdateGameState(GameState.Procesing); }
+        //if (GameManager.Instance.State == GameState.Gaming) { GameManager.Instance.UpdateGameState(GameState.Procesing); }
 
         SoundManager.cleanSoundToBuffer();
 
@@ -80,7 +80,7 @@ public class MovementAndAnimationsCheker : IConditionCheck
             GameManager.Instance.UpdateGameState(GameState.Lose);
         }
 
-        if (GameManager.Instance.State == GameState.Procesing) { GameManager.Instance.UpdateGameState(GameState.Gaming); }
+        //if (GameManager.Instance.State == GameState.Procesing) { GameManager.Instance.UpdateGameState(GameState.Gaming); }
     }
 
     private static bool enemyisNOTmovig(Enemy enemy)

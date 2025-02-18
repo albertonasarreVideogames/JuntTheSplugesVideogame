@@ -19,6 +19,7 @@ public class SoundManager : MonoBehaviour
     [SerializeField] private AudioClip[] soundList;
     private static SoundManager instance;
     private AudioSource audioSource;
+    private AudioSource audioSourceOst;
     private SoundType[] soundstoPlayOntheNextturn;
     private SoundType[] PlaySoundOnTimeBuffer;
 
@@ -38,8 +39,15 @@ public class SoundManager : MonoBehaviour
 
     private void Start()
     {
-        audioSource = GetComponent<AudioSource>();
+        AudioSource[] audioSources = GetComponents<AudioSource>();
+        audioSource = audioSources[0];
+        audioSourceOst = audioSources[1];
         soundstoPlayOntheNextturn = new SoundType[0];
+    }
+
+    public static void StartOst()
+    {
+        instance.audioSourceOst.Play();
     }
 
 

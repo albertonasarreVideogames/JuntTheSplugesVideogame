@@ -92,6 +92,7 @@ public class GameManager : MonoBehaviour
     private void HandleGaming()
     {
         Time.timeScale = 1;
+        SoundManager.StartOst();
     }
 
     private void HandlePause()
