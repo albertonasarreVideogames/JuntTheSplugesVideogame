@@ -47,6 +47,7 @@ public class SoundManager : MonoBehaviour
 
     public static void StartOst()
     {
+        if (instance == null) { return; }
         instance.audioSourceOst.Play();
     }
 
