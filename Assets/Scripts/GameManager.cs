@@ -130,7 +130,7 @@ public class GameManager : MonoBehaviour
 
     private void HandleLose()
     {
-        //Time.timeScale = 0;
+        Time.timeScale = 0.5f;
 
     }
 
