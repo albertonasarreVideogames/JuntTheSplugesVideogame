@@ -39,7 +39,7 @@ public class VictoryState : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    public void UpdateState()
     {
 
         if (Input.GetKeyDown(KeyCode.Space) && GameManager.Instance.State == GameState.Victory)

@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance;
 
     public GameState State;
+    public GameState OldState;
 
     public static event Action<GameState> OnGameStateChanged;
 
@@ -30,7 +31,7 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         UpdateGameState(State);
-        
+        OldState = GameState.Menu;
     }
 
     private void Update()
@@ -50,12 +51,36 @@ public class GameManager : MonoBehaviour
             UpdateGameState(GameState.Gaming);
         }
         //FINISHDEBUG
+        switch (State)
+        {
+            case GameState.Pause:
+                PauseState.Instance.UpdateState();
+                break;
+            case GameState.Gaming:
+                GamingState.Instance.UpdateState();
+                break;
+            case GameState.Victory:
+                VictoryState.Instance.UpdateState();
+                break;
+            case GameState.Lose:
+                LoseState.Instance.UpdateState();
+                break;
+            case GameState.Menu:
+                MenuState.Instance.UpdateState();
+                break;
+            case GameState.Procesing:
+                break;
+            default:
+                throw new ArgumentOutOfRangeException(nameof(State), State, null);
+        }
+
     }
 
 
 
     public void UpdateGameState(GameState newState)
     {
+        OldState = State;
         State = newState;
 
         switch (newState)
@@ -92,7 +117,10 @@ public class GameManager : MonoBehaviour
     private void HandleGaming()
     {
         Time.timeScale = 1;
-        SoundManager.StartOst();
+        if (OldState != GameState.Pause)
+        {
+            SoundManager.StartOst();
+        }
     }
 
     private void HandlePause()

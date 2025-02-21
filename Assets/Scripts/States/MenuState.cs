@@ -39,15 +39,12 @@ public class MenuState : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    public void UpdateState()
     {
         if (Input.GetKeyDown(KeyCode.Return) && GameManager.Instance.State == GameState.Menu)
         {
             GoToNextLevel();
 
-        }else if (Input.GetKeyDown(KeyCode.Return) && GameManager.Instance.State == GameState.Gaming)
-        {
-            GoToMenu();
         }
 
     }

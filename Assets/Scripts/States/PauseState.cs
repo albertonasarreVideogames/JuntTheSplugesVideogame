@@ -37,18 +37,11 @@ public class PauseState : MonoBehaviour
     }
 
     // Update is called once per frame
-    private void Update()
+    public void UpdateState()
     {
-        if (Input.GetKeyDown(KeyCode.X))
+        if (Input.GetKeyDown(KeyCode.Return))
         {
-            if(GameManager.Instance.State == GameState.Pause) {
-
-                GameManager.Instance.UpdateGameState(GameState.Gaming);
-
-            } else if (GameManager.Instance.State == GameState.Gaming)
-            {
-                GameManager.Instance.UpdateGameState(GameState.Pause);
-            }
+             GameManager.Instance.UpdateGameState(GameState.Gaming);               
         }
 
 

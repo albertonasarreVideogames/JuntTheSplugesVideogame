@@ -65,12 +65,15 @@ public class GamingState : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    public void UpdateState()
     {
-        if (GameManager.Instance.State == GameState.Gaming)
-        {
-            managePlayerMovement.Execute();
-            checkPlayerSelected.Execute();
+        managePlayerMovement.Execute();
+        checkPlayerSelected.Execute();
+        
+
+        if (Input.GetKeyDown(KeyCode.Return))
+        { 
+            GameManager.Instance.UpdateGameState(GameState.Pause);
         }
     }
 
