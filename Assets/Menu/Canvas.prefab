@@ -1201,7 +1201,7 @@ MonoBehaviour:
   newGameAnimator: {fileID: 5942977381678204731}
   settingsAnimator: {fileID: 5942977381457538479}
   quitAnimator: {fileID: 5942977380207393094}
-  ControlsPanel: {fileID: 8367600408762425323}
+  ControlsPanel: {fileID: 7500798378658608777}
   transitionCam: {fileID: 0}
   transitionLvl1: {fileID: 7500798377547572139}
 --- !u!82 &5942977381457538450
