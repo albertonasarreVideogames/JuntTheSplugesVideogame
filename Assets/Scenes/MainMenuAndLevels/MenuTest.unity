@@ -128,6 +128,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5942977380207393097, guid: 3bbe4c7ba0b0a7c48b2bc4732425bce5,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5942977381002369936, guid: 3bbe4c7ba0b0a7c48b2bc4732425bce5,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -238,6 +243,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 5942977381457538478, guid: 3bbe4c7ba0b0a7c48b2bc4732425bce5,
+        type: 3}
+      propertyPath: ControlsPanel
+      value: 
+      objectReference: {fileID: 2095565882}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3bbe4c7ba0b0a7c48b2bc4732425bce5, type: 3}
 --- !u!1 &1868795116
@@ -323,3 +333,9 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2095565882 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7500798378658608777, guid: 3bbe4c7ba0b0a7c48b2bc4732425bce5,
+    type: 3}
+  m_PrefabInstance: {fileID: 526630898}
+  m_PrefabAsset: {fileID: 0}
