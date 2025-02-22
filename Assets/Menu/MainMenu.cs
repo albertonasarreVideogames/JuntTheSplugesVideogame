@@ -3,6 +3,7 @@ using System;
 using System.Collections;
 using System.Threading;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MainMenu : MenuBase
 {
@@ -81,5 +82,6 @@ public class MainMenu : MenuBase
         yield return new WaitForSeconds(time);
 
         //LevelManager.Instance.LoadFirstLevel();
+        SceneManager.LoadScene("init Menu");
     }
 }
