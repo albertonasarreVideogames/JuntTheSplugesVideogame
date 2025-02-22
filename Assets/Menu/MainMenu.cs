@@ -82,6 +82,8 @@ public class MainMenu : MenuBase
         yield return new WaitForSeconds(time);
 
         //LevelManager.Instance.LoadFirstLevel();
-        SceneManager.LoadScene("init Menu");
+        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+        SceneManager.LoadScene(currentSceneIndex + 1);
+        GameManager.Instance.UpdateGameState(GameState.Gaming);
     }
 }

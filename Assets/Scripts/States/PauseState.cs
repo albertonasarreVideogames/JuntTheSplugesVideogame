@@ -54,7 +54,7 @@ public class PauseState : MonoBehaviour
     }
     private void GoToMenu()
     {
-        SceneManager.LoadScene(0);
         GameManager.Instance.UpdateGameState(GameState.Menu);
+        SceneManager.LoadScene(0);
     }
 }

@@ -137,6 +137,7 @@ public class GameManager : MonoBehaviour
 
     private void HandleMenu()
     {
+        Time.timeScale = 1;
         SoundManager.StopOst();
 
     }

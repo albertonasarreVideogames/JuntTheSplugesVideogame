@@ -1411,7 +1411,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   menuButtonController: {fileID: 8342571757963900085}
-  disableOnce: 0
+  disableOnce: 1
   surePanel: {fileID: 8367600408762425323}
   newGameAnimator: {fileID: 5942977381678204731}
   settingsAnimator: {fileID: 5942977381457538479}
@@ -2095,7 +2095,7 @@ Animator:
   m_GameObject: {fileID: 7500798377406100265}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 09502dae4123bd042b3c0d185ecdd05a, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -2413,7 +2413,7 @@ Animator:
   m_GameObject: {fileID: 7500798377547572139}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: dcca30e3c7aacbe4eafb383cb3a1d137, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
