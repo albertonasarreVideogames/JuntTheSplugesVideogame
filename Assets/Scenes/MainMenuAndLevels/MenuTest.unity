@@ -276,6 +276,11 @@ PrefabInstance:
       propertyPath: transitionCam
       value: 
       objectReference: {fileID: 948154421}
+    - target: {fileID: 5942977381678204730, guid: 3bbe4c7ba0b0a7c48b2bc4732425bce5,
+        type: 3}
+      propertyPath: disableOnce
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7500798377406100261, guid: 3bbe4c7ba0b0a7c48b2bc4732425bce5,
         type: 3}
       propertyPath: m_Controller
