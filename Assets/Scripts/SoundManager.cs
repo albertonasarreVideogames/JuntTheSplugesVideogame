@@ -51,6 +51,11 @@ public class SoundManager : MonoBehaviour
         instance.audioSourceOst.Play();
     }
 
+    public static void StopOst()
+    {
+        if (instance == null) { return; }
+        instance.audioSourceOst.Stop();
+    }
 
 
     public static void PlaySound(SoundType sound, float volume = 1)

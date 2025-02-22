@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PauseState : MonoBehaviour
 {
@@ -44,6 +45,16 @@ public class PauseState : MonoBehaviour
              GameManager.Instance.UpdateGameState(GameState.Gaming);               
         }
 
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            GoToMenu();
+        }
 
+
+    }
+    private void GoToMenu()
+    {
+        SceneManager.LoadScene(0);
+        GameManager.Instance.UpdateGameState(GameState.Menu);
     }
 }

@@ -55,10 +55,4 @@ public class MenuState : MonoBehaviour
         SceneManager.LoadScene(currentSceneIndex + 1);
         GameManager.Instance.UpdateGameState(GameState.Gaming);
     }
-
-    private void GoToMenu()
-    {
-        SceneManager.LoadScene(0);
-        GameManager.Instance.UpdateGameState(GameState.Menu);
-    }
 }

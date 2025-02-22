@@ -98,6 +98,7 @@ public class GameManager : MonoBehaviour
                 HandleLose();
                 break;
             case GameState.Menu:
+                HandleMenu();
                 break;
             case GameState.Procesing:
                 break;
@@ -131,6 +132,12 @@ public class GameManager : MonoBehaviour
     private void HandleLose()
     {
         Time.timeScale = 0.5f;
+
+    }
+
+    private void HandleMenu()
+    {
+        SoundManager.StopOst();
 
     }
 
