@@ -43,21 +43,7 @@ public class PauseState : MonoBehaviour
     // Update is called once per frame
     public void UpdateState()
     {
-        if (Input.GetKeyDown(KeyCode.Return))
-        {
-                       
-        }
-
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            GoToMenu();
-        }
-
-
+        
     }
-    private void GoToMenu()
-    {
-        GameManager.Instance.UpdateGameState(GameState.Menu);
-        SceneManager.LoadScene(0);
-    }
+    
 }

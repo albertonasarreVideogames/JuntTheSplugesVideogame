@@ -9,13 +9,15 @@ public class PauseMenu : MenuBase
     public Animator newGameAnimator;
     public Animator settingsAnimator;
     public Animator quitAnimator;
+    public Animator backToMenuAnimator;
     public GameObject ControlsPanel;
     private bool button1EndSequence = false;
-    private enum MenuOptions
+    private enum PauseOptions
     {
         NewGame = 0,
         Settings = 1,
-        Quit = 2
+        Quit = 2,
+        BackTomenu = 3
     }
 
     private void Start()
@@ -25,6 +27,7 @@ public class PauseMenu : MenuBase
         newGameAnimator.updateMode = AnimatorUpdateMode.UnscaledTime;
         settingsAnimator.updateMode = AnimatorUpdateMode.UnscaledTime;
         quitAnimator.updateMode = AnimatorUpdateMode.UnscaledTime;
+        backToMenuAnimator.updateMode = AnimatorUpdateMode.UnscaledTime;
     }
     void Update()
     {
@@ -41,7 +44,7 @@ public class PauseMenu : MenuBase
 
         switch (menuButtonController.index)
         {
-            case (int)MenuOptions.NewGame:
+            case (int)PauseOptions.NewGame:
                 ExecuteButtonAction(() =>
                 {
                     Resumegame();
@@ -49,19 +52,26 @@ public class PauseMenu : MenuBase
                 }, newGameAnimator);
                 break;
 
-            case (int)MenuOptions.Settings:
+            case (int)PauseOptions.Settings:
                 ExecuteButtonAction(() =>
                 {
                     ControlsPanel.SetActive(true);
                 }, settingsAnimator);
                 break;
 
-            case (int)MenuOptions.Quit:
+            case (int)PauseOptions.Quit:
                 ExecuteButtonAction(() =>
                 {
                     var confirm = gameObject.AddComponent<ConfirmationPanel>();
                     confirm.Initiate(surePanel, () => Quit());
                 }, quitAnimator);
+                break;
+            case (int)PauseOptions.BackTomenu:
+                ExecuteButtonAction(() =>
+                {
+                    button1EndSequence = true;
+                    GoToMenu();
+                }, backToMenuAnimator);
                 break;
         }
     }
@@ -76,10 +86,18 @@ public class PauseMenu : MenuBase
             settingsAnimator.SetBool("pressed", false);
             quitAnimator.SetBool("selected", false);
             quitAnimator.SetBool("pressed", false);
+            backToMenuAnimator.SetBool("selected", false);
+            backToMenuAnimator.SetBool("pressed", false);
         }
     }
     private void Resumegame()
     {
         GameManager.Instance.UpdateGameState(GameState.Gaming);
+    }
+
+    private void GoToMenu()
+    {
+        GameManager.Instance.UpdateGameState(GameState.Menu);
+        SceneManager.LoadScene(0);
     }
 }
