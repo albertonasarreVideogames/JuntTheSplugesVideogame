@@ -90,7 +90,8 @@ public class MenuButtonController : MonoBehaviour
                         }
                     }
                     keyDown = true;
-                    SoundManager.PlaySound(SoundType.MENUCHANGE);
+                    if (GameManager.Instance.State == GameState.Pause || GameManager.Instance.State == GameState.Menu) { SoundManager.PlaySound(SoundType.MENUCHANGE); }
+                    
                 }
             }
             else

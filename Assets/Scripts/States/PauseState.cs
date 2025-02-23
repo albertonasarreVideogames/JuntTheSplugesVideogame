@@ -156,9 +156,4 @@ public class PauseState : MonoBehaviour
         Application.Quit ();
 #endif
     }
-
-    public void PlaySound(AudioClip whichSound)
-    {
-        
-    }
 }

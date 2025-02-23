@@ -40,6 +40,7 @@ public class MenuBase : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Return))
         {
             anim.SetBool("pressed", true);
+            SoundManager.PlaySound(SoundType.MENUSELECTED);
             actionToExecute.Invoke();
         }
     }
@@ -64,17 +65,6 @@ public class MenuBase : MonoBehaviour
 #else
         Application.Quit ();
 #endif
-    }
-    public void PlaySound(AudioClip whichSound)
-    {
-            if (!disableOnce)
-            {
-                audioSource.PlayOneShot(whichSound);
-            }
-            else
-            {
-                disableOnce = false;
-            }   
     }
 
     protected void ShowSurePanel()
