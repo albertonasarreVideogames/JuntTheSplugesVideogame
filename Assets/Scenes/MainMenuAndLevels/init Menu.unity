@@ -314,6 +314,8 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 30f5cfcc84534e746b303c13cf55029c, type: 3}
   - {fileID: 8300000, guid: 63341617e712d0f4eb93ca8ed5451d95, type: 3}
   - {fileID: 8300000, guid: 5d13ab2938dff984191b2c764862cb3b, type: 3}
+  - {fileID: 8300000, guid: 58867e7020ae0804194d3d667342d729, type: 3}
+  - {fileID: 8300000, guid: 18ed218e20b9d0447927a6a83ab76d52, type: 3}
 --- !u!82 &335631538
 AudioSource:
   m_ObjectHideFlags: 0
@@ -602,7 +604,6 @@ GameObject:
   - component: {fileID: 496563837}
   - component: {fileID: 496563836}
   - component: {fileID: 496563835}
-  - component: {fileID: 496563834}
   m_Layer: 5
   m_Name: Back to main menu
   m_TagString: Untagged
@@ -631,26 +632,6 @@ RectTransform:
   m_AnchoredPosition: {x: -243, y: -385}
   m_SizeDelta: {x: 69.1, y: 3.3}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &496563834
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 496563832}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2a4eb65bd9fff66469b7cd61f9938b45, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  menuButtonController: {fileID: 8342571759365530375}
-  disableOnce: 0
-  surePanel: {fileID: 8367600410162514009}
-  newGameAnimator: {fileID: 5942977380276015241}
-  settingsAnimator: {fileID: 5942977380172823069}
-  quitAnimator: {fileID: 5942977381490077428}
-  backToMenuAnimator: {fileID: 496563836}
-  ControlsPanel: {fileID: 7500798377912787259}
 --- !u!82 &496563835
 AudioSource:
   m_ObjectHideFlags: 0
@@ -2039,6 +2020,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _text: {fileID: 5942977379583855654}
+  menuButtonController: {fileID: 5942977379583855656}
+  disableOnce: 0
+  surePanel: {fileID: 8367600410162514009}
+  newGameAnimator: {fileID: 5942977380276015241}
+  settingsAnimator: {fileID: 5942977380172823069}
+  quitAnimator: {fileID: 5942977381490077428}
+  backToMenuAnimator: {fileID: 496563836}
+  ControlsPanel: {fileID: 7500798377912787259}
 --- !u!4 &1575764693
 Transform:
   m_ObjectHideFlags: 0
@@ -3512,7 +3501,7 @@ GameObject:
   - component: {fileID: 5942977379583855648}
   - component: {fileID: 5942977379583855655}
   - component: {fileID: 5942977379583855644}
-  - component: {fileID: 8342571759365530375}
+  - component: {fileID: 5942977379583855656}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -3537,6 +3526,20 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &5942977379583855656
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5942977379583855654}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bc82ea24cd0e404580374732c1fdb4e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  index: 0
+  maxIndex: 3
 --- !u!95 &5942977380172823069
 Animator:
   serializedVersion: 3
@@ -3702,7 +3705,6 @@ GameObject:
   - component: {fileID: 5942977380172823070}
   - component: {fileID: 5942977380172823069}
   - component: {fileID: 5942977380172823072}
-  - component: {fileID: 5942977380172823075}
   m_Layer: 5
   m_Name: ControlsPanel
   m_TagString: Untagged
@@ -3731,26 +3733,6 @@ RectTransform:
   m_AnchoredPosition: {x: -238, y: 104}
   m_SizeDelta: {x: 81.9, y: 3}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &5942977380172823075
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5942977380172823073}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2a4eb65bd9fff66469b7cd61f9938b45, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  menuButtonController: {fileID: 8342571759365530375}
-  disableOnce: 0
-  surePanel: {fileID: 8367600410162514009}
-  newGameAnimator: {fileID: 5942977380276015241}
-  settingsAnimator: {fileID: 5942977380172823069}
-  quitAnimator: {fileID: 5942977381490077428}
-  backToMenuAnimator: {fileID: 496563836}
-  ControlsPanel: {fileID: 7500798377912787259}
 --- !u!95 &5942977380276015241
 Animator:
   serializedVersion: 3
@@ -3916,7 +3898,6 @@ GameObject:
   - component: {fileID: 5942977380276015242}
   - component: {fileID: 5942977380276015241}
   - component: {fileID: 5942977380276015244}
-  - component: {fileID: 5942977380276015247}
   m_Layer: 5
   m_Name: NewGamePanel
   m_TagString: Untagged
@@ -3945,26 +3926,6 @@ RectTransform:
   m_AnchoredPosition: {x: -212, y: 291}
   m_SizeDelta: {x: 224.08, y: 2.8}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &5942977380276015247
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5942977380276015245}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2a4eb65bd9fff66469b7cd61f9938b45, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  menuButtonController: {fileID: 8342571759365530375}
-  disableOnce: 0
-  surePanel: {fileID: 8367600410162514009}
-  newGameAnimator: {fileID: 5942977380276015241}
-  settingsAnimator: {fileID: 5942977380172823069}
-  quitAnimator: {fileID: 5942977381490077428}
-  backToMenuAnimator: {fileID: 496563836}
-  ControlsPanel: {fileID: 7500798377912787259}
 --- !u!222 &5942977380955571588
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4286,7 +4247,6 @@ GameObject:
   - component: {fileID: 5942977381490077429}
   - component: {fileID: 5942977381490077428}
   - component: {fileID: 5942977381490077431}
-  - component: {fileID: 5942977381490077434}
   m_Layer: 5
   m_Name: QuitPanel
   m_TagString: Untagged
@@ -4315,26 +4275,6 @@ RectTransform:
   m_AnchoredPosition: {x: -243, y: -166}
   m_SizeDelta: {x: 69.1, y: 3.3}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &5942977381490077434
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5942977381490077432}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2a4eb65bd9fff66469b7cd61f9938b45, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  menuButtonController: {fileID: 8342571759365530375}
-  disableOnce: 0
-  surePanel: {fileID: 8367600410162514009}
-  newGameAnimator: {fileID: 5942977380276015241}
-  settingsAnimator: {fileID: 5942977380172823069}
-  quitAnimator: {fileID: 5942977381490077428}
-  backToMenuAnimator: {fileID: 496563836}
-  ControlsPanel: {fileID: 7500798377912787259}
 --- !u!1 &5942977381629725936
 GameObject:
   m_ObjectHideFlags: 0
@@ -5973,20 +5913,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &8342571759365530375
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5942977379583855654}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7e5578464290f8741a60126bf050ba27, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  index: 0
-  maxIndex: 3
 --- !u!222 &8367600410162514006
 CanvasRenderer:
   m_ObjectHideFlags: 0

@@ -9,7 +9,9 @@ public enum SoundType
     SPLUGEHITONWALL,
     SPUNGEJUMP,
     SPLINGEFALLING,
-    SWITCHDOWN
+    SWITCHDOWN,
+    MENUCHANGE,
+    MENUSELECTED
 }
 
 [RequireComponent(typeof(AudioSource))]
