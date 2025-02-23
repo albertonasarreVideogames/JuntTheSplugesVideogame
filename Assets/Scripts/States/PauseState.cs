@@ -29,7 +29,10 @@ public class PauseState : MonoBehaviour
 
     private void GameManagerOnGameStateChanged(GameState state)
     {
-        _text.SetActive(state == GameState.Pause);
+        if(state == GameState.Menu) { _text.SetActive(false); }
+        if (state == GameState.Pause) { _text.SetActive(true); }
+        if (state == GameState.Gaming) { _text.SetActive(false); }
+
 
     }
     void Start()
@@ -42,7 +45,7 @@ public class PauseState : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Return))
         {
-             GameManager.Instance.UpdateGameState(GameState.Gaming);               
+                       
         }
 
         if (Input.GetKeyDown(KeyCode.Space))

@@ -156,7 +156,10 @@ public class MapLoader : MonoBehaviour
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         // Cuando la escena esté cargada, llamamos a AdjustCameraAndGrid
-        AdjustCameraAndGrid();
+        //if (GameManager.Instance.State == GameState.Gaming)
+        //{
+            AdjustCameraAndGrid();
+        //}
     }
 
 }
