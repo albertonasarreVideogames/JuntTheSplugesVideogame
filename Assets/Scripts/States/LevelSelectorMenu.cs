@@ -6,12 +6,8 @@ using UnityEngine.SceneManagement;
 
 public class LevelSelectorMenu : MonoBehaviour
 {
-
-    [SerializeField] private GameObject _text;
-    public static PauseState Instance;
-
-    public MenuButtonController menuButtonController;
-    public bool disableOnce;
+    public GameObject worldChoose;
+    public GameObject LevelChoose;
     public GameObject surePanel;
 
     public Animator world1Animator;
@@ -19,6 +15,13 @@ public class LevelSelectorMenu : MonoBehaviour
     public Animator world3Animator;
     public Animator world4Animator;
     public Animator backToMenuAnimator;
+
+    public Animator level1Animator;
+    public Animator level2Animator;
+    public Animator level3Animator;
+    public Animator level4Animator;
+    public Animator level5Animator;
+
     private bool button1EndSequence = false;
     // Start is called before the first frame update
 
@@ -30,9 +33,18 @@ public class LevelSelectorMenu : MonoBehaviour
         World4 = 3,
         BackTomenu = 4
     }
+
+    private enum levelOptions
+    {
+        Level1 = 0,
+        Level2 = 1,
+        Level3 = 2,
+        Level4 = 3,
+        Level5 = 4
+    }
     void Start()
     {
-        menuButtonController.index = 0;
+        worldChoose.GetComponent<MenuButtonController>().index = 0;
     }
 
     // Update is called once per frame
@@ -40,42 +52,94 @@ public class LevelSelectorMenu : MonoBehaviour
     {
         SetDefaultValues();
 
-        switch (menuButtonController.index)
+        if (worldChoose.activeSelf)
         {
-            case (int)WorldsOptions.World1:
-                ExecuteButtonAction(() =>
-                {
-                    Debug.Log("World1");
-                }, world1Animator);
-                break;
+            switch (worldChoose.GetComponent<MenuButtonController>().index)
+            {
+                case (int)WorldsOptions.World1:
+                    ExecuteButtonAction(() =>
+                    {
+                        worldChoose.SetActive(false);
+                        LevelChoose.SetActive(true);
+                        Debug.Log("World1");
+                    }, world1Animator);
+                    break;
 
-            case (int)WorldsOptions.World2:
-                ExecuteButtonAction(() =>
-                {
-                    Debug.Log("World2");
-                }, world2Animator);
-                break;
+                case (int)WorldsOptions.World2:
+                    ExecuteButtonAction(() =>
+                    {
+                        Debug.Log("World2");
+                    }, world2Animator);
+                    break;
 
-            case (int)WorldsOptions.World3:
-                ExecuteButtonAction(() =>
-                {
-                    Debug.Log("World3");
-                }, world3Animator);
-                break;
-            case (int)WorldsOptions.World4:
-                ExecuteButtonAction(() =>
-                {
-                    Debug.Log("World4");
-                }, world4Animator);
-                break;
-            case (int)WorldsOptions.BackTomenu:
-                ExecuteButtonAction(() =>
-                {
-                    button1EndSequence = true;
-                    GoToMenu();
-                }, backToMenuAnimator);
-                break;
+                case (int)WorldsOptions.World3:
+                    ExecuteButtonAction(() =>
+                    {
+                        Debug.Log("World3");
+                    }, world3Animator);
+                    break;
+                case (int)WorldsOptions.World4:
+                    ExecuteButtonAction(() =>
+                    {
+                        Debug.Log("World4");
+                    }, world4Animator);
+                    break;
+                case (int)WorldsOptions.BackTomenu:
+                    ExecuteButtonAction(() =>
+                    {
+                        button1EndSequence = true;
+                        GoToMenu();
+                    }, backToMenuAnimator);
+                    break;
+            }
+
+
         }
+
+        if (LevelChoose.activeSelf)
+        {
+            switch (LevelChoose.GetComponent<MenuButtonController>().index)
+            {
+                case (int)levelOptions.Level1:
+                    ExecuteButtonAction(() =>
+                    {
+                     
+                        Debug.Log("Level1");
+                    }, level1Animator);
+                    break;
+
+                case (int)levelOptions.Level2:
+                    ExecuteButtonAction(() =>
+                    {
+                        Debug.Log("Level2");
+                    }, level2Animator);
+                    break;
+
+                case (int)levelOptions.Level3:
+                    ExecuteButtonAction(() =>
+                    {
+                        Debug.Log("Level3");
+                    }, level3Animator);
+                    break;
+                case (int)levelOptions.Level4:
+                    ExecuteButtonAction(() =>
+                    {
+                        Debug.Log("Level4");
+                    }, level4Animator);
+                    break;
+                case (int)levelOptions.Level5:
+                    ExecuteButtonAction(() =>
+                    {
+                        Debug.Log("Level5");
+                    }, level5Animator);
+                    break;
+            }
+
+
+        }
+
+
+
 
     }
 
@@ -83,16 +147,36 @@ public class LevelSelectorMenu : MonoBehaviour
     {
         if (!button1EndSequence)
         {
-            world1Animator.SetBool("selected", false);
-            world1Animator.SetBool("pressed", false);
-            world2Animator.SetBool("selected", false);
-            world2Animator.SetBool("pressed", false);
-            world3Animator.SetBool("selected", false);
-            world3Animator.SetBool("pressed", false);
-            world4Animator.SetBool("selected", false);
-            world4Animator.SetBool("pressed", false);
-            backToMenuAnimator.SetBool("selected", false);
-            backToMenuAnimator.SetBool("pressed", false);
+            if (worldChoose.activeSelf)
+            {
+
+                world1Animator.SetBool("selected", false);
+                world1Animator.SetBool("pressed", false);
+                world2Animator.SetBool("selected", false);
+                world2Animator.SetBool("pressed", false);
+                world3Animator.SetBool("selected", false);
+                world3Animator.SetBool("pressed", false);
+                world4Animator.SetBool("selected", false);
+                world4Animator.SetBool("pressed", false);
+                backToMenuAnimator.SetBool("selected", false);
+                backToMenuAnimator.SetBool("pressed", false);
+            }
+
+            if (LevelChoose.activeSelf)
+            {
+
+                level1Animator.SetBool("selected", false);
+                level1Animator.SetBool("pressed", false);
+                level2Animator.SetBool("selected", false);
+                level2Animator.SetBool("pressed", false);
+                level3Animator.SetBool("selected", false);
+                level3Animator.SetBool("pressed", false);
+                level4Animator.SetBool("selected", false);
+                level4Animator.SetBool("pressed", false);
+                level5Animator.SetBool("selected", false);
+                level5Animator.SetBool("pressed", false);
+            }
+
         }
     }
 
