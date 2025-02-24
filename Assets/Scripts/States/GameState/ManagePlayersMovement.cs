@@ -76,7 +76,7 @@ public class ManagePlayersMovement
         if (Mathf.Abs(movement.x) == 1f || Mathf.Abs(movement.y) == 1f)
         {
             //chek if players are still movement
-            if (Array.TrueForAll(players, playerisNOTmovig))
+            if (checkAnyPlayerIsmoving())
             {
                 //check the movement of the mainplayers
                 if (Array.TrueForAll(mainplayers, mainplayer => MainPlayerscanmove(mainplayer, movement)))
@@ -90,6 +90,11 @@ public class ManagePlayersMovement
     }
 
     //Functions to check conditions
+    public bool checkAnyPlayerIsmoving()
+    {
+        //Debug.Log(Array.TrueForAll(players, playerisNOTmovig));
+        return Array.TrueForAll(players, playerisNOTmovig);
+    }
     private static bool playerisNOTmovig(Player player)
     {
         return player.checkIfPlayerIsNOTStrillMoveent();

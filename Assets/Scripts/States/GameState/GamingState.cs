@@ -152,4 +152,9 @@ public class GamingState : MonoBehaviour
             managePlayerMovement.Simulatemovement(movement);
         }
     }
+
+    public bool getIfPlayersStopMoving()
+    {
+        return managePlayerMovement.checkAnyPlayerIsmoving();
+    }
 }

@@ -10,14 +10,20 @@ public static class TestUtilities
     {
         
         yield return SceneManager.LoadSceneAsync(sceneName, LoadSceneMode.Single);
-        
+        yield return new WaitForSeconds(0.1f * timeBetweenmovementsMultiplicator);
 
         // Realizar las acciones específicas del test
         for (int i = 0; i < movementsManager.buttonspressed.Count; i++)
         {
             if (GamingState.Instance != null)
             {
-                yield return new WaitForSeconds(0.1f*timeBetweenmovementsMultiplicator);
+                //yield return new WaitForSeconds(0.1f*timeBetweenmovementsMultiplicator);
+                while (!GamingState.Instance.getIfPlayersStopMoving())
+                {
+                    // Aquí se puede agregar un pequeño retraso para evitar que la corutina consuma demasiados recursos
+                    yield return null; // Espera hasta el siguiente frame
+                }
+                GamingState.Instance.getIfPlayersStopMoving();
                 movementsManager.executeComand(i);
                 //Debug.Log("Me muevo");
             }
