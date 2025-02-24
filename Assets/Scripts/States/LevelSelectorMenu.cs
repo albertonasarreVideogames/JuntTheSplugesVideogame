@@ -22,6 +22,8 @@ public class LevelSelectorMenu : MonoBehaviour
     public Animator level4Animator;
     public Animator level5Animator;
 
+    private string wordlSelected = "";
+
     private bool button1EndSequence = false;
     // Start is called before the first frame update
 
@@ -59,29 +61,27 @@ public class LevelSelectorMenu : MonoBehaviour
                 case (int)WorldsOptions.World1:
                     ExecuteButtonAction(() =>
                     {
-                        worldChoose.SetActive(false);
-                        LevelChoose.SetActive(true);
-                        Debug.Log("World1");
+                        StartCoroutine( SelectWorld(1.0f, "World1"));
                     }, world1Animator);
                     break;
 
                 case (int)WorldsOptions.World2:
                     ExecuteButtonAction(() =>
                     {
-                        Debug.Log("World2");
+                        StartCoroutine(SelectWorld(1.0f, "World2"));
                     }, world2Animator);
                     break;
 
                 case (int)WorldsOptions.World3:
                     ExecuteButtonAction(() =>
                     {
-                        Debug.Log("World3");
+                        StartCoroutine(SelectWorld(1.0f, "World3"));
                     }, world3Animator);
                     break;
                 case (int)WorldsOptions.World4:
                     ExecuteButtonAction(() =>
                     {
-                        Debug.Log("World4");
+                        StartCoroutine(SelectWorld(1.0f, "World4"));
                     }, world4Animator);
                     break;
                 case (int)WorldsOptions.BackTomenu:
@@ -104,33 +104,33 @@ public class LevelSelectorMenu : MonoBehaviour
                     ExecuteButtonAction(() =>
                     {
                      
-                        Debug.Log("Level1");
+                        Debug.Log(wordlSelected+ "level1");
                     }, level1Animator);
                     break;
 
                 case (int)levelOptions.Level2:
                     ExecuteButtonAction(() =>
                     {
-                        Debug.Log("Level2");
+                        Debug.Log(wordlSelected + "level2");
                     }, level2Animator);
                     break;
 
                 case (int)levelOptions.Level3:
                     ExecuteButtonAction(() =>
                     {
-                        Debug.Log("Level3");
+                        Debug.Log(wordlSelected + "level3");
                     }, level3Animator);
                     break;
                 case (int)levelOptions.Level4:
                     ExecuteButtonAction(() =>
                     {
-                        Debug.Log("Level4");
+                        Debug.Log(wordlSelected + "level4");
                     }, level4Animator);
                     break;
                 case (int)levelOptions.Level5:
                     ExecuteButtonAction(() =>
                     {
-                        Debug.Log("Level5");
+                        Debug.Log(wordlSelected + "level5");
                     }, level5Animator);
                     break;
             }
@@ -198,5 +198,14 @@ public class LevelSelectorMenu : MonoBehaviour
             SoundManager.PlaySound(SoundType.MENUSELECTED);
             actionToExecute.Invoke();
         }
+    }
+
+    private IEnumerator SelectWorld(float time, string world)
+    {
+        yield return new WaitForSeconds(time);
+
+        worldChoose.SetActive(false);
+        LevelChoose.SetActive(true);
+        wordlSelected = world;
     }
 }
