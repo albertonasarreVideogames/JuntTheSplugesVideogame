@@ -4,28 +4,22 @@ using UnityEngine;
 using System;
 using UnityEngine.SceneManagement;
 
+using UnityEngine;
+using UnityEngine.SceneManagement;
+using System;
+using System.Collections;
+using System.Collections.Generic;
+
 public class LevelSelectorMenu : MonoBehaviour
 {
     public GameObject worldChoose;
     public GameObject LevelChoose;
     public GameObject surePanel;
 
-    public Animator world1Animator;
-    public Animator world2Animator;
-    public Animator world3Animator;
-    public Animator world4Animator;
     public Animator backToMenuAnimator;
 
-    public Animator level1Animator;
-    public Animator level2Animator;
-    public Animator level3Animator;
-    public Animator level4Animator;
-    public Animator level5Animator;
-
     private string wordlSelected = "";
-
     private bool button1EndSequence = false;
-    // Start is called before the first frame update
 
     private enum WorldsOptions
     {
@@ -33,10 +27,10 @@ public class LevelSelectorMenu : MonoBehaviour
         World2 = 1,
         World3 = 2,
         World4 = 3,
-        BackTomenu = 4
+        BackToMenu = 4
     }
 
-    private enum levelOptions
+    private enum LevelOptions
     {
         Level1 = 0,
         Level2 = 1,
@@ -44,144 +38,111 @@ public class LevelSelectorMenu : MonoBehaviour
         Level4 = 3,
         Level5 = 4
     }
+
+    // Diccionario para almacenar los animadores de mundos y niveles
+    private Dictionary<WorldsOptions, Animator> worldAnimators = new Dictionary<WorldsOptions, Animator>();
+    private Dictionary<LevelOptions, Animator> levelAnimators = new Dictionary<LevelOptions, Animator>();
+
     void Start()
     {
+        // Accediendo a los animadores de los mundos desde la jerarquía
+        worldAnimators.Add(WorldsOptions.World1, worldChoose.transform.Find("Menu/Buttons/World1").GetComponent<Animator>());
+        worldAnimators.Add(WorldsOptions.World2, worldChoose.transform.Find("Menu/Buttons/World2").GetComponent<Animator>());
+        worldAnimators.Add(WorldsOptions.World3, worldChoose.transform.Find("Menu/Buttons/World3").GetComponent<Animator>());
+        worldAnimators.Add(WorldsOptions.World4, worldChoose.transform.Find("Menu/Buttons/World4").GetComponent<Animator>());
+        worldAnimators.Add(WorldsOptions.BackToMenu, backToMenuAnimator);
+
+        // Accediendo a los animadores de los niveles desde la jerarquía
+        levelAnimators.Add(LevelOptions.Level1, LevelChoose.transform.Find("Menu/Buttons/Level1").GetComponent<Animator>());
+        levelAnimators.Add(LevelOptions.Level2, LevelChoose.transform.Find("Menu/Buttons/Level2").GetComponent<Animator>());
+        levelAnimators.Add(LevelOptions.Level3, LevelChoose.transform.Find("Menu/Buttons/Level3").GetComponent<Animator>());
+        levelAnimators.Add(LevelOptions.Level4, LevelChoose.transform.Find("Menu/Buttons/Level4").GetComponent<Animator>());
+        levelAnimators.Add(LevelOptions.Level5, LevelChoose.transform.Find("Menu/Buttons/Level5").GetComponent<Animator>());
+
         worldChoose.GetComponent<MenuButtonController>().index = 0;
     }
 
-    // Update is called once per frame
     void Update()
     {
         SetDefaultValues();
 
+        // Manejo de selección de mundo
         if (worldChoose.activeSelf)
         {
-            switch (worldChoose.GetComponent<MenuButtonController>().index)
-            {
-                case (int)WorldsOptions.World1:
-                    ExecuteButtonAction(() =>
-                    {
-                        StartCoroutine( SelectWorld(1.0f, "World1"));
-                    }, world1Animator);
-                    break;
-
-                case (int)WorldsOptions.World2:
-                    ExecuteButtonAction(() =>
-                    {
-                        StartCoroutine(SelectWorld(1.0f, "World2"));
-                    }, world2Animator);
-                    break;
-
-                case (int)WorldsOptions.World3:
-                    ExecuteButtonAction(() =>
-                    {
-                        StartCoroutine(SelectWorld(1.0f, "World3"));
-                    }, world3Animator);
-                    break;
-                case (int)WorldsOptions.World4:
-                    ExecuteButtonAction(() =>
-                    {
-                        StartCoroutine(SelectWorld(1.0f, "World4"));
-                    }, world4Animator);
-                    break;
-                case (int)WorldsOptions.BackTomenu:
-                    ExecuteButtonAction(() =>
-                    {
-                        button1EndSequence = true;
-                        GoToMenu();
-                    }, backToMenuAnimator);
-                    break;
-            }
-
-
+            WorldsOptions selectedWorld = (WorldsOptions)worldChoose.GetComponent<MenuButtonController>().index;
+            HandleWorldSelection(selectedWorld);
         }
 
+        // Manejo de selección de nivel
         if (LevelChoose.activeSelf)
         {
-            switch (LevelChoose.GetComponent<MenuButtonController>().index)
-            {
-                case (int)levelOptions.Level1:
-                    ExecuteButtonAction(() =>
-                    {
-                     
-                        Debug.Log(wordlSelected+ "level1");
-                        GameManager.Instance.UpdateGameState(GameState.Gaming);
-                        SceneManager.LoadScene(wordlSelected + "level1");
-                    }, level1Animator);
-                    break;
-
-                case (int)levelOptions.Level2:
-                    ExecuteButtonAction(() =>
-                    {
-                        Debug.Log(wordlSelected + "level2");
-                    }, level2Animator);
-                    break;
-
-                case (int)levelOptions.Level3:
-                    ExecuteButtonAction(() =>
-                    {
-                        Debug.Log(wordlSelected + "level3");
-                    }, level3Animator);
-                    break;
-                case (int)levelOptions.Level4:
-                    ExecuteButtonAction(() =>
-                    {
-                        Debug.Log(wordlSelected + "level4");
-                    }, level4Animator);
-                    break;
-                case (int)levelOptions.Level5:
-                    ExecuteButtonAction(() =>
-                    {
-                        Debug.Log(wordlSelected + "level5");
-                    }, level5Animator);
-                    break;
-            }
-
-
+            LevelOptions selectedLevel = (LevelOptions)LevelChoose.GetComponent<MenuButtonController>().index;
+            HandleLevelSelection(selectedLevel);
         }
-
-
-
-
     }
 
     private void SetDefaultValues()
     {
         if (!button1EndSequence)
         {
-            if (worldChoose.activeSelf)
-            {
-
-                world1Animator.SetBool("selected", false);
-                world1Animator.SetBool("pressed", false);
-                world2Animator.SetBool("selected", false);
-                world2Animator.SetBool("pressed", false);
-                world3Animator.SetBool("selected", false);
-                world3Animator.SetBool("pressed", false);
-                world4Animator.SetBool("selected", false);
-                world4Animator.SetBool("pressed", false);
-                backToMenuAnimator.SetBool("selected", false);
-                backToMenuAnimator.SetBool("pressed", false);
-            }
-
-            if (LevelChoose.activeSelf)
-            {
-
-                level1Animator.SetBool("selected", false);
-                level1Animator.SetBool("pressed", false);
-                level2Animator.SetBool("selected", false);
-                level2Animator.SetBool("pressed", false);
-                level3Animator.SetBool("selected", false);
-                level3Animator.SetBool("pressed", false);
-                level4Animator.SetBool("selected", false);
-                level4Animator.SetBool("pressed", false);
-                level5Animator.SetBool("selected", false);
-                level5Animator.SetBool("pressed", false);
-            }
-
+            ResetWorldAnimators();
+            ResetLevelAnimators();
         }
     }
 
+    private void HandleWorldSelection(WorldsOptions world)
+    {
+        ExecuteButtonAction(() =>
+        {
+            switch (world)
+            {
+                case WorldsOptions.World1:
+                    StartCoroutine(SelectWorld(1.0f, "World1"));
+                    break;
+                case WorldsOptions.World2:
+                    StartCoroutine(SelectWorld(1.0f, "World2"));
+                    break;
+                case WorldsOptions.World3:
+                    StartCoroutine(SelectWorld(1.0f, "World3"));
+                    break;
+                case WorldsOptions.World4:
+                    StartCoroutine(SelectWorld(1.0f, "World4"));
+                    break;
+                case WorldsOptions.BackToMenu:
+                    button1EndSequence = true;
+                    GoToMenu();
+                    break;
+            }
+        }, worldAnimators[world]);
+    }
+
+    private void HandleLevelSelection(LevelOptions level)
+    {
+        ExecuteButtonAction(() =>
+        {
+            Debug.Log(wordlSelected + level.ToString());
+            GameManager.Instance.UpdateGameState(GameState.Gaming);
+            SceneManager.LoadScene(wordlSelected + level.ToString());
+        }, levelAnimators[level]);
+    }
+
+    private void ResetWorldAnimators()
+    {
+        foreach (var animator in worldAnimators.Values)
+        {
+            animator.SetBool("selected", false);
+            animator.SetBool("pressed", false);
+        }
+    }
+
+    private void ResetLevelAnimators()
+    {
+        foreach (var animator in levelAnimators.Values)
+        {
+            animator.SetBool("selected", false);
+            animator.SetBool("pressed", false);
+        }
+    }
 
     private void GoToMenu()
     {
@@ -191,9 +152,7 @@ public class LevelSelectorMenu : MonoBehaviour
 
     protected void ExecuteButtonAction(Action actionToExecute, Animator anim)
     {
-
         anim.SetBool("selected", true);
-        //SoundManager.PlaySound(SoundType.MENUCHANGE);
         if (Input.GetKeyDown(KeyCode.Return))
         {
             anim.SetBool("pressed", true);
@@ -211,3 +170,5 @@ public class LevelSelectorMenu : MonoBehaviour
         wordlSelected = world;
     }
 }
+
+
