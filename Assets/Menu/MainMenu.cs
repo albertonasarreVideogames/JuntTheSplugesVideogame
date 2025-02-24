@@ -11,6 +11,7 @@ public class MainMenu : MenuBase
     public Animator newGameAnimator;
     public Animator settingsAnimator;
     public Animator quitAnimator;
+    public Animator levelSelectedAnimator;
     public GameObject ControlsPanel;
     private bool button1EndSequence = false;
 
@@ -21,7 +22,9 @@ public class MainMenu : MenuBase
     {
         NewGame = 0,
         Settings = 1,
-        Quit = 2
+        Quit = 2,
+        LevelSelected = 3
+      
     }
     void Update()
     {
@@ -62,6 +65,12 @@ public class MainMenu : MenuBase
 					confirm.Initiate(surePanel, ()=>Quit());
                 }, quitAnimator);
                 break;
+            case (int)MenuOptions.LevelSelected:
+                ExecuteButtonAction(() =>
+                {
+                    Debug.Log("Level menu selected");
+                }, levelSelectedAnimator);
+                break;
         }
     }
 
@@ -75,6 +84,8 @@ public class MainMenu : MenuBase
             settingsAnimator.SetBool("pressed", false);
             quitAnimator.SetBool("selected", false);
             quitAnimator.SetBool("pressed", false);
+            levelSelectedAnimator.SetBool("selected", false);
+            levelSelectedAnimator.SetBool("pressed", false);
         }
     }
     IEnumerator LoadFirstLevel(float time)
