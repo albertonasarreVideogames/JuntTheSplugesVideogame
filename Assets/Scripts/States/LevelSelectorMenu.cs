@@ -19,7 +19,6 @@ public class LevelSelectorMenu : MonoBehaviour
     public Animator world3Animator;
     public Animator world4Animator;
     public Animator backToMenuAnimator;
-    public GameObject ControlsPanel;
     private bool button1EndSequence = false;
     // Start is called before the first frame update
 
@@ -40,13 +39,6 @@ public class LevelSelectorMenu : MonoBehaviour
     void Update()
     {
         SetDefaultValues();
-        if (ControlsPanel.activeSelf)
-        {
-            if (Input.anyKeyDown)
-            {
-                ControlsPanel.SetActive(false);
-            }
-        }
 
         switch (menuButtonController.index)
         {
