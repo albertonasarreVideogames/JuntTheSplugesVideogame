@@ -9,7 +9,7 @@ public class PauseState : MonoBehaviour
     [SerializeField] private GameObject _text;
     public static PauseState Instance;
 
-    public MenuButtonController menuButtonController;
+    private MenuButtonController menuButtonController;
     public bool disableOnce;
     public GameObject surePanel;
 
@@ -62,11 +62,13 @@ public class PauseState : MonoBehaviour
         settingsAnimator.updateMode = AnimatorUpdateMode.UnscaledTime;
         quitAnimator.updateMode = AnimatorUpdateMode.UnscaledTime;
         backToMenuAnimator.updateMode = AnimatorUpdateMode.UnscaledTime;
+        menuButtonController = new MenuButtonController(3);
     }
 
     // Update is called once per frame
     public void UpdateState()
     {
+        menuButtonController.Update();
         SetDefaultValues();
         if (ControlsPanel.activeSelf)
         {

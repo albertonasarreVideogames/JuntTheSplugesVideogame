@@ -26,9 +26,15 @@ public class MainMenu : MenuBase
         LevelSelected = 3
       
     }
+
+    private void Start()
+    {
+        base.Start();
+        menuButtonController = new MenuButtonController(3);
+    }
     void Update()
     {
-
+        menuButtonController.Update();
         SetDefaultValues();
 
         if (ControlsPanel.activeSelf)

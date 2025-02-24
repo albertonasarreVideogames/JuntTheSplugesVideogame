@@ -2145,6 +2145,7 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 5942977380207393097, guid: 3bbe4c7ba0b0a7c48b2bc4732425bce5, type: 3}
     - {fileID: 5942977381457538478, guid: 3bbe4c7ba0b0a7c48b2bc4732425bce5, type: 3}
+    - {fileID: 8342571757963900085, guid: 3bbe4c7ba0b0a7c48b2bc4732425bce5, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 3bbe4c7ba0b0a7c48b2bc4732425bce5, type: 3}
 --- !u!1 &1285943500
 GameObject:
@@ -2353,7 +2354,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _text: {fileID: 5942977379583855654}
-  menuButtonController: {fileID: 5942977379583855656}
   disableOnce: 0
   surePanel: {fileID: 8367600410162514009}
   newGameAnimator: {fileID: 5942977380276015241}
@@ -3987,7 +3987,6 @@ GameObject:
   - component: {fileID: 5942977379583855648}
   - component: {fileID: 5942977379583855655}
   - component: {fileID: 5942977379583855644}
-  - component: {fileID: 5942977379583855656}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -4012,20 +4011,6 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &5942977379583855656
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5942977379583855654}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2bc82ea24cd0e404580374732c1fdb4e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  index: 0
-  maxIndex: 3
 --- !u!95 &5942977380172823069
 Animator:
   serializedVersion: 3

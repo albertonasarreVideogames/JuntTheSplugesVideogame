@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class MenuBase : MonoBehaviour
 {
-    public MenuButtonController menuButtonController;
+    protected MenuButtonController menuButtonController;
     public bool disableOnce;
     public GameObject surePanel;
     private AudioSource audioSource;

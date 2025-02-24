@@ -11,6 +11,8 @@ public class LevelSelectorMenu : MonoBehaviour
 
     public Animator backToMenuAnimator;
 
+    private MenuButtonController menuButtonController;
+    private MenuButtonController menuButtonControllerLevels;
     private string wordlSelected = "";
     private bool button1EndSequence = false;
 
@@ -59,7 +61,8 @@ public class LevelSelectorMenu : MonoBehaviour
             levelAnimators.Add(LevelOptions.Level5, LevelChoose.transform.Find("Menu/Buttons/Level5").GetComponent<Animator>());
         }
 
-        worldChoose.GetComponent<MenuButtonController>().index = 0;
+        menuButtonController = new MenuButtonController(4);
+        menuButtonControllerLevels = new MenuButtonController(4);
     }
 
 
@@ -70,14 +73,16 @@ public class LevelSelectorMenu : MonoBehaviour
         // Manejo de selección de mundo
         if (worldChoose.activeSelf)
         {
-            WorldsOptions selectedWorld = (WorldsOptions)worldChoose.GetComponent<MenuButtonController>().index;
+            menuButtonController.Update();
+            WorldsOptions selectedWorld = (WorldsOptions)menuButtonController.index;
             HandleWorldSelection(selectedWorld);
         }
 
         // Manejo de selección de nivel
         if (LevelChoose.activeSelf)
         {
-            LevelOptions selectedLevel = (LevelOptions)LevelChoose.GetComponent<MenuButtonController>().index;
+            menuButtonControllerLevels.Update();
+            LevelOptions selectedLevel = (LevelOptions)menuButtonControllerLevels.index;
             HandleLevelSelection(selectedLevel);
         }
     }
