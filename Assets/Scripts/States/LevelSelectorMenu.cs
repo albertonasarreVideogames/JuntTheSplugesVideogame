@@ -3,13 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 using UnityEngine.SceneManagement;
-
-using UnityEngine;
-using UnityEngine.SceneManagement;
-using System;
-using System.Collections;
-using System.Collections.Generic;
-
 public class LevelSelectorMenu : MonoBehaviour
 {
     public GameObject worldChoose;
