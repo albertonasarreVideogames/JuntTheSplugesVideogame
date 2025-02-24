@@ -45,22 +45,30 @@ public class LevelSelectorMenu : MonoBehaviour
 
     void Start()
     {
-        // Accediendo a los animadores de los mundos desde la jerarquía
-        worldAnimators.Add(WorldsOptions.World1, worldChoose.transform.Find("Menu/Buttons/World1").GetComponent<Animator>());
-        worldAnimators.Add(WorldsOptions.World2, worldChoose.transform.Find("Menu/Buttons/World2").GetComponent<Animator>());
-        worldAnimators.Add(WorldsOptions.World3, worldChoose.transform.Find("Menu/Buttons/World3").GetComponent<Animator>());
-        worldAnimators.Add(WorldsOptions.World4, worldChoose.transform.Find("Menu/Buttons/World4").GetComponent<Animator>());
-        worldAnimators.Add(WorldsOptions.BackToMenu, backToMenuAnimator);
+        // Verificar si el diccionario ya tiene valores, para no volver a llenarlos
+        if (worldAnimators.Count == 0)
+        {
+            // Accediendo a los animadores de los mundos desde la jerarquía
+            worldAnimators.Add(WorldsOptions.World1, worldChoose.transform.Find("Menu/Buttons/World1").GetComponent<Animator>());
+            worldAnimators.Add(WorldsOptions.World2, worldChoose.transform.Find("Menu/Buttons/World2").GetComponent<Animator>());
+            worldAnimators.Add(WorldsOptions.World3, worldChoose.transform.Find("Menu/Buttons/World3").GetComponent<Animator>());
+            worldAnimators.Add(WorldsOptions.World4, worldChoose.transform.Find("Menu/Buttons/World4").GetComponent<Animator>());
+            worldAnimators.Add(WorldsOptions.BackToMenu, backToMenuAnimator);
+        }
 
-        // Accediendo a los animadores de los niveles desde la jerarquía
-        levelAnimators.Add(LevelOptions.Level1, LevelChoose.transform.Find("Menu/Buttons/Level1").GetComponent<Animator>());
-        levelAnimators.Add(LevelOptions.Level2, LevelChoose.transform.Find("Menu/Buttons/Level2").GetComponent<Animator>());
-        levelAnimators.Add(LevelOptions.Level3, LevelChoose.transform.Find("Menu/Buttons/Level3").GetComponent<Animator>());
-        levelAnimators.Add(LevelOptions.Level4, LevelChoose.transform.Find("Menu/Buttons/Level4").GetComponent<Animator>());
-        levelAnimators.Add(LevelOptions.Level5, LevelChoose.transform.Find("Menu/Buttons/Level5").GetComponent<Animator>());
+        if (levelAnimators.Count == 0)
+        {
+            // Accediendo a los animadores de los niveles desde la jerarquía
+            levelAnimators.Add(LevelOptions.Level1, LevelChoose.transform.Find("Menu/Buttons/Level1").GetComponent<Animator>());
+            levelAnimators.Add(LevelOptions.Level2, LevelChoose.transform.Find("Menu/Buttons/Level2").GetComponent<Animator>());
+            levelAnimators.Add(LevelOptions.Level3, LevelChoose.transform.Find("Menu/Buttons/Level3").GetComponent<Animator>());
+            levelAnimators.Add(LevelOptions.Level4, LevelChoose.transform.Find("Menu/Buttons/Level4").GetComponent<Animator>());
+            levelAnimators.Add(LevelOptions.Level5, LevelChoose.transform.Find("Menu/Buttons/Level5").GetComponent<Animator>());
+        }
 
         worldChoose.GetComponent<MenuButtonController>().index = 0;
     }
+
 
     void Update()
     {
