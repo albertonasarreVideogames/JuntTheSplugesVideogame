@@ -68,7 +68,7 @@ public class MainMenu : MenuBase
             case (int)MenuOptions.LevelSelected:
                 ExecuteButtonAction(() =>
                 {
-                    Debug.Log("Level menu selected");
+                    SceneManager.LoadScene("LevelSelectorMenu");
                 }, levelSelectedAnimator);
                 break;
         }
