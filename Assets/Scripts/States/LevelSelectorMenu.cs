@@ -105,6 +105,7 @@ public class LevelSelectorMenu : MonoBehaviour
                     {
                      
                         Debug.Log(wordlSelected+ "level1");
+                        SceneManager.LoadScene(wordlSelected + "level1");
                     }, level1Animator);
                     break;
 
