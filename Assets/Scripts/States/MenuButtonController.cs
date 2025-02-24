@@ -91,6 +91,7 @@ public class MenuButtonController : MonoBehaviour
                     }
                     keyDown = true;
                     if (GameManager.Instance.State == GameState.Pause || GameManager.Instance.State == GameState.Menu) { SoundManager.PlaySound(SoundType.MENUCHANGE); }
+                    Debug.Log("Sound exected. as you see this logs on more time each arrow moves it means this class is instanciate twice and it needs to be solved");
                     
                 }
             }
