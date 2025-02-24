@@ -14,24 +14,26 @@ public class LevelSelectorMenu : MonoBehaviour
     public bool disableOnce;
     public GameObject surePanel;
 
-    public Animator newGameAnimator;
-    public Animator settingsAnimator;
-    public Animator quitAnimator;
+    public Animator world1Animator;
+    public Animator world2Animator;
+    public Animator world3Animator;
+    public Animator world4Animator;
     public Animator backToMenuAnimator;
     public GameObject ControlsPanel;
     private bool button1EndSequence = false;
     // Start is called before the first frame update
 
-    private enum PauseOptions
+    private enum WorldsOptions
     {
-        NewGame = 0,
-        Settings = 1,
-        Quit = 2,
-        BackTomenu = 3
+        World1 = 0,
+        World2 = 1,
+        World3 = 2,
+        World4 = 3,
+        BackTomenu = 4
     }
     void Start()
     {
-        
+        menuButtonController.index = 0;
     }
 
     // Update is called once per frame
@@ -48,29 +50,33 @@ public class LevelSelectorMenu : MonoBehaviour
 
         switch (menuButtonController.index)
         {
-            case (int)PauseOptions.NewGame:
+            case (int)WorldsOptions.World1:
                 ExecuteButtonAction(() =>
                 {
-                    Resumegame();
-                    button1EndSequence = true;
-                }, newGameAnimator);
+                    Debug.Log("World1");
+                }, world1Animator);
                 break;
 
-            case (int)PauseOptions.Settings:
+            case (int)WorldsOptions.World2:
                 ExecuteButtonAction(() =>
                 {
-                    ControlsPanel.SetActive(true);
-                }, settingsAnimator);
+                    Debug.Log("World2");
+                }, world2Animator);
                 break;
 
-            case (int)PauseOptions.Quit:
+            case (int)WorldsOptions.World3:
                 ExecuteButtonAction(() =>
                 {
-                    var confirm = gameObject.AddComponent<ConfirmationPanel>();
-                    confirm.Initiate(surePanel, () => Quit());
-                }, quitAnimator);
+                    Debug.Log("World3");
+                }, world3Animator);
                 break;
-            case (int)PauseOptions.BackTomenu:
+            case (int)WorldsOptions.World4:
+                ExecuteButtonAction(() =>
+                {
+                    Debug.Log("World4");
+                }, world4Animator);
+                break;
+            case (int)WorldsOptions.BackTomenu:
                 ExecuteButtonAction(() =>
                 {
                     button1EndSequence = true;
@@ -85,21 +91,19 @@ public class LevelSelectorMenu : MonoBehaviour
     {
         if (!button1EndSequence)
         {
-            newGameAnimator.SetBool("selected", false);
-            newGameAnimator.SetBool("pressed", false);
-            settingsAnimator.SetBool("selected", false);
-            settingsAnimator.SetBool("pressed", false);
-            quitAnimator.SetBool("selected", false);
-            quitAnimator.SetBool("pressed", false);
+            world1Animator.SetBool("selected", false);
+            world1Animator.SetBool("pressed", false);
+            world2Animator.SetBool("selected", false);
+            world2Animator.SetBool("pressed", false);
+            world3Animator.SetBool("selected", false);
+            world3Animator.SetBool("pressed", false);
+            world4Animator.SetBool("selected", false);
+            world4Animator.SetBool("pressed", false);
             backToMenuAnimator.SetBool("selected", false);
             backToMenuAnimator.SetBool("pressed", false);
         }
     }
 
-    private void Resumegame()
-    {
-        GameManager.Instance.UpdateGameState(GameState.Gaming);
-    }
 
     private void GoToMenu()
     {
@@ -118,14 +122,5 @@ public class LevelSelectorMenu : MonoBehaviour
             SoundManager.PlaySound(SoundType.MENUSELECTED);
             actionToExecute.Invoke();
         }
-    }
-
-    public void Quit()
-    {
-#if UNITY_EDITOR
-        UnityEditor.EditorApplication.isPlaying = false;
-#else
-        Application.Quit ();
-#endif
     }
 }
