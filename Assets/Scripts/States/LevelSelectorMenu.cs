@@ -31,7 +31,7 @@ public class LevelSelectorMenu : MonoBehaviour
     {
         // Llenar el diccionario de mundos y niveles
         worldLevels.Add("World1", new List<string> { "Level1", "Level2", "Level3", "Level4", "Level5", "Level6", "Level7", "Level8", "Level9", "Level10" });
-        worldLevels.Add("World2", new List<string> { "Level1", "Level2", "Level3" });
+        worldLevels.Add("World2", new List<string> { "Level1", "Level2", "Level3", "Level4", "Level5", "Level6", "Level7", "Level8", "Level9", "Level10" });
         worldLevels.Add("World3", new List<string> { "Level1", "Level2" });
         worldLevels.Add("World4", new List<string> { "Level1", "Level2", "Level3", "Level4" });
         worldLevels.Add("BackToMenu", new List<string> {});
