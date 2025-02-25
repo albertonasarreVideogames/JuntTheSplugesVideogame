@@ -11,7 +11,8 @@ public enum SoundType
     SPLINGEFALLING,
     SWITCHDOWN,
     MENUCHANGE,
-    MENUSELECTED
+    MENUSELECTED,
+    MENUDENIED
 }
 
 [RequireComponent(typeof(AudioSource))]
