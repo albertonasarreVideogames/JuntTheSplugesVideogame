@@ -34,7 +34,7 @@ public class LevelSelectorMenu : MonoBehaviour
         worldLevels.Add("World2", new List<string> { "Level1", "Level2", "Level3" });
         worldLevels.Add("World3", new List<string> { "Level1", "Level2" });
         worldLevels.Add("World4", new List<string> { "Level1", "Level2", "Level3", "Level4" });
-        worldLevels.Add("BackToMenu", new List<string> { "Level1", "Level2", "Level3", "Level4" });
+        worldLevels.Add("BackToMenu", new List<string> {});
 
         // Crear los animadores de mundos y niveles
         InitializeWorldsAndLevels();
