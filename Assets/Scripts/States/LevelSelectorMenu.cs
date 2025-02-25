@@ -10,7 +10,6 @@ public class LevelSelectorMenu : MonoBehaviour
 {
     public GameObject worldChoose;
     public GameObject LevelChoose;
-    public GameObject surePanel;
 
     // Prefabs de botones
     public GameObject levelButtonPrefab;
