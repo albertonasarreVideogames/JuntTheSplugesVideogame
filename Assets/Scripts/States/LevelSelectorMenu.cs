@@ -3,68 +3,45 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+using System.Linq;
+
 public class LevelSelectorMenu : MonoBehaviour
 {
     public GameObject worldChoose;
     public GameObject LevelChoose;
     public GameObject surePanel;
-
     public Animator backToMenuAnimator;
+
+    // Prefabs de botones
+    public GameObject levelButtonPrefab;
+
+    // Diccionario para mapear mundos a sus niveles
+    private Dictionary<string, List<string>> worldLevels = new Dictionary<string, List<string>>();
+
+    private Dictionary<string, Animator> worldAnimators = new Dictionary<string, Animator>();
+    private Dictionary<string, List<Animator>> levelAnimators = new Dictionary<string, List<Animator>>();
 
     private MenuButtonController menuButtonController;
     private MenuButtonController menuButtonControllerLevels;
-    private string wordlSelected = "";
+    private string worldSelected = "";
     private bool button1EndSequence = false;
-
-    private enum WorldsOptions
-    {
-        World1 = 0,
-        World2 = 1,
-        World3 = 2,
-        World4 = 3,
-        BackToMenu = 4
-    }
-
-    private enum LevelOptions
-    {
-        Level1 = 0,
-        Level2 = 1,
-        Level3 = 2,
-        Level4 = 3,
-        Level5 = 4
-    }
-
-    // Diccionario para almacenar los animadores de mundos y niveles
-    private Dictionary<WorldsOptions, Animator> worldAnimators = new Dictionary<WorldsOptions, Animator>();
-    private Dictionary<LevelOptions, Animator> levelAnimators = new Dictionary<LevelOptions, Animator>();
 
     void Start()
     {
-        // Verificar si el diccionario ya tiene valores, para no volver a llenarlos
-        if (worldAnimators.Count == 0)
-        {
-            // Accediendo a los animadores de los mundos desde la jerarquía
-            worldAnimators.Add(WorldsOptions.World1, worldChoose.transform.Find("Menu/Buttons/World1").GetComponent<Animator>());
-            worldAnimators.Add(WorldsOptions.World2, worldChoose.transform.Find("Menu/Buttons/World2").GetComponent<Animator>());
-            worldAnimators.Add(WorldsOptions.World3, worldChoose.transform.Find("Menu/Buttons/World3").GetComponent<Animator>());
-            worldAnimators.Add(WorldsOptions.World4, worldChoose.transform.Find("Menu/Buttons/World4").GetComponent<Animator>());
-            worldAnimators.Add(WorldsOptions.BackToMenu, backToMenuAnimator);
-        }
+        // Llenar el diccionario de mundos y niveles
+        worldLevels.Add("World1", new List<string> { "Level1", "Level2", "Level3", "Level4", "Level5" });
+        worldLevels.Add("World2", new List<string> { "Level1", "Level2", "Level3" });
+        worldLevels.Add("World3", new List<string> { "Level1", "Level2" });
+        worldLevels.Add("World4", new List<string> { "Level1", "Level2", "Level3", "Level4" });
+        worldLevels.Add("BackToMenu", new List<string> { "Level1", "Level2", "Level3", "Level4" });
 
-        if (levelAnimators.Count == 0)
-        {
-            // Accediendo a los animadores de los niveles desde la jerarquía
-            levelAnimators.Add(LevelOptions.Level1, LevelChoose.transform.Find("Menu/Buttons/Level1").GetComponent<Animator>());
-            levelAnimators.Add(LevelOptions.Level2, LevelChoose.transform.Find("Menu/Buttons/Level2").GetComponent<Animator>());
-            levelAnimators.Add(LevelOptions.Level3, LevelChoose.transform.Find("Menu/Buttons/Level3").GetComponent<Animator>());
-            levelAnimators.Add(LevelOptions.Level4, LevelChoose.transform.Find("Menu/Buttons/Level4").GetComponent<Animator>());
-            levelAnimators.Add(LevelOptions.Level5, LevelChoose.transform.Find("Menu/Buttons/Level5").GetComponent<Animator>());
-        }
+        // Crear los animadores de mundos y niveles
+        InitializeWorldsAndLevels();
 
         menuButtonController = new MenuButtonController(4);
-        menuButtonControllerLevels = new MenuButtonController(4);
+        //menuButtonControllerLevels = new MenuButtonController(4);
     }
-
 
     void Update()
     {
@@ -74,7 +51,7 @@ public class LevelSelectorMenu : MonoBehaviour
         if (worldChoose.activeSelf)
         {
             menuButtonController.Update();
-            WorldsOptions selectedWorld = (WorldsOptions)menuButtonController.index;
+            string selectedWorld = worldLevels.Keys.ToList()[menuButtonController.index];
             HandleWorldSelection(selectedWorld);
         }
 
@@ -82,9 +59,62 @@ public class LevelSelectorMenu : MonoBehaviour
         if (LevelChoose.activeSelf)
         {
             menuButtonControllerLevels.Update();
-            LevelOptions selectedLevel = (LevelOptions)menuButtonControllerLevels.index;
-            HandleLevelSelection(selectedLevel);
+            int selectedLevelIndex = menuButtonControllerLevels.index;
+            HandleLevelSelection(worldSelected, selectedLevelIndex);
         }
+    }
+
+    private void InitializeWorldsAndLevels()
+    {
+        // Crear animadores para los mundos
+        worldAnimators.Clear();
+        foreach (var world in worldLevels.Keys)
+        {
+            GameObject worldButton = worldChoose.transform.Find($"Menu/Buttons/{world}").gameObject;
+            worldAnimators.Add(world, worldButton.GetComponent<Animator>());
+        }
+        //worldAnimators.Add("BackToMenu", backToMenuAnimator);
+        
+        // Crear botones de niveles dinámicamente
+        levelAnimators.Clear();
+        foreach (var world in worldLevels.Keys)
+        {
+            List<Animator> animators = new List<Animator>();
+
+            // Calculamos la cantidad de niveles para este mundo
+            int numberOfLevels = worldLevels[world].Count;
+
+            // Calculamos el rango de distribución
+            float minPositionY = -736f;
+            float maxPositionY = 512f;
+
+            // Si hay niveles, distribuimos la distancia entre ellos
+            float spaceBetweenButtons = (maxPositionY - minPositionY) / (numberOfLevels + 1);
+
+            foreach (var (index, level) in worldLevels[world].Select((level, index) => (index, level)))
+            {
+                GameObject levelButton = Instantiate(levelButtonPrefab, LevelChoose.transform);
+                levelButton.name = world + "_Level" + (index + 1);  // Asignamos un nombre único
+
+                // Asignamos el texto del nivel al botón
+                levelButton.transform.GetComponentInChildren<Text>().text = level;
+
+                // Calcular la posición Y del botón
+                float buttonPositionY = minPositionY + (spaceBetweenButtons * (index + 1));
+
+                // Asignamos la posición del botón
+                levelButton.GetComponent<RectTransform>().anchoredPosition = new Vector2(0, buttonPositionY);
+
+                // Obtén el Animator y lo agregamos a la lista
+                Animator levelAnimator = levelButton.GetComponent<Animator>();
+                animators.Add(levelAnimator);
+                levelButton.SetActive(false);
+            }
+
+            // Añadimos los animadores de los niveles al diccionario
+            levelAnimators.Add(world, animators);
+        }
+
     }
 
     private void SetDefaultValues()
@@ -96,40 +126,33 @@ public class LevelSelectorMenu : MonoBehaviour
         }
     }
 
-    private void HandleWorldSelection(WorldsOptions world)
+    private void HandleWorldSelection(string world)
     {
         ExecuteButtonAction(() =>
         {
-            switch (world)
+            if (world == "BackToMenu")
             {
-                case WorldsOptions.World1:
-                    StartCoroutine(SelectWorld(1.0f, "World1"));
-                    break;
-                case WorldsOptions.World2:
-                    StartCoroutine(SelectWorld(1.0f, "World2"));
-                    break;
-                case WorldsOptions.World3:
-                    StartCoroutine(SelectWorld(1.0f, "World3"));
-                    break;
-                case WorldsOptions.World4:
-                    StartCoroutine(SelectWorld(1.0f, "World4"));
-                    break;
-                case WorldsOptions.BackToMenu:
-                    button1EndSequence = true;
-                    GoToMenu();
-                    break;
+                button1EndSequence = true;
+                GoToMenu();
+            }
+            else
+            {
+                worldSelected = world;
+                ShowLevelsForWorld(worldSelected);
+                StartCoroutine(SelectWorld(1.0f, world));
             }
         }, worldAnimators[world]);
     }
 
-    private void HandleLevelSelection(LevelOptions level)
+    private void HandleLevelSelection(string world, int levelIndex)
     {
         ExecuteButtonAction(() =>
         {
-            Debug.Log(wordlSelected + level.ToString());
+            string selectedLevel = worldLevels[world][levelIndex];
+            Debug.Log(worldSelected + selectedLevel);
             GameManager.Instance.UpdateGameState(GameState.Gaming);
-            SceneManager.LoadScene(wordlSelected + level.ToString());
-        }, levelAnimators[level]);
+            SceneManager.LoadScene(worldSelected + selectedLevel);
+        }, levelAnimators[world][levelIndex]);
     }
 
     private void ResetWorldAnimators()
@@ -143,10 +166,13 @@ public class LevelSelectorMenu : MonoBehaviour
 
     private void ResetLevelAnimators()
     {
-        foreach (var animator in levelAnimators.Values)
+        foreach (var worldAnimatorsList in levelAnimators.Values)
         {
-            animator.SetBool("selected", false);
-            animator.SetBool("pressed", false);
+            foreach (var animator in worldAnimatorsList)
+            {
+                animator.SetBool("selected", false);
+                animator.SetBool("pressed", false);
+            }
         }
     }
 
@@ -171,10 +197,30 @@ public class LevelSelectorMenu : MonoBehaviour
     {
         yield return new WaitForSeconds(time);
 
+        menuButtonControllerLevels = new MenuButtonController(worldLevels[world].Count -1);
         worldChoose.SetActive(false);
         LevelChoose.SetActive(true);
-        wordlSelected = world;
     }
+
+    private void ShowLevelsForWorld(string world)
+    {
+       
+        // Ahora, activamos solo los botones correspondientes al mundo seleccionado
+        List<string> levelsForWorld = worldLevels[world]; // Obtén los niveles del mundo seleccionado
+
+        for (int i = 0; i < levelsForWorld.Count; i++)
+        {
+            string buttonName = world + "_Level" + (i + 1);  // El nombre dinámico
+            GameObject levelButton = LevelChoose.transform.Find(buttonName)?.gameObject;
+
+            if (levelButton != null)
+            {
+                levelButton.SetActive(true);
+            }
+        }
+    }
+
 }
+
 
 
