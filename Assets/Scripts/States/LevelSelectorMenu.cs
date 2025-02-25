@@ -74,7 +74,7 @@ public class LevelSelectorMenu : MonoBehaviour
             worldAnimators.Add(world, worldButton.GetComponent<Animator>());
         }
         //worldAnimators.Add("BackToMenu", backToMenuAnimator);
-        
+
         // Crear botones de niveles dinámicamente
         levelAnimators.Clear();
         foreach (var world in worldLevels.Keys)
@@ -99,8 +99,9 @@ public class LevelSelectorMenu : MonoBehaviour
                 // Asignamos el texto del nivel al botón
                 levelButton.transform.GetComponentInChildren<Text>().text = level;
 
-                // Calcular la posición Y del botón
-                float buttonPositionY = minPositionY + (spaceBetweenButtons * (index + 1));
+                // Calcular la posición Y del botón (invertido)
+                // Invertimos la fórmula para que el nivel 1 esté en la parte superior
+                float buttonPositionY = maxPositionY - (spaceBetweenButtons * (index + 1));
 
                 // Asignamos la posición del botón
                 levelButton.GetComponent<RectTransform>().anchoredPosition = new Vector2(0, buttonPositionY);
@@ -114,8 +115,8 @@ public class LevelSelectorMenu : MonoBehaviour
             // Añadimos los animadores de los niveles al diccionario
             levelAnimators.Add(world, animators);
         }
-
     }
+
 
     private void SetDefaultValues()
     {
