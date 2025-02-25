@@ -162,6 +162,7 @@ public class LevelSelectorMenu : MonoBehaviour
             else
             {
                 worldSelected = world;
+                if (worldChoose.transform.Find(world).gameObject.transform.Find("Red").gameObject.activeSelf) { return; }
                 ShowLevelsForWorld(worldSelected);
                 StartCoroutine(SelectWorld(1.0f, world));
             }
@@ -173,6 +174,7 @@ public class LevelSelectorMenu : MonoBehaviour
         ExecuteButtonAction(() =>
         {
             string selectedLevel = worldLevels[world][levelIndex];
+            if (LevelChoose.transform.Find(worldSelected + "_" + selectedLevel).gameObject.transform.Find("Red").gameObject.activeSelf) { return; }
             Debug.Log(worldSelected + selectedLevel);
             GameManager.Instance.UpdateGameState(GameState.Gaming);
             SceneManager.LoadScene(worldSelected + selectedLevel);
