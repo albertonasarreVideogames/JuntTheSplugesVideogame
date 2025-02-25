@@ -81,15 +81,37 @@ public class VictoryState : MonoBehaviour
 
     private void SavePlayerProgress(int world, int level)
     {
-        // TODO guardar solo si el nivel es mas avanzado que el que ya esta guardado.
+        // Cargar el progreso guardado (último mundo y nivel)
+        (int savedWorld, int savedLevel) = LoadPlayerProgress();
 
-        // Guardamos el nombre del mundo y el número del nivel
-        PlayerPrefs.SetInt("LastWorld", world);
-        PlayerPrefs.SetInt("LastLevel", level);
+        // Comparar el nivel actual con el nivel guardado.
+        // Solo se guarda si el jugador ha avanzado más.
+        if (world > savedWorld || (world == savedWorld && level > savedLevel))
+        {
+            // Guardamos el nombre del mundo y el número del nivel
+            PlayerPrefs.SetInt("LastWorld", world);
+            PlayerPrefs.SetInt("LastLevel", level);
 
-        // Asegúrate de guardar los datos
-        PlayerPrefs.Save();
+            // Asegúrate de guardar los datos
+            PlayerPrefs.Save();
+
+            Debug.Log("Progreso guardado.");
+        }
+        else
+        {
+            Debug.Log("El nivel actual no es más avanzado que el guardado. No se guardó progreso.");
+        }
     }
+
+    private (int, int) LoadPlayerProgress()
+    {
+        // Si no se ha guardado nunca progreso, retornar un valor predeterminado (por ejemplo, mundo 0, nivel 0)
+        int savedWorld = PlayerPrefs.GetInt("LastWorld", 0);
+        int savedLevel = PlayerPrefs.GetInt("LastLevel", 0);
+
+        return (savedWorld, savedLevel);
+    }
+
 
 
     private bool ParseSceneName(string sceneName, out int world, out int level)
