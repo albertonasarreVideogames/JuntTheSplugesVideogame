@@ -11,10 +11,10 @@ public class LevelSelectorMenu : MonoBehaviour
     public GameObject worldChoose;
     public GameObject LevelChoose;
     public GameObject surePanel;
-    public Animator backToMenuAnimator;
 
     // Prefabs de botones
     public GameObject levelButtonPrefab;
+    public GameObject backtoMenuPrefab;
 
     // Diccionario para mapear mundos a sus niveles
     private Dictionary<string, List<string>> worldLevels = new Dictionary<string, List<string>>();
@@ -68,12 +68,34 @@ public class LevelSelectorMenu : MonoBehaviour
     {
         // Crear animadores para los mundos
         worldAnimators.Clear();
+        int i = 0;
         foreach (var world in worldLevels.Keys)
-        {
-            GameObject worldButton = worldChoose.transform.Find($"Menu/Buttons/{world}").gameObject;
+        {        
+
+            int numberOfWorlds = worldLevels.Count;
+
+            float minPositionY = -736f;
+            float maxPositionY = 512f;
+
+            float spaceBetweenButtons = (maxPositionY - minPositionY) / (numberOfWorlds + 1);
+            GameObject worldButton;
+            if (world == "BackToMenu") { worldButton = Instantiate(backtoMenuPrefab, worldChoose.transform); } else { worldButton = Instantiate(levelButtonPrefab, worldChoose.transform); }
+            
+            worldButton.name = world;
+
+            worldButton.transform.GetComponentInChildren<Text>().text = world;
+
+            // Calcular la posición Y del botón (invertido)
+            // Invertimos la fórmula para que el nivel 1 esté en la parte superior
+            float buttonPositionY = maxPositionY - (spaceBetweenButtons * (i + 1));
+
+            // Asignamos la posición del botón
+            worldButton.GetComponent<RectTransform>().anchoredPosition = new Vector2(0, buttonPositionY);
             worldAnimators.Add(world, worldButton.GetComponent<Animator>());
+            i++;
+
         }
-        //worldAnimators.Add("BackToMenu", backToMenuAnimator);
+
 
         // Crear botones de niveles dinámicamente
         levelAnimators.Clear();

@@ -15,6 +15,7 @@ TagManager:
   - PinkPincho
   - GreenBloc
   - Persistent
+  - LevelButton
   layers:
   - Default
   - TransparentFX
