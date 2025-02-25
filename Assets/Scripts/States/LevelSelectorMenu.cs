@@ -5,6 +5,7 @@ using System;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using System.Linq;
+using System.Text.RegularExpressions;
 
 public class LevelSelectorMenu : MonoBehaviour
 {
@@ -90,6 +91,7 @@ public class LevelSelectorMenu : MonoBehaviour
             // Asignamos la posición del botón
             worldButton.GetComponent<RectTransform>().anchoredPosition = new Vector2(0, buttonPositionY);
             worldAnimators.Add(world, worldButton.GetComponent<Animator>());
+            SetButtonRed(worldButton);
             i++;
 
         }
@@ -129,6 +131,7 @@ public class LevelSelectorMenu : MonoBehaviour
                 // Obtén el Animator y lo agregamos a la lista
                 Animator levelAnimator = levelButton.GetComponent<Animator>();
                 animators.Add(levelAnimator);
+                SetButtonRed(levelButton);
                 levelButton.SetActive(false);
             }
 
@@ -238,6 +241,72 @@ public class LevelSelectorMenu : MonoBehaviour
             {
                 levelButton.SetActive(true);
             }
+        }
+    }
+
+    private void SetButtonRed(GameObject levelButton)
+    {
+
+        (int savedWorld, int savedLevel) = LoadPlayerProgress();
+
+        int world, level;
+
+        ParseLevelName(levelButton.name, out world, out level);
+        // Comparar el nivel actual con el nivel guardado.
+        // Solo se pone en rojo si el jugador no ha llegado hasta ahi.
+        if (world > savedWorld || (world == savedWorld && level > savedLevel))
+        {
+            // Buscar el hijo llamado "Red" dentro de levelButton
+            Transform redTransform = levelButton.transform.Find("Red");
+
+            // Si lo encontramos, activamos el GameObject
+            if (redTransform != null)
+            {
+                redTransform.gameObject.SetActive(true);
+            }
+            else
+            {
+                Debug.Log("No se encontró el objeto 'Red' como hijo.");
+            }
+        }
+    }
+
+    private (int, int) LoadPlayerProgress()
+    {
+        // Si no se ha guardado nunca progreso, retornar un valor predeterminado (por ejemplo, mundo 0, nivel 0)
+        int savedWorld = PlayerPrefs.GetInt("LastWorld", 0);
+        int savedLevel = PlayerPrefs.GetInt("LastLevel", 0);
+
+        return (savedWorld, savedLevel);
+    }
+
+    private bool ParseLevelName(string sceneName, out int world, out int level)
+    {
+        // Inicializamos los valores en -1 por si falla el parseo
+        world = -1;
+        level = -1;
+
+        // Usamos una expresión regular para capturar el formato 'WorldX_LevelY' o 'WorldX'
+        Regex regex = new Regex(@"World(\d+)(_Level(\d+))?");
+        Match match = regex.Match(sceneName);
+
+        if (match.Success)
+        {
+            // Extraemos el número del mundo
+            world = int.Parse(match.Groups[1].Value);
+
+            // Si existe la parte de Level (es decir, no es null), extraemos el número del nivel
+            if (match.Groups[3].Success)
+            {
+                level = int.Parse(match.Groups[3].Value);
+            }
+
+            return true;
+        }
+        else
+        {
+            Debug.Log("El nombre de la escena no sigue el formato esperado.");
+            return false;
         }
     }
 
