@@ -38,8 +38,7 @@ public class LevelSelectorMenu : MonoBehaviour
         // Crear los animadores de mundos y niveles
         InitializeWorldsAndLevels();
 
-        menuButtonController = new MenuButtonController(4);
-        //menuButtonControllerLevels = new MenuButtonController(4);
+        menuButtonController = new MenuButtonController(worldLevels.Count - 1);
     }
 
     void Update()
