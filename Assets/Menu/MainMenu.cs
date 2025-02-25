@@ -102,5 +102,29 @@ public class MainMenu : MenuBase
         int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
         SceneManager.LoadScene(currentSceneIndex + 1);
         GameManager.Instance.UpdateGameState(GameState.Gaming);
+
+        LoadPlayerProgress();
     }
+
+    public void LoadPlayerProgress()
+    {
+        // Verificamos si el jugador tiene progreso guardado
+        if (PlayerPrefs.HasKey("LastWorld") && PlayerPrefs.HasKey("LastLevel"))
+        {
+            int lastWorld = PlayerPrefs.GetInt("LastWorld");
+            int lastLevel = PlayerPrefs.GetInt("LastLevel");
+
+            // Usar la información cargada para posicionar al jugador en el último mundo y nivel
+            Debug.Log("Último mundo: " + lastWorld);
+            Debug.Log("Último nivel: " + lastLevel);
+
+            // Aquí puedes usar lastWorld y lastLevel para cargar la escena correspondiente
+        }
+        else
+        {
+            Debug.Log("No se encontró progreso guardado.");
+            // Si no hay progreso guardado, quizás iniciar en el primer mundo/primer nivel
+        }
+    }
+
 }

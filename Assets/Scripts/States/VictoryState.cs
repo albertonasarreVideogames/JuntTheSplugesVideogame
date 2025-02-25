@@ -71,11 +71,24 @@ public class VictoryState : MonoBehaviour
         if (ParseSceneName(sceneName, out world, out level))
         {
             Debug.Log($"World: {world}, Level: {level}");
+            SavePlayerProgress(world,level);
         }
         else
         {
             Debug.Log("No se pudo parsear el nombre de la escena.");
         }
+    }
+
+    private void SavePlayerProgress(int world, int level)
+    {
+        // TODO guardar solo si el nivel es mas avanzado que el que ya esta guardado.
+
+        // Guardamos el nombre del mundo y el número del nivel
+        PlayerPrefs.SetInt("LastWorld", world);
+        PlayerPrefs.SetInt("LastLevel", level);
+
+        // Asegúrate de guardar los datos
+        PlayerPrefs.Save();
     }
 
 
