@@ -30,7 +30,7 @@ public class LevelSelectorMenu : MonoBehaviour
     void Start()
     {
         // Llenar el diccionario de mundos y niveles
-        worldLevels.Add("World1", new List<string> { "Level1", "Level2", "Level3", "Level4", "Level5" });
+        worldLevels.Add("World1", new List<string> { "Level1", "Level2", "Level3", "Level4", "Level5", "Level6", "Level7", "Level8", "Level9", "Level10" });
         worldLevels.Add("World2", new List<string> { "Level1", "Level2", "Level3" });
         worldLevels.Add("World3", new List<string> { "Level1", "Level2" });
         worldLevels.Add("World4", new List<string> { "Level1", "Level2", "Level3", "Level4" });
@@ -254,7 +254,7 @@ public class LevelSelectorMenu : MonoBehaviour
         ParseLevelName(levelButton.name, out world, out level);
         // Comparar el nivel actual con el nivel guardado.
         // Solo se pone en rojo si el jugador no ha llegado hasta ahi.
-        if (world > savedWorld || (world == savedWorld && level > savedLevel))
+        if (world > savedWorld || (world == savedWorld && level > savedLevel + 1))
         {
             // Buscar el hijo llamado "Red" dentro de levelButton
             Transform redTransform = levelButton.transform.Find("Red");
