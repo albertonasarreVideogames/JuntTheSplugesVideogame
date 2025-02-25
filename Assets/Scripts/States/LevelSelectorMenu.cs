@@ -163,6 +163,7 @@ public class LevelSelectorMenu : MonoBehaviour
             {
                 worldSelected = world;
                 if (worldChoose.transform.Find(world).gameObject.transform.Find("Red").gameObject.activeSelf) { return; }
+                SoundManager.PlaySound(SoundType.MENUSELECTED);
                 ShowLevelsForWorld(worldSelected);
                 StartCoroutine(SelectWorld(1.0f, world));
             }
@@ -175,6 +176,7 @@ public class LevelSelectorMenu : MonoBehaviour
         {
             string selectedLevel = worldLevels[world][levelIndex];
             if (LevelChoose.transform.Find(worldSelected + "_" + selectedLevel).gameObject.transform.Find("Red").gameObject.activeSelf) { return; }
+            SoundManager.PlaySound(SoundType.MENUSELECTED);
             Debug.Log(worldSelected + selectedLevel);
             GameManager.Instance.UpdateGameState(GameState.Gaming);
             SceneManager.LoadScene(worldSelected + selectedLevel);
@@ -213,8 +215,7 @@ public class LevelSelectorMenu : MonoBehaviour
         anim.SetBool("selected", true);
         if (Input.GetKeyDown(KeyCode.Return))
         {
-            anim.SetBool("pressed", true);
-            SoundManager.PlaySound(SoundType.MENUSELECTED);
+            anim.SetBool("pressed", true);          
             actionToExecute.Invoke();
         }
     }
