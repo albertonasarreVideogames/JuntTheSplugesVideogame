@@ -59,7 +59,7 @@ public class Player : MonoBehaviour
     public void Update()
     {
         transform.position = Vector3.MoveTowards(transform.position, movePoint.position, moveSpeed * Time.deltaTime);
-        if (GetType() == typeof(Player) && checkIfPlayerIsNOTStrillMoveent() && Input.GetAxisRaw("Horizontal") == 0 && Input.GetAxisRaw("Vertical") == 0) { myAnimator.SetBool("Run", false); } // este update hereda de enemy, habra que ponerle animacion tambien
+        if (checkIfPlayerIsNOTStrillMoveent() && Input.GetAxisRaw("Horizontal") == 0 && Input.GetAxisRaw("Vertical") == 0) { myAnimator.SetBool("Run", false); }
     }
 
     public virtual bool CheckSwitchContactAndSetAnimation(string switchLayerName)

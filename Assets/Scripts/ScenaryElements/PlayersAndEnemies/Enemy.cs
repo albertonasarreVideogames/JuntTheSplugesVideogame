@@ -15,13 +15,6 @@ public class Enemy : Player
     private Vector3 offset;
     public bool test;
 
-    public void Update()
-    {
-        base.Update();
-        if (GetType() == typeof(Enemy) && checkIEnemyStrillMoveent() && Input.GetAxisRaw("Horizontal") == 0 && Input.GetAxisRaw("Vertical") == 0) { myAnimator.SetBool("Run", false); }
-    }
-
-
     public override void updateMovepointChecker(Vector2 Generalmovement)
     {
 
@@ -171,13 +164,6 @@ public class Enemy : Player
             return true;
         }
         return false;
-    }
-
-    public bool checkIEnemyStrillMoveent()
-    {
-        bool isAtMovePoint = Vector3.Distance(transform.position, movePoint.position) == 0;
-        
-        return isAtMovePoint;
     }
 }
 
