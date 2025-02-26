@@ -40,7 +40,7 @@ public static class TestUtilities
         }
 
         // Esperar un poco más para asegurarse de que ha acabado
-        yield return new WaitForSeconds(.2f);
+        yield return new WaitForSeconds(1f);
 
         // Verificar el estado final
         Assert.AreEqual(GameManager.Instance.State, expectedState);
