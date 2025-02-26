@@ -35,8 +35,8 @@ public class Player : MonoBehaviour
     protected PlayerFloorLevel currentPlayerFloorLevel = PlayerFloorLevel.Down;
 
     protected Animator myAnimator;
-    private bool facingRight = true;
-    private AnimationHandler.IAnimationManager playerAnimation;
+    protected bool facingRight = true;
+    protected AnimationHandler.IAnimationManager playerAnimation;
 
     private void Awake()
     {
@@ -56,7 +56,7 @@ public class Player : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    public void Update()
     {
         transform.position = Vector3.MoveTowards(transform.position, movePoint.position, moveSpeed * Time.deltaTime);
         if (GetType() == typeof(Player) && checkIfPlayerIsNOTStrillMoveent() && Input.GetAxisRaw("Horizontal") == 0 && Input.GetAxisRaw("Vertical") == 0) { myAnimator.SetBool("Run", false); } // este update hereda de enemy, habra que ponerle animacion tambien
@@ -175,7 +175,7 @@ public class Player : MonoBehaviour
 
  
 
-    private bool IsAnimationFinished(string animationName, float limitToReinice)
+    protected bool IsAnimationFinished(string animationName, float limitToReinice)
     {
         if (myAnimator == null) return true;
 
@@ -238,7 +238,7 @@ public class Player : MonoBehaviour
         
     }
 
-    private void flip()
+    protected void flip()
     {
         facingRight = !facingRight;
         Vector3 scaler = transform.localScale;

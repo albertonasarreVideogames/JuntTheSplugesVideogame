@@ -12,15 +12,30 @@ public class EnemyAnimation : MonoBehaviour, AnimationHandler.IAnimationManager
     }
 
     public event AnimationHandler.AnimationEventHandler OnAnimationStateChanged;
+    private Animator myAnimator;
+
+    private void Awake()
+    {
+        myAnimator = GetComponent<Animator>();
+    }
 
     public void executetriggeranimations()
     {
-        //throw new System.NotImplementedException();
+        switch (NextAnimationTrigger)
+        {        
+            case AnimationHandler.AnimationState.Running:
+                myAnimator.SetBool("Run", true);
+                SetNextAnimationTrigger(AnimationHandler.AnimationState.Idle);
+                SoundManager.AddSoundToNextTurn(SoundType.SPLUNGESRUN);
+                break;         
+        }
     }
 
     public void SetNextAnimationTrigger(AnimationHandler.AnimationState newState)
     {
-        //throw new System.NotImplementedException();
+        if (NextAnimationTrigger == newState) return;
+
+        NextAnimationTrigger = newState;
     }
 
     // Start is called before the first frame update

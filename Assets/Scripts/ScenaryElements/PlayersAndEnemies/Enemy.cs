@@ -15,6 +15,12 @@ public class Enemy : Player
     private Vector3 offset;
     public bool test;
 
+    public void Update()
+    {
+        base.Update();
+        if (GetType() == typeof(Enemy) && checkIEnemyStrillMoveent() && Input.GetAxisRaw("Horizontal") == 0 && Input.GetAxisRaw("Vertical") == 0) { myAnimator.SetBool("Run", false); }
+    }
+
 
     public override void updateMovepointChecker(Vector2 Generalmovement)
     {
@@ -23,9 +29,32 @@ public class Enemy : Player
 
         if (enemyMovement == EnemyMovement.Reverse) { offset = -new Vector3(Generalmovement.x, Generalmovement.y, 0f); }
         if (enemyMovement == EnemyMovement.ReverseVertical) { offset = new Vector3(Generalmovement.x, -Generalmovement.y, 0f); }
+        playerAnimation.SetNextAnimationTrigger(AnimationHandler.AnimationState.Running);
 
         movePointCheker.position += offset;
 
+        if (enemyMovement != EnemyMovement.Reverse) // Solo hacer flip si no es Reverse
+        {
+            if (Generalmovement.x > 0 && !facingRight)
+            {
+                flip();  // El flip hace que el personaje se voltee a la derecha
+            }
+            else if (Generalmovement.x < 0 && facingRight)
+            {
+                flip();  // El flip hace que el personaje se voltee a la izquierda
+            }
+        }
+        else // Si el movimiento es Reverse, invertimos la lógica del flip
+        {
+            if (Generalmovement.x < 0 && !facingRight) // Si se mueve a la izquierda, voltea
+            {
+                flip();
+            }
+            else if (Generalmovement.x > 0 && facingRight) // Si se mueve a la derecha, voltea
+            {
+                flip();
+            }
+        }
     }
 
     public override void checkCollisions()
@@ -142,6 +171,13 @@ public class Enemy : Player
             return true;
         }
         return false;
+    }
+
+    public bool checkIEnemyStrillMoveent()
+    {
+        bool isAtMovePoint = Vector3.Distance(transform.position, movePoint.position) == 0;
+        
+        return isAtMovePoint;
     }
 }
 

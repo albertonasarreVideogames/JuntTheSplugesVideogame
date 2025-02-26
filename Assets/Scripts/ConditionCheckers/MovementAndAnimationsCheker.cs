@@ -35,6 +35,7 @@ public class MovementAndAnimationsCheker : IConditionCheck
         for (int i = 0; i < enemies.Length; i++)
         {
             enemies[i].GetComponent<Enemy>().updateMovePoint();
+            enemies[i].GetComponent<EnemyAnimation>().executetriggeranimations();
         }
 
         MonoBehaviourSingleton.Instance.StartCoroutine(ManageEnemiesOnSamePlaceAfterMovement());
