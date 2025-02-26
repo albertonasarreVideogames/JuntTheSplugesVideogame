@@ -23,7 +23,6 @@ public static class TestUtilities
                     // Aquí se puede agregar un pequeño retraso para evitar que la corutina consuma demasiados recursos
                     yield return null; // Espera hasta el siguiente frame
                 }
-                GamingState.Instance.getIfPlayersStopMoving();
                 movementsManager.executeComand(i);
                 //Debug.Log("Me muevo");
             }
