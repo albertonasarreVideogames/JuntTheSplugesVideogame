@@ -50,13 +50,20 @@ public class LoseConditionCheck : IConditionCheck
 
     private bool CheckEnemyPlayerCollision()
     {
+        bool returned = false;
         foreach (Enemy enemy in enemies)
         {
             foreach (Player player in players)
             {
                 if (enemy.movePointCheker.position == player.movePointCheker.position)
                 {
-                    return true;
+                    player.setnextAnimation(AnimationHandler.AnimationState.Dying);
+                    player.ExecuteAnimation("Death");
+
+                    enemy.setnextAnimation(AnimationHandler.AnimationState.Attacking);
+                    enemy.ExecuteAnimation("Attack");
+
+                    returned = true;
                 }
             }
         }
@@ -66,10 +73,15 @@ public class LoseConditionCheck : IConditionCheck
             {
                 if (enemy.movePointCheker.position == player.transform.position && enemy.transform.position == player.movePointCheker.position)
                 {
-                    return true;
+                    player.setnextAnimation(AnimationHandler.AnimationState.Dying);
+                    player.ExecuteAnimation("Death");
+                    enemy.setnextAnimation(AnimationHandler.AnimationState.Attacking);
+                    enemy.ExecuteAnimation("Attack");
+
+                    returned = true;
                 }
             }
         }
-        return false;
+        return returned;
     }
 }

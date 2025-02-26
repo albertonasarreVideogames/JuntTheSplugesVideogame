@@ -246,5 +246,22 @@ public class Player : MonoBehaviour
         transform.localScale = scaler;
     }
 
+    public void ExecuteAnimation(string animation) {
+
+        myAnimator.SetTrigger(animation);
+    }
+
+    public void setnextAnimation(AnimationHandler.AnimationState state)
+    {
+
+        playerAnimation.SetNextAnimationTrigger(state);
+    }
+
+    public AnimationHandler.AnimationState getnextAnimation()
+    {
+
+        return playerAnimation.NextAnimationTrigger;
+    }
+
 
 }

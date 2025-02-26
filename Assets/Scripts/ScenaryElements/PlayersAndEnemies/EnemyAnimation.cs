@@ -25,9 +25,12 @@ public class EnemyAnimation : MonoBehaviour, AnimationHandler.IAnimationManager
         {        
             case AnimationHandler.AnimationState.Running:
                 myAnimator.SetBool("Run", true);
+                SetNextAnimationTrigger(AnimationHandler.AnimationState.Idle);             
+                break;
+            case AnimationHandler.AnimationState.Attacking:
+                myAnimator.SetTrigger("Attack");
                 SetNextAnimationTrigger(AnimationHandler.AnimationState.Idle);
-                SoundManager.AddSoundToNextTurn(SoundType.SPLUNGESRUN);
-                break;         
+                break;
         }
     }
 

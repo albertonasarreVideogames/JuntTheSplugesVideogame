@@ -96,17 +96,30 @@ public class MovementAndAnimationsCheker : IConditionCheck
 
     private bool CheckEnemyPlayerCollision()
     {
+        bool returned = false;
         foreach (Enemy enemy in enemies)
         {
             foreach (Player player in players)
             {
                 if (enemy.movePointCheker.position == player.movePointCheker.position)
                 {
-                    return true;
+                    if (player.getnextAnimation() != AnimationHandler.AnimationState.Dying)
+                    {
+                        player.ExecuteAnimation("Death");
+                        player.setnextAnimation(AnimationHandler.AnimationState.Dying);// esto es cuando los enemigos se reorganizan
+                    }
+
+                    if (enemy.getnextAnimation() != AnimationHandler.AnimationState.Attacking)
+                    {
+                        enemy.ExecuteAnimation("Attack");
+                        enemy.setnextAnimation(AnimationHandler.AnimationState.Attacking);// esto es cuando los enemigos se reorganizan
+                    }
+
+                    returned = true;
                 }
             }
         }
 
-        return false;
+        return returned;
     }
 }
