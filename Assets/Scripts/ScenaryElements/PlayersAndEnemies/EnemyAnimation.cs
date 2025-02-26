@@ -29,6 +29,7 @@ public class EnemyAnimation : MonoBehaviour, AnimationHandler.IAnimationManager
                 break;
             case AnimationHandler.AnimationState.Attacking:
                 myAnimator.SetTrigger("Attack");
+                SoundManager.AddSoundToNextTurn(SoundType.ENEMYBITE);
                 SetNextAnimationTrigger(AnimationHandler.AnimationState.Idle);
                 break;
         }
