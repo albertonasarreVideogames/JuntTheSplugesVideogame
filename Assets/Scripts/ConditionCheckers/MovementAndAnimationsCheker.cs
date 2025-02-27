@@ -28,7 +28,7 @@ public class MovementAndAnimationsCheker : IConditionCheck
             // can put animation death here?
             // create animation geston on player object, the win lose and another states save the next animations steps, and here it will be checked and activated
             
-            players[i].GetComponent<PlayerAnimation>().executetriggeranimations();
+            players[i].GetComponent<PlayerAnimation>().executetriggeranimations(); // TODO THE ORDER OF THIS TWO FUNCTIONS ALTERATES THE ANIMATION ON TESTS
             players[i].GetComponent<Player>().updateMovePoint();
         }
 
