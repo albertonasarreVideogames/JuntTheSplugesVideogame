@@ -32,7 +32,7 @@ public class RewindState : MonoBehaviour
     private void GameManagerOnGameStateChanged(GameState state)
     {
         _text.SetActive(state == GameState.Rewind);
-        StartCoroutine(RunRewind(GamingState.PlayerMovementsStored));
+        if (state == GameState.Rewind){ StartCoroutine(RunRewind(GamingState.PlayerMovementsStored)); }
 
     }
 
@@ -90,8 +90,12 @@ public class RewindState : MonoBehaviour
                 Debug.Log("No GamingState");
             }
         }
-        // Esperar un poco más para asegurarse de que ha acabado
-        yield return new WaitForSeconds(1f);
+        // Si llegas al final quita el rewind solo
+        Debug.Log("Corutina detenida por la tecla E");
+        spacePressedThisFrame = false;
+        stopRewind = false;
+        GameManager.Instance.UpdateGameState(GameState.Gaming);
+        yield break;
 
     }
 
