@@ -39,7 +39,7 @@ public class GamingState : MonoBehaviour
     //Invoked functions
     private void GameManagerOnGameStateChanged(GameState state)
     {
-        if (state != GameState.Pause && state != GameState.Rewind) { PlayerMovementsStored = new MovementsManagerPlay(); Debug.Log("borrano rewind"); }
+        if (state != GameState.Pause && state != GameState.Rewind && state != GameState.Gaming) { PlayerMovementsStored = new MovementsManagerPlay(); Debug.Log("borrano rewind"); }
     }
   
     void OnLevelFinishedLoading(Scene scene, LoadSceneMode mode)
