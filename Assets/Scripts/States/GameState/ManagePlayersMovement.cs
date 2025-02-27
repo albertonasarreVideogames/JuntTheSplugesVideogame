@@ -58,6 +58,8 @@ public class ManagePlayersMovement
             }
         }
 
+        if (GameManager.Instance.State == GameState.Gaming) { GamingState.PlayerMovementsStored.addMovement(movement); }
+
     }
 
     private void managePlayersMovement(Vector2 movement)
@@ -109,6 +111,17 @@ public class ManagePlayersMovement
     public void Simulatemovement(Vector2 movement)
     {
         managePlayersMovement(movement);
+    }
+
+    public void movePlayersWithLastMovementStored()
+    {
+        for (int i = 0; i < players.Length; i++)
+        {
+            players[i].GetComponent<Player>().updateMovepointCheckerToRewind();
+        }
+
+        checkScenaryConditions?.Invoke();
+
     }
 
 }

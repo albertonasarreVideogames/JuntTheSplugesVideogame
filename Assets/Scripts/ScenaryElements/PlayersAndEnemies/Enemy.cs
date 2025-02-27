@@ -50,6 +50,16 @@ public class Enemy : Player
         }
     }
 
+    public override void updateMovepointCheckerToRewind()
+    {
+        Vector2 Generalmovement = PlayerMovementsStored.getButtonOnLastPosition();
+        offset = new Vector3(Generalmovement.x, Generalmovement.y, 0f);
+
+        playerAnimation.SetNextAnimationTrigger(AnimationHandler.AnimationState.Running);
+
+        movePointCheker.position += offset;
+    }
+
     public override void checkCollisions()
     {
         Collider2D collision = Physics2D.OverlapCircle(movePointCheker.position, .2f, whatstopMovmeet);
@@ -144,8 +154,9 @@ public class Enemy : Player
             Enemy enemy = collision.gameObject.GetComponent<Enemy>();
             if (enemy != null)
             {
-
                 movePoint.position -= offset;
+                
+                if (GameManager.Instance.State == GameState.Gaming) { PlayerMovementsStored.reverseTheLastMovement(); }
 
             }
         }

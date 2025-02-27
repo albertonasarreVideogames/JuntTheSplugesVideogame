@@ -15,6 +15,7 @@ public class CheckPlayerSelected
         if (Input.GetKeyDown(KeyCode.Z))
         {
             Player.changePlayerTypeToMove();
+            GamingState.PlayerMovementsStored.AddMChangePlayer(1);
         }
     }
 

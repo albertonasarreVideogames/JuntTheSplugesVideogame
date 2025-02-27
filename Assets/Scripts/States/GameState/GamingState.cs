@@ -8,9 +8,11 @@ using UnityEngine.SceneManagement;
 public class GamingState : MonoBehaviour
 {
     public static GamingState Instance;
+    public static MovementsManagerPlay PlayerMovementsStored;
     private ManagePlayersMovement managePlayerMovement;
     private CheckPlayerSelected checkPlayerSelected;
     private ScenarioConditionsUpdater scenarioConditionsUpdater;
+    private Player[] allPlayers;
 
     private void Awake()
     {
@@ -26,6 +28,7 @@ public class GamingState : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        PlayerMovementsStored = new MovementsManagerPlay();
     }
 
     private void OnDestroy()
@@ -37,7 +40,17 @@ public class GamingState : MonoBehaviour
     //Invoked functions
     private void GameManagerOnGameStateChanged(GameState state)
     {
-        
+        if (state != GameState.Pause && state != GameState.Rewind && state != GameState.Gaming)
+        {
+            PlayerMovementsStored = new MovementsManagerPlay();
+            if (allPlayers != null)
+            {
+                foreach (Player player in allPlayers)
+                {
+                    player.PlayerMovementsStored.buttonspressed.Clear();
+                }
+            }
+        }
     }
   
     void OnLevelFinishedLoading(Scene scene, LoadSceneMode mode)
@@ -52,7 +65,7 @@ public class GamingState : MonoBehaviour
             Enemy[] enemies = GameObject.FindGameObjectsWithTag("Enemy").Select(playerObject => playerObject.GetComponent<Enemy>()).ToArray();
             MainPlayer[] mainPlayesrs = GameObject.FindGameObjectsWithTag("MainPlayer").Select(playerObject => playerObject.GetComponent<MainPlayer>()).ToArray();
        
-            Player[] allPlayers = players
+            allPlayers = players
                 .Concat(enemies)
                 .Concat(mainPlayesrs)
                 .ToArray();
@@ -74,6 +87,10 @@ public class GamingState : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Return))
         { 
             GameManager.Instance.UpdateGameState(GameState.Pause);
+        }
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            GameManager.Instance.UpdateGameState(GameState.Rewind);
         }
     }
 
@@ -143,6 +160,11 @@ public class GamingState : MonoBehaviour
                 pinkPinchos
             };
         return KeeperElements;
+    }
+
+    public void SimulatemovementAtPlayerLevel()
+    {
+        managePlayerMovement.movePlayersWithLastMovementStored();
     }
 
     //TESTING

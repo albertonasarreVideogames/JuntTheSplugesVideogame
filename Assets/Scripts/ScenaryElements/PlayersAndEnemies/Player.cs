@@ -37,11 +37,13 @@ public class Player : MonoBehaviour
     protected Animator myAnimator;
     protected bool facingRight = true;
     protected AnimationHandler.IAnimationManager playerAnimation;
+    public MovementsManagerPlay PlayerMovementsStored;
 
     private void Awake()
     {
         playerAnimation = GetComponent<AnimationHandler.IAnimationManager>();
         playerAnimation.OnAnimationStateChanged += HandleAnimationStateChanged;
+        PlayerMovementsStored = new MovementsManagerPlay();
     }
 
     private void OnDestroy()
@@ -115,6 +117,26 @@ public class Player : MonoBehaviour
         }
     }
 
+    public virtual void updateMovepointCheckerToRewind()
+    {
+
+        Vector2 Generalmovement = PlayerMovementsStored.getButtonOnLastPosition();
+        movePointCheker.position += new Vector3(Generalmovement.x, Generalmovement.y, 0f);
+        playerAnimation.SetNextAnimationTrigger(AnimationHandler.AnimationState.Running);
+
+
+        if (Generalmovement.x > 0 && facingRight)
+        {
+            flip();
+        }
+
+        if (Generalmovement.x < 0 && !facingRight)
+        {
+            flip();
+        }
+
+    }
+
     // Pensar en mover esto a ScenarioConditionsUpdater
     public virtual void checkCollisions()
     {
@@ -140,12 +162,17 @@ public class Player : MonoBehaviour
 
         }
 
+        
+
     }
 
     public void updateMovePoint()
     {
         if(playerAnimation.NextAnimationTrigger != AnimationHandler.AnimationState.AfterJump && playerAnimation.NextAnimationTrigger != AnimationHandler.AnimationState.DieOnHole) { 
-        movePoint.position = movePointCheker.position;
+            movePoint.position = movePointCheker.position;
+            Vector2 movement = movePointCheker.position - this.transform.position;
+            
+            if (GameManager.Instance.State == GameState.Gaming) { PlayerMovementsStored.addMovement(movement); }
         }
     }
 
@@ -228,10 +255,14 @@ public class Player : MonoBehaviour
         switch (state)
         {
             case AnimationHandler.AnimationState.AfterJump:
+                Vector2 movement = movePointCheker.position - this.transform.position;
+                if (GameManager.Instance.State == GameState.Gaming) { PlayerMovementsStored.addMovement(movement);}
                 movePoint.position = movePointCheker.position;
                 break;
 
             case AnimationHandler.AnimationState.DieOnHole:
+                Vector2 movement2 = movePointCheker.position - this.transform.position;
+                if (GameManager.Instance.State == GameState.Gaming) { PlayerMovementsStored.addMovement(movement2);}
                 movePoint.position = movePointCheker.position;
                 break;
         }
