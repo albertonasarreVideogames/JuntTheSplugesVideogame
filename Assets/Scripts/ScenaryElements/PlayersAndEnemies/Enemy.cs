@@ -58,29 +58,6 @@ public class Enemy : Player
         playerAnimation.SetNextAnimationTrigger(AnimationHandler.AnimationState.Running);
 
         movePointCheker.position += offset;
-
-        if (enemyMovement != EnemyMovement.Reverse) // Solo hacer flip si no es Reverse
-        {
-            if (Generalmovement.x > 0 && facingRight)
-            {
-                flip();  // El flip hace que el personaje se voltee a la derecha
-            }
-            else if (Generalmovement.x < 0 && !facingRight)
-            {
-                flip();  // El flip hace que el personaje se voltee a la izquierda
-            }
-        }
-        else // Si el movimiento es Reverse, invertimos la lógica del flip
-        {
-            if (Generalmovement.x < 0 && facingRight) // Si se mueve a la izquierda, voltea
-            {
-                flip();
-            }
-            else if (Generalmovement.x > 0 && !facingRight) // Si se mueve a la derecha, voltea
-            {
-                flip();
-            }
-        }
     }
 
     public override void checkCollisions()
