@@ -256,13 +256,13 @@ public class Player : MonoBehaviour
         {
             case AnimationHandler.AnimationState.AfterJump:
                 Vector2 movement = movePointCheker.position - this.transform.position;
-                if (GameManager.Instance.State == GameState.Gaming) { PlayerMovementsStored.addMovement(movement); Debug.Log("updating movement" + movement); }
+                if (GameManager.Instance.State == GameState.Gaming) { PlayerMovementsStored.addMovement(movement);}
                 movePoint.position = movePointCheker.position;
                 break;
 
             case AnimationHandler.AnimationState.DieOnHole:
                 Vector2 movement2 = movePointCheker.position - this.transform.position;
-                if (GameManager.Instance.State == GameState.Gaming) { PlayerMovementsStored.addMovement(movement2); Debug.Log("updating movement" + movement2); }
+                if (GameManager.Instance.State == GameState.Gaming) { PlayerMovementsStored.addMovement(movement2);}
                 movePoint.position = movePointCheker.position;
                 break;
         }
