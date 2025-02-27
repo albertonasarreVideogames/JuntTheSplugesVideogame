@@ -6,6 +6,7 @@ public class RewindState : MonoBehaviour
 {
     [SerializeField] private GameObject _text;
     public static RewindState Instance;
+    private bool stopRewind = false;
 
     private static bool spacePressedThisFrame = false;
 
@@ -37,7 +38,10 @@ public class RewindState : MonoBehaviour
 
     public void UpdateState()
     {
-       
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            stopRewind = true; // Interrumpe la corutina
+        }
     }
 
     public IEnumerator RunRewind(MovementsManagerPlay movementsManager)
@@ -52,16 +56,19 @@ public class RewindState : MonoBehaviour
             {
                 Debug.Log("Esperando antes de pulsar espacio " + i);
 
-                if (Input.GetKeyDown(KeyCode.E))
+                
+
+                // Espera a que se presione la tecla de espacio (pero evita múltiples presiones rápidas)
+                yield return new WaitUntil(() => (Input.GetKeyDown(KeyCode.Q) && !spacePressedThisFrame && GamingState.Instance.getIfPlayersStopMoving()) || stopRewind);
+
+                if (stopRewind)
                 {
                     Debug.Log("Corutina detenida por la tecla E");
                     spacePressedThisFrame = false;
+                    stopRewind = false;
                     GameManager.Instance.UpdateGameState(GameState.Gaming);
                     yield break; // Termina la corutina si se presiona "E"
                 }
-
-                // Espera a que se presione la tecla de espacio (pero evita múltiples presiones rápidas)
-                yield return new WaitUntil(() => Input.GetKeyDown(KeyCode.Q) && !spacePressedThisFrame && GamingState.Instance.getIfPlayersStopMoving());
 
                 // Marcar que la tecla espacio ha sido presionada
                 spacePressedThisFrame = true;

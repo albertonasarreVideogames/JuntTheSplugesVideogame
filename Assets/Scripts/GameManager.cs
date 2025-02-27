@@ -119,7 +119,7 @@ public class GameManager : MonoBehaviour
     private void HandleGaming()
     {
         Time.timeScale = 1;
-        if (OldState != GameState.Pause)
+        if (OldState != GameState.Pause && OldState != GameState.Rewind)
         {
             SoundManager.StartOst();
         }
