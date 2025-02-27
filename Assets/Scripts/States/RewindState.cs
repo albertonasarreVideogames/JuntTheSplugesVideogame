@@ -32,7 +32,7 @@ public class RewindState : MonoBehaviour
     private void GameManagerOnGameStateChanged(GameState state)
     {
         _text.SetActive(state == GameState.Rewind);
-        if (state == GameState.Rewind){ StartCoroutine(RunRewind(GamingState.PlayerMovementsStored)); }
+        if (state == GameState.Rewind){ StartCoroutine(RunRewind(GamingState.PlayerMovementsStored, GamingState.Instance.allPlayers)); }
 
     }
 
@@ -44,9 +44,10 @@ public class RewindState : MonoBehaviour
         }
     }
 
-    public IEnumerator RunRewind(MovementsManagerPlay movementsManager)
+    public IEnumerator RunRewind(MovementsManagerPlay movementsManager, Player[] allPlayers)
     {
-        
+
+
         yield return new WaitForSeconds(0.2f);
 
         // Iterar sobre los comandos de movimiento
@@ -73,10 +74,10 @@ public class RewindState : MonoBehaviour
                 // Marcar que la tecla espacio ha sido presionada
                 spacePressedThisFrame = true;
 
-                Debug.Log("Ejecutado " + i);
-                movementsManager.executeComandReverse(i);
+                GamingState.Instance.SimulatemovementAtPlayerLevel();
+                //movementsManager.executeComandReverse(i);
 
-                // Eliminar el botón de la lista después de ejecutarlo
+
                 movementsManager.buttonspressed.RemoveAt(i);
 
                 // Espera hasta que se libere la tecla de espacio para evitar múltiples activaciones
@@ -91,7 +92,7 @@ public class RewindState : MonoBehaviour
             }
         }
         // Si llegas al final quita el rewind solo
-        Debug.Log("Corutina detenida por la tecla E");
+        Debug.Log("Corutina detenida por array movementsManager vacio");
         spacePressedThisFrame = false;
         stopRewind = false;
         GameManager.Instance.UpdateGameState(GameState.Gaming);

@@ -12,6 +12,7 @@ public class GamingState : MonoBehaviour
     private ManagePlayersMovement managePlayerMovement;
     private CheckPlayerSelected checkPlayerSelected;
     private ScenarioConditionsUpdater scenarioConditionsUpdater;
+    public Player[] allPlayers;
 
     private void Awake()
     {
@@ -39,7 +40,15 @@ public class GamingState : MonoBehaviour
     //Invoked functions
     private void GameManagerOnGameStateChanged(GameState state)
     {
-        if (state != GameState.Pause && state != GameState.Rewind && state != GameState.Gaming) { PlayerMovementsStored = new MovementsManagerPlay(); Debug.Log("borrano rewind"); }
+        if (state != GameState.Pause && state != GameState.Rewind && state != GameState.Gaming) {
+            PlayerMovementsStored = new MovementsManagerPlay();
+            foreach (Player player in allPlayers)
+            {
+                Debug.Log("borrando rewind del player");   
+                player.PlayerMovementsStored.buttonspressed.Clear();
+
+            }
+            Debug.Log("borrano rewind"); }
     }
   
     void OnLevelFinishedLoading(Scene scene, LoadSceneMode mode)
@@ -54,7 +63,7 @@ public class GamingState : MonoBehaviour
             Enemy[] enemies = GameObject.FindGameObjectsWithTag("Enemy").Select(playerObject => playerObject.GetComponent<Enemy>()).ToArray();
             MainPlayer[] mainPlayesrs = GameObject.FindGameObjectsWithTag("MainPlayer").Select(playerObject => playerObject.GetComponent<MainPlayer>()).ToArray();
        
-            Player[] allPlayers = players
+            allPlayers = players
                 .Concat(enemies)
                 .Concat(mainPlayesrs)
                 .ToArray();
@@ -149,6 +158,11 @@ public class GamingState : MonoBehaviour
                 pinkPinchos
             };
         return KeeperElements;
+    }
+
+    public void SimulatemovementAtPlayerLevel()
+    {
+        managePlayerMovement.movePlayersWithLastMovementStored();
     }
 
     //TESTING

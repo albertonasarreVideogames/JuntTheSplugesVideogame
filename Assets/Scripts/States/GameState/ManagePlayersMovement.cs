@@ -113,4 +113,15 @@ public class ManagePlayersMovement
         managePlayersMovement(movement);
     }
 
+    public void movePlayersWithLastMovementStored()
+    {
+        for (int i = 0; i < players.Length; i++)
+        {
+            players[i].GetComponent<Player>().updateMovepointCheckerToRewind();
+        }
+
+        checkScenaryConditions?.Invoke();
+
+    }
+
 }

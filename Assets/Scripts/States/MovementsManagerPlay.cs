@@ -8,7 +8,8 @@ public enum ButtonPresed
     LEFT,
     UP,
     DOWN,
-    CHANGEPLAYER
+    CHANGEPLAYER,
+    EMPTY
 }
 public class MovementsManagerPlay
 {
@@ -18,30 +19,58 @@ public class MovementsManagerPlay
     private Vector2 moventLeft = new Vector2(-1, 0);
     private Vector2 moventUp = new Vector2(0, 1);
     private Vector2 moventDown = new Vector2(0, -1);
+    private Vector2 empty = new Vector2(0, 0);
 
     public void executeComandReverse(int i)
     {
-        if (buttonspressed[i] == ButtonPresed.RIGHT)
+        // Verificar que el índice i es válido para evitar desbordamientos
+        if (i < 0 || i >= buttonspressed.Count)
         {
-            GamingState.Instance.Simulatemovement(moventLeft);
+            Debug.LogError("Índice fuera de rango");
+            return;
         }
-        if (buttonspressed[i] == ButtonPresed.LEFT)
+
+        // Obtener el tipo de movimiento del botón presionado
+        ButtonPresed button = buttonspressed[i];
+        Debug.Log("Comando a ejecutar: " + buttonspressed[i].ToString());
+        // Determinar el movimiento inverso según el tipo de botón
+        switch (button)
         {
-            GamingState.Instance.Simulatemovement(moventRight);
-        }
-        if (buttonspressed[i] == ButtonPresed.UP)
-        {
-            GamingState.Instance.Simulatemovement(moventDown);
-        }
-        if (buttonspressed[i] == ButtonPresed.DOWN)
-        {
-            GamingState.Instance.Simulatemovement(moventUp);
-        }
-        if (buttonspressed[i] == ButtonPresed.CHANGEPLAYER)
-        {
-            Player.changePlayerTypeToMove();
+            case ButtonPresed.RIGHT:
+                GamingState.Instance.Simulatemovement(moventLeft);
+                Debug.Log("Movimiento: Left");
+                break;
+
+            case ButtonPresed.LEFT:
+                GamingState.Instance.Simulatemovement(moventRight);
+                Debug.Log("Movimiento: Right");
+                break;
+
+            case ButtonPresed.UP:
+                GamingState.Instance.Simulatemovement(moventDown);
+                Debug.Log("Movimiento: Down");
+                break;
+
+            case ButtonPresed.DOWN:
+                GamingState.Instance.Simulatemovement(moventUp);
+                Debug.Log("Movimiento: Up");
+                break;
+
+            case ButtonPresed.CHANGEPLAYER:
+                Player.changePlayerTypeToMove();
+                Debug.Log("Cambio de jugador");
+                break;
+
+            case ButtonPresed.EMPTY:
+                Debug.Log("Movimiento vacío");
+                break;
+
+            default:
+                Debug.LogWarning("Comando no reconocido: " + button);
+                break;
         }
     }
+
 
     public void AddMovementRight(int times) {
 
@@ -105,7 +134,76 @@ public class MovementsManagerPlay
         else
         {
             // Si el movimiento no es uno de los predefinidos, podrías agregar un tipo especial o manejarlo de otro modo.
-            Debug.LogWarning("Movimiento no reconocido.");
+            buttonspressed.Add(ButtonPresed.EMPTY);
+            Debug.Log("SE ha añadido un empty");
         }
+
+        
+    }
+
+    public Vector2 getButtonOnLastPosition()
+    {
+
+        // Obtener el tipo de movimiento del botón presionado
+        // Verificar si la lista tiene elementos
+        if (buttonspressed.Count == 0)
+        {
+            // Si la lista está vacía, retornar un valor "empty"
+            return empty;
+        }
+
+        // Obtener el tipo de movimiento del botón presionado (último elemento)
+        ButtonPresed lastButton = buttonspressed[buttonspressed.Count - 1];
+        Debug.Log("Comando a ejecutar: " + lastButton.ToString());
+
+        // Variable para almacenar el resultado
+        Vector2 movement = empty; // Valor predeterminado
+
+        // Determinar el movimiento inverso según el tipo de botón
+        switch (lastButton)
+        {
+            case ButtonPresed.RIGHT:
+                movement = moventLeft;
+                Debug.Log("Movimiento: Left");
+                break;
+
+            case ButtonPresed.LEFT:
+                movement = moventRight;
+                Debug.Log("Movimiento: Right");
+                break;
+
+            case ButtonPresed.UP:
+                movement = moventDown;
+                Debug.Log("Movimiento: Down");
+                break;
+
+            case ButtonPresed.DOWN:
+                movement = moventUp;
+                Debug.Log("Movimiento: Up");
+                break;
+
+            case ButtonPresed.CHANGEPLAYER:
+                Player.changePlayerTypeToMove();
+                Debug.Log("Cambio de jugador");
+                movement = empty;
+                break;
+
+            case ButtonPresed.EMPTY:
+                Debug.Log("Movimiento vacío");
+                movement = empty;
+                break;
+
+            default:
+                Debug.LogWarning("Comando no reconocido: " + lastButton);
+                movement = empty;
+                break;
+        }
+
+        // Eliminar el último elemento después de ejecutar el comando
+        buttonspressed.RemoveAt(buttonspressed.Count - 1);       
+
+        // Retornar el movimiento calculado
+        return movement;
+
     }
 }
