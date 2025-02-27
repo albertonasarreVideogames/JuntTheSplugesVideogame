@@ -40,18 +40,17 @@ public class GamingState : MonoBehaviour
     //Invoked functions
     private void GameManagerOnGameStateChanged(GameState state)
     {
-        if (state != GameState.Pause && state != GameState.Rewind && state != GameState.Gaming) {
+        if (state != GameState.Pause && state != GameState.Rewind && state != GameState.Gaming)
+        {
             PlayerMovementsStored = new MovementsManagerPlay();
             if (allPlayers != null)
             {
                 foreach (Player player in allPlayers)
                 {
-                    Debug.Log("borrando rewind del player");
                     player.PlayerMovementsStored.buttonspressed.Clear();
-
                 }
             }
-            Debug.Log("borrano rewind"); }
+        }
     }
   
     void OnLevelFinishedLoading(Scene scene, LoadSceneMode mode)
