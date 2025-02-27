@@ -39,7 +39,7 @@ public class GamingState : MonoBehaviour
     //Invoked functions
     private void GameManagerOnGameStateChanged(GameState state)
     {
-        if (state != GameState.Pause){ PlayerMovementsStored = new MovementsManagerPlay(); }
+        if (state != GameState.Pause && state != GameState.Rewind) { PlayerMovementsStored = new MovementsManagerPlay(); }
     }
   
     void OnLevelFinishedLoading(Scene scene, LoadSceneMode mode)
