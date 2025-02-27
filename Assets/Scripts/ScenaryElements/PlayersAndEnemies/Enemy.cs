@@ -179,8 +179,6 @@ public class Enemy : Player
             {
                 movePoint.position -= offset;
                 
-                Debug.Log(string.Join(" ", PlayerMovementsStored.buttonspressed));
-                Debug.Log(offset);
                 if (GameManager.Instance.State == GameState.Gaming) { PlayerMovementsStored.reverseTheLastMovement(); }
 
             }
