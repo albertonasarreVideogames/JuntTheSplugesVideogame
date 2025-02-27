@@ -206,4 +206,48 @@ public class MovementsManagerPlay
         return movement;
 
     }
+
+    public void reverseTheLastMovement()
+    {
+
+        if (buttonspressed.Count == 0)
+        {
+            // Si la lista está vacía, retornar un valor "empty"
+            return;
+        }
+
+        // Obtener el tipo de movimiento del botón presionado (último elemento)
+        ButtonPresed lastButton = buttonspressed[buttonspressed.Count - 1];
+
+        switch(lastButton){
+
+            case ButtonPresed.RIGHT:
+                buttonspressed[buttonspressed.Count - 1] = ButtonPresed.LEFT;         
+                break;
+
+            case ButtonPresed.LEFT:
+                buttonspressed[buttonspressed.Count - 1] = ButtonPresed.RIGHT;
+                break;
+
+            case ButtonPresed.UP:
+                buttonspressed[buttonspressed.Count - 1] = ButtonPresed.DOWN;
+                break;
+
+            case ButtonPresed.DOWN:
+                buttonspressed[buttonspressed.Count - 1] = ButtonPresed.UP;
+                break;
+
+            case ButtonPresed.CHANGEPLAYER:
+                break;
+            case ButtonPresed.EMPTY:
+                break;
+
+            default:
+                break;
+
+        }
+
+
+
+    }
 }
