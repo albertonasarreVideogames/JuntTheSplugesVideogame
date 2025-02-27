@@ -43,7 +43,7 @@ public class ManagePlayersMovement
     {
         for (int i = 0; i < players.Length; i++)
         {
-            players[i].GetComponent<Player>().updateMovepointChecker(movement); 
+            MonoBehaviourSingleton.Instance.StartCoroutine(players[i].GetComponent<Player>().updateMovepointChecker(movement)); 
         }
         for (int i = 0; i < players.Length; i++)
         {

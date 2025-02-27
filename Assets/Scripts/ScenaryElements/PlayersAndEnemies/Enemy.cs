@@ -15,7 +15,7 @@ public class Enemy : Player
     private Vector3 offset;
     public bool test;
 
-    public override void updateMovepointChecker(Vector2 Generalmovement)
+    public override IEnumerator updateMovepointChecker(Vector2 Generalmovement)
     {
 
         offset = new Vector3(Generalmovement.x, Generalmovement.y, 0f);
@@ -48,6 +48,8 @@ public class Enemy : Player
                 flip();
             }
         }
+
+        yield return new WaitForSeconds(1f);
     }
 
     public override void checkCollisions()

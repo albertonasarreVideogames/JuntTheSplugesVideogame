@@ -95,8 +95,9 @@ public class Player : MonoBehaviour
         return Physics2D.OverlapCircle(movePointCheker.position, 0.2f, layerMask);
     }
 
-    public virtual void updateMovepointChecker(Vector2 Generalmovement)
+    public virtual IEnumerator updateMovepointChecker(Vector2 Generalmovement)
     {
+        yield return new WaitUntil(() => Input.GetKeyDown(KeyCode.Q));
         if (playerType == currentAllowedType)
         {
             movePointCheker.position += new Vector3(Generalmovement.x, Generalmovement.y, 0f);
@@ -113,6 +114,8 @@ public class Player : MonoBehaviour
                 flip();
             }
         }
+
+        
     }
 
     // Pensar en mover esto a ScenarioConditionsUpdater
@@ -157,6 +160,7 @@ public class Player : MonoBehaviour
     public bool checkIfPlayerIsNOTStrillMoveent()
     {
         bool isAtMovePoint = Vector3.Distance(transform.position, movePoint.position) == 0;
+        bool isAtMovePoint2 = Vector3.Distance(movePointCheker.position, movePoint.position) == 0;
         bool isAnimationFinished = IsAnimationFinished("Enemy Attack 1", 1.0f);
         bool isAnimationFinished2 = IsAnimationFinished("Enemy Hit", 0.7f);
 

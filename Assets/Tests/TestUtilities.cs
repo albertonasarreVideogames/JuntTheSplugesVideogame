@@ -6,6 +6,7 @@ using System.Collections;
 
 public static class TestUtilities
 {
+    private static bool spacePressedThisFrame = false;
     public static IEnumerator RunTest(string sceneName, MovementsManager movementsManager, GameState expectedState,float timeBetweenmovementsMultiplicator = 2f)
     {
         
@@ -17,14 +18,16 @@ public static class TestUtilities
         {
             if (GamingState.Instance != null)
             {
-                //yield return new WaitForSeconds(0.1f*timeBetweenmovementsMultiplicator);
-                while (!GamingState.Instance.getIfPlayersStopMoving())
-                {
-                    // Aquí se puede agregar un pequeño retraso para evitar que la corutina consuma demasiados recursos
-                    yield return null; // Espera hasta el siguiente frame
-                }
+                Debug.Log("aqui esperando antes de pulsar espacio " + i);
+
+                // Espera hasta que se presione la tecla de espacio
+                yield return new WaitUntil(() => Input.GetKeyDown(KeyCode.Space));
+
+                Debug.Log("executed " + i);
                 movementsManager.executeComand(i);
-                //Debug.Log("Me muevo");
+
+                // Esperar a que se libere la tecla de espacio para evitar múltiples activaciones
+                yield return new WaitUntil(() => !Input.GetKey(KeyCode.Space));
             }
             else
             {

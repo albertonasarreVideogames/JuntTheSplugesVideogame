@@ -28,9 +28,11 @@ public class MainPlayer : Player
         return false;
     }
 
-    public override void updateMovepointChecker(Vector2 Generalmovement)
+    public override IEnumerator updateMovepointChecker(Vector2 Generalmovement)
     {
             movePointCheker.position += new Vector3(Generalmovement.x, Generalmovement.y, 0f);
+
+        yield return new WaitForSeconds(1f);
     }
 
 
