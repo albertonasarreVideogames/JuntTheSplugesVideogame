@@ -68,7 +68,8 @@ public class GameManager : MonoBehaviour
             case GameState.Menu:
                 MenuState.Instance.UpdateState();
                 break;
-            case GameState.Procesing:
+            case GameState.Rewind:
+                RewindState.Instance.UpdateState();
                 break;
             default:
                 throw new ArgumentOutOfRangeException(nameof(State), State, null);
@@ -100,7 +101,7 @@ public class GameManager : MonoBehaviour
             case GameState.Menu:
                 HandleMenu();
                 break;
-            case GameState.Procesing:
+            case GameState.Rewind:
                 break;
             default:
                 throw new ArgumentOutOfRangeException(nameof(newState), newState, null);
@@ -152,5 +153,5 @@ public enum GameState
     Victory,
     Lose,
     Menu,
-    Procesing
+    Rewind
 }

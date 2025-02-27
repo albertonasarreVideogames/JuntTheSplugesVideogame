@@ -8,6 +8,7 @@ using UnityEngine.SceneManagement;
 public class GamingState : MonoBehaviour
 {
     public static GamingState Instance;
+    public static MovementsManagerPlay PlayerMovementsStored;
     private ManagePlayersMovement managePlayerMovement;
     private CheckPlayerSelected checkPlayerSelected;
     private ScenarioConditionsUpdater scenarioConditionsUpdater;
@@ -26,6 +27,7 @@ public class GamingState : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        PlayerMovementsStored = new MovementsManagerPlay();
     }
 
     private void OnDestroy()
@@ -37,7 +39,7 @@ public class GamingState : MonoBehaviour
     //Invoked functions
     private void GameManagerOnGameStateChanged(GameState state)
     {
-        
+        if (state != GameState.Pause){ PlayerMovementsStored = new MovementsManagerPlay(); }
     }
   
     void OnLevelFinishedLoading(Scene scene, LoadSceneMode mode)
@@ -74,6 +76,10 @@ public class GamingState : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Return))
         { 
             GameManager.Instance.UpdateGameState(GameState.Pause);
+        }
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            GameManager.Instance.UpdateGameState(GameState.Rewind);
         }
     }
 

@@ -19,23 +19,23 @@ public class MovementsManagerPlay
     private Vector2 moventUp = new Vector2(0, 1);
     private Vector2 moventDown = new Vector2(0, -1);
 
-    public void executeComand(int i)
+    public void executeComandReverse(int i)
     {
         if (buttonspressed[i] == ButtonPresed.RIGHT)
         {
-            GamingState.Instance.Simulatemovement(moventRight);
+            GamingState.Instance.Simulatemovement(moventLeft);
         }
         if (buttonspressed[i] == ButtonPresed.LEFT)
         {
-            GamingState.Instance.Simulatemovement(moventLeft);
+            GamingState.Instance.Simulatemovement(moventRight);
         }
         if (buttonspressed[i] == ButtonPresed.UP)
         {
-            GamingState.Instance.Simulatemovement(moventUp);
+            GamingState.Instance.Simulatemovement(moventDown);
         }
         if (buttonspressed[i] == ButtonPresed.DOWN)
         {
-            GamingState.Instance.Simulatemovement(moventDown);
+            GamingState.Instance.Simulatemovement(moventUp);
         }
         if (buttonspressed[i] == ButtonPresed.CHANGEPLAYER)
         {
@@ -80,6 +80,32 @@ public class MovementsManagerPlay
         for (int i = 0; i < times; i++)
         {
             buttonspressed.Add(ButtonPresed.CHANGEPLAYER);
+        }
+    }
+
+    public void addMovement(Vector2 movement)
+    {
+        // Determinar el tipo de movimiento según el Vector2
+        if (movement == moventRight)
+        {
+            buttonspressed.Add(ButtonPresed.RIGHT);
+        }
+        else if (movement == moventLeft)
+        {
+            buttonspressed.Add(ButtonPresed.LEFT);
+        }
+        else if (movement == moventUp)
+        {
+            buttonspressed.Add(ButtonPresed.UP);
+        }
+        else if (movement == moventDown)
+        {
+            buttonspressed.Add(ButtonPresed.DOWN);
+        }
+        else
+        {
+            // Si el movimiento no es uno de los predefinidos, podrías agregar un tipo especial o manejarlo de otro modo.
+            Debug.LogWarning("Movimiento no reconocido.");
         }
     }
 }

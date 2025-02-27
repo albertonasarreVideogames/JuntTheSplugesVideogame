@@ -58,6 +58,8 @@ public class ManagePlayersMovement
             }
         }
 
+        if (GameManager.Instance.State == GameState.Gaming) { GamingState.PlayerMovementsStored.addMovement(movement); }
+
     }
 
     private void managePlayersMovement(Vector2 movement)

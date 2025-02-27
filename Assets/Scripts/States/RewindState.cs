@@ -4,35 +4,76 @@ using UnityEngine;
 
 public class RewindState : MonoBehaviour
 {
+    [SerializeField] private GameObject _text;
+    public static RewindState Instance;
+
     private static bool spacePressedThisFrame = false;
-    public static IEnumerator RunTest(
-    string sceneName,
-    MovementsManagerPlay movementsManager,
-    GameState expectedState,
-    float timeBetweenmovementsMultiplicator = 2f
-)
+
+    private void Awake()
     {
-        //yield return SceneManager.LoadSceneAsync(sceneName, LoadSceneMode.Single);
-        yield return new WaitForSeconds(0.1f * timeBetweenmovementsMultiplicator);
+        GameManager.OnGameStateChanged += GameManagerOnGameStateChanged;
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
+
+    private void OnDestroy()
+    {
+        GameManager.OnGameStateChanged -= GameManagerOnGameStateChanged;
+    }
+
+    private void GameManagerOnGameStateChanged(GameState state)
+    {
+        _text.SetActive(state == GameState.Rewind);
+        StartCoroutine(RunRewind(GamingState.PlayerMovementsStored));
+
+    }
+
+    public void UpdateState()
+    {
+       
+    }
+
+    public IEnumerator RunRewind(MovementsManagerPlay movementsManager)
+    {
+        
+        yield return new WaitForSeconds(0.2f);
 
         // Iterar sobre los comandos de movimiento
-        for (int i = 0; i < movementsManager.buttonspressed.Count; i++)
+        for (int i = movementsManager.buttonspressed.Count - 1; i >= 0; i--)
         {
             if (GamingState.Instance != null)
             {
                 Debug.Log("Esperando antes de pulsar espacio " + i);
 
+                if (Input.GetKeyDown(KeyCode.E))
+                {
+                    Debug.Log("Corutina detenida por la tecla E");
+                    spacePressedThisFrame = false;
+                    GameManager.Instance.UpdateGameState(GameState.Gaming);
+                    yield break; // Termina la corutina si se presiona "E"
+                }
+
                 // Espera a que se presione la tecla de espacio (pero evita múltiples presiones rápidas)
-                yield return new WaitUntil(() => Input.GetKeyDown(KeyCode.Space) && !spacePressedThisFrame && GamingState.Instance.getIfPlayersStopMoving());
+                yield return new WaitUntil(() => Input.GetKeyDown(KeyCode.Q) && !spacePressedThisFrame && GamingState.Instance.getIfPlayersStopMoving());
 
                 // Marcar que la tecla espacio ha sido presionada
                 spacePressedThisFrame = true;
 
                 Debug.Log("Ejecutado " + i);
-                movementsManager.executeComand(i);
+                movementsManager.executeComandReverse(i);
+
+                // Eliminar el botón de la lista después de ejecutarlo
+                movementsManager.buttonspressed.RemoveAt(i);
 
                 // Espera hasta que se libere la tecla de espacio para evitar múltiples activaciones
-                yield return new WaitUntil(() => !Input.GetKey(KeyCode.Space));
+                yield return new WaitUntil(() => !Input.GetKey(KeyCode.Q));
 
                 // Marcar que la tecla espacio ha sido liberada
                 spacePressedThisFrame = false;
@@ -42,19 +83,9 @@ public class RewindState : MonoBehaviour
                 Debug.Log("No GamingState");
             }
         }
-
-        // Destruir los objetos persistentes
-        GameObject[] persistentObjects = GameObject.FindGameObjectsWithTag("Persistent");
-        foreach (GameObject obj in persistentObjects)
-        {
-            UnityEngine.Object.Destroy(obj);
-        }
-
         // Esperar un poco más para asegurarse de que ha acabado
         yield return new WaitForSeconds(1f);
 
-        // Verificar el estado final
-        //Assert.AreEqual(GameManager.Instance.State, expectedState);
     }
 
 }
