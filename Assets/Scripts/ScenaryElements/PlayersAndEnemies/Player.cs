@@ -119,23 +119,22 @@ public class Player : MonoBehaviour
 
     public virtual void updateMovepointCheckerToRewind()
     {
-        if (playerType == currentAllowedType)
+
+        Vector2 Generalmovement = PlayerMovementsStored.getButtonOnLastPosition();
+        movePointCheker.position += new Vector3(Generalmovement.x, Generalmovement.y, 0f);
+        playerAnimation.SetNextAnimationTrigger(AnimationHandler.AnimationState.Running);
+
+
+        if (Generalmovement.x > 0 && facingRight)
         {
-            Vector2 Generalmovement = PlayerMovementsStored.getButtonOnLastPosition();
-            movePointCheker.position += new Vector3(Generalmovement.x, Generalmovement.y, 0f);
-            playerAnimation.SetNextAnimationTrigger(AnimationHandler.AnimationState.Running);
-
-
-            if (Generalmovement.x > 0 && facingRight)
-            {
-                flip();
-            }
-
-            if (Generalmovement.x < 0 && !facingRight)
-            {
-                flip();
-            }
+            flip();
         }
+
+        if (Generalmovement.x < 0 && !facingRight)
+        {
+            flip();
+        }
+
     }
 
     // Pensar en mover esto a ScenarioConditionsUpdater
