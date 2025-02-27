@@ -172,7 +172,7 @@ public class Player : MonoBehaviour
             movePoint.position = movePointCheker.position;
             Vector2 movement = movePointCheker.position - this.transform.position;
             
-            if (GameManager.Instance.State == GameState.Gaming) { PlayerMovementsStored.addMovement(movement); Debug.Log("updating movement" + movement); }
+            if (GameManager.Instance.State == GameState.Gaming) { PlayerMovementsStored.addMovement(movement); }
         }
     }
 

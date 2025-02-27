@@ -32,7 +32,7 @@ public class RewindState : MonoBehaviour
     private void GameManagerOnGameStateChanged(GameState state)
     {
         _text.SetActive(state == GameState.Rewind);
-        if (state == GameState.Rewind){ StartCoroutine(RunRewind(GamingState.PlayerMovementsStored, GamingState.Instance.allPlayers)); }
+        if (state == GameState.Rewind){ StartCoroutine(RunRewind(GamingState.PlayerMovementsStored)); }
 
     }
 
@@ -44,7 +44,7 @@ public class RewindState : MonoBehaviour
         }
     }
 
-    public IEnumerator RunRewind(MovementsManagerPlay movementsManager, Player[] allPlayers)
+    public IEnumerator RunRewind(MovementsManagerPlay movementsManager)
     {
 
 
@@ -55,9 +55,7 @@ public class RewindState : MonoBehaviour
         {
             if (GamingState.Instance != null)
             {
-                Debug.Log("Esperando antes de pulsar espacio " + i);
-
-                
+                Debug.Log("Esperando antes de pulsar Q " + i);              
 
                 // Espera a que se presione la tecla de espacio (pero evita múltiples presiones rápidas)
                 yield return new WaitUntil(() => (Input.GetKeyDown(KeyCode.Q) && !spacePressedThisFrame && GamingState.Instance.getIfPlayersStopMoving()) || stopRewind);

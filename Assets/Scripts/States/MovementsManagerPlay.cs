@@ -32,37 +32,30 @@ public class MovementsManagerPlay
 
         // Obtener el tipo de movimiento del botón presionado
         ButtonPresed button = buttonspressed[i];
-        Debug.Log("Comando a ejecutar: " + buttonspressed[i].ToString());
         // Determinar el movimiento inverso según el tipo de botón
         switch (button)
         {
             case ButtonPresed.RIGHT:
                 GamingState.Instance.Simulatemovement(moventLeft);
-                Debug.Log("Movimiento: Left");
                 break;
 
             case ButtonPresed.LEFT:
                 GamingState.Instance.Simulatemovement(moventRight);
-                Debug.Log("Movimiento: Right");
                 break;
 
             case ButtonPresed.UP:
                 GamingState.Instance.Simulatemovement(moventDown);
-                Debug.Log("Movimiento: Down");
                 break;
 
             case ButtonPresed.DOWN:
                 GamingState.Instance.Simulatemovement(moventUp);
-                Debug.Log("Movimiento: Up");
                 break;
 
             case ButtonPresed.CHANGEPLAYER:
                 Player.changePlayerTypeToMove();
-                Debug.Log("Cambio de jugador");
                 break;
 
             case ButtonPresed.EMPTY:
-                Debug.Log("Movimiento vacío");
                 break;
 
             default:
@@ -135,7 +128,6 @@ public class MovementsManagerPlay
         {
             // Si el movimiento no es uno de los predefinidos, podrías agregar un tipo especial o manejarlo de otro modo.
             buttonspressed.Add(ButtonPresed.EMPTY);
-            Debug.Log("SE ha añadido un empty");
         }
 
         
@@ -154,7 +146,6 @@ public class MovementsManagerPlay
 
         // Obtener el tipo de movimiento del botón presionado (último elemento)
         ButtonPresed lastButton = buttonspressed[buttonspressed.Count - 1];
-        Debug.Log("Comando a ejecutar: " + lastButton.ToString());
 
         // Variable para almacenar el resultado
         Vector2 movement = empty; // Valor predeterminado
@@ -164,37 +155,30 @@ public class MovementsManagerPlay
         {
             case ButtonPresed.RIGHT:
                 movement = moventLeft;
-                Debug.Log("Movimiento: Left");
                 break;
 
             case ButtonPresed.LEFT:
                 movement = moventRight;
-                Debug.Log("Movimiento: Right");
                 break;
 
             case ButtonPresed.UP:
                 movement = moventDown;
-                Debug.Log("Movimiento: Down");
                 break;
 
             case ButtonPresed.DOWN:
                 movement = moventUp;
-                Debug.Log("Movimiento: Up");
                 break;
 
             case ButtonPresed.CHANGEPLAYER:
                 Player.changePlayerTypeToMove();
-                Debug.Log("Cambio de jugador");
                 movement = empty;
                 break;
 
             case ButtonPresed.EMPTY:
-                Debug.Log("Movimiento vacío");
                 movement = empty;
                 break;
 
             default:
-                Debug.LogWarning("Comando no reconocido: " + lastButton);
                 movement = empty;
                 break;
         }

@@ -12,7 +12,7 @@ public class GamingState : MonoBehaviour
     private ManagePlayersMovement managePlayerMovement;
     private CheckPlayerSelected checkPlayerSelected;
     private ScenarioConditionsUpdater scenarioConditionsUpdater;
-    public Player[] allPlayers;
+    private Player[] allPlayers;
 
     private void Awake()
     {
@@ -42,11 +42,14 @@ public class GamingState : MonoBehaviour
     {
         if (state != GameState.Pause && state != GameState.Rewind && state != GameState.Gaming) {
             PlayerMovementsStored = new MovementsManagerPlay();
-            foreach (Player player in allPlayers)
+            if (allPlayers != null)
             {
-                Debug.Log("borrando rewind del player");   
-                player.PlayerMovementsStored.buttonspressed.Clear();
+                foreach (Player player in allPlayers)
+                {
+                    Debug.Log("borrando rewind del player");
+                    player.PlayerMovementsStored.buttonspressed.Clear();
 
+                }
             }
             Debug.Log("borrano rewind"); }
     }
