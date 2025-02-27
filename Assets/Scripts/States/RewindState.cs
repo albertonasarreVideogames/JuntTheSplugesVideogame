@@ -54,15 +54,12 @@ public class RewindState : MonoBehaviour
         for (int i = movementsManager.buttonspressed.Count - 1; i >= 0; i--)
         {
             if (GamingState.Instance != null)
-            {
-                Debug.Log("Esperando antes de pulsar Q " + i);              
-
+            {         
                 // Espera a que se presione la tecla de espacio (pero evita múltiples presiones rápidas)
                 yield return new WaitUntil(() => (Input.GetKeyDown(KeyCode.Q) && !spacePressedThisFrame && GamingState.Instance.getIfPlayersStopMoving()) || stopRewind);
 
                 if (stopRewind)
                 {
-                    Debug.Log("Corutina detenida por la tecla E");
                     spacePressedThisFrame = false;
                     stopRewind = false;
                     GameManager.Instance.UpdateGameState(GameState.Gaming);
@@ -90,7 +87,6 @@ public class RewindState : MonoBehaviour
             }
         }
         // Si llegas al final quita el rewind solo
-        Debug.Log("Corutina detenida por array movementsManager vacio");
         spacePressedThisFrame = false;
         stopRewind = false;
         GameManager.Instance.UpdateGameState(GameState.Gaming);
