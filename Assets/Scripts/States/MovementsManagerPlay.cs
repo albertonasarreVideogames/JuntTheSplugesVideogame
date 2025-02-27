@@ -170,7 +170,6 @@ public class MovementsManagerPlay
                 break;
 
             case ButtonPresed.CHANGEPLAYER:
-                Player.changePlayerTypeToMove();
                 movement = empty;
                 break;
 
