@@ -63,6 +63,7 @@ public class SoundManager : MonoBehaviour
 
     public static void ChangeOSTpitch(float pitch)
     {
+        if (instance == null) { return; }
         instance.audioSourceOst.pitch = pitch;
     }
 
