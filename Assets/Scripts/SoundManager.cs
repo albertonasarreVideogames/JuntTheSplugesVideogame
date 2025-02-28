@@ -61,6 +61,11 @@ public class SoundManager : MonoBehaviour
         instance.audioSourceOst.Stop();
     }
 
+    public static void ChangeOSTpitch(float pitch)
+    {
+        instance.audioSourceOst.pitch = pitch;
+    }
+
 
     public static void PlaySound(SoundType sound, float volume = 1)
     {

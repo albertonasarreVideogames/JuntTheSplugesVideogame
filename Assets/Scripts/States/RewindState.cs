@@ -8,7 +8,6 @@ public class RewindState : MonoBehaviour
     public static RewindState Instance;
     private bool stopRewind = false;
 
-    private static bool spacePressedThisFrame = false;
 
     private void Awake()
     {
@@ -42,6 +41,7 @@ public class RewindState : MonoBehaviour
         {
             stopRewind = true; // Interrumpe la corutina
         }
+        if (Input.GetKeyUp(KeyCode.Q)) { SoundManager.ChangeOSTpitch(1f); }
     }
 
     public IEnumerator RunRewind(MovementsManagerPlay movementsManager)
@@ -54,29 +54,22 @@ public class RewindState : MonoBehaviour
         for (int i = movementsManager.buttonspressed.Count - 1; i >= 0; i--)
         {
             if (GamingState.Instance != null)
-            {         
-                // Espera a que se presione la tecla de espacio (pero evita múltiples presiones rápidas)
-                yield return new WaitUntil(() => (Input.GetKey(KeyCode.Q) && !spacePressedThisFrame && GamingState.Instance.getIfPlayersStopMoving()) || stopRewind);
+            {
 
+                yield return new WaitUntil(() => (Input.GetKey(KeyCode.Q) && GamingState.Instance.getIfPlayersStopMoving()) || stopRewind);
+                
                 if (stopRewind)
                 {
-                    spacePressedThisFrame = false;
+                    SoundManager.ChangeOSTpitch(1);
                     stopRewind = false;
                     GameManager.Instance.UpdateGameState(GameState.Gaming);
                     yield break; // Termina la corutina si se presiona "E"
-                }
-
-                // Marcar que la tecla espacio ha sido presionada
-                spacePressedThisFrame = true;
+                }    
 
                 GamingState.Instance.SimulatemovementAtPlayerLevel();
-                //movementsManager.executeComandReverse(i);
+                SoundManager.ChangeOSTpitch(-1.5f);
+                movementsManager.buttonspressed.RemoveAt(i);              
 
-
-                movementsManager.buttonspressed.RemoveAt(i);
-
-                // Marcar que la tecla espacio ha sido liberada
-                spacePressedThisFrame = false;
             }
             else
             {
@@ -84,7 +77,7 @@ public class RewindState : MonoBehaviour
             }
         }
         // Si llegas al final quita el rewind solo
-        spacePressedThisFrame = false;
+        SoundManager.ChangeOSTpitch(1f);
         stopRewind = false;
         GameManager.Instance.UpdateGameState(GameState.Gaming);
         yield break;
