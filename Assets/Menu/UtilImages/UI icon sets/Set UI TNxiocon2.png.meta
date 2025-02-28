@@ -1,0 +1,860 @@
+fileFormatVersion: 2
+guid: 51feb047f87890443bfff259e93a8a50
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 1039508182797141084
+    second: Set UI TNxiocon2_0
+  - first:
+      213: 6781539032891656099
+    second: Set UI TNxiocon2_1
+  - first:
+      213: -806119529101333924
+    second: Set UI TNxiocon2_2
+  - first:
+      213: -6904539418752504157
+    second: Set UI TNxiocon2_3
+  - first:
+      213: -2478659719243846697
+    second: Set UI TNxiocon2_4
+  - first:
+      213: 2399755874731005881
+    second: Set UI TNxiocon2_5
+  - first:
+      213: 7293145108238765181
+    second: Set UI TNxiocon2_6
+  - first:
+      213: -7788968846356733312
+    second: Set UI TNxiocon2_7
+  - first:
+      213: -5169192262534735821
+    second: Set UI TNxiocon2_8
+  - first:
+      213: 6233301297054649193
+    second: Set UI TNxiocon2_9
+  - first:
+      213: -7762683260743509265
+    second: Set UI TNxiocon2_10
+  - first:
+      213: 2764365304961737163
+    second: Set UI TNxiocon2_11
+  - first:
+      213: 8786004321226851667
+    second: Set UI TNxiocon2_12
+  - first:
+      213: 1118864639417423643
+    second: Set UI TNxiocon2_13
+  - first:
+      213: 8877561096283522670
+    second: Set UI TNxiocon2_14
+  - first:
+      213: -2811449005215701393
+    second: Set UI TNxiocon2_15
+  - first:
+      213: -9086811059540356169
+    second: Set UI TNxiocon2_16
+  - first:
+      213: 2338642939521380798
+    second: Set UI TNxiocon2_17
+  - first:
+      213: -1287218885284940254
+    second: Set UI TNxiocon2_18
+  - first:
+      213: 8995942405508814911
+    second: Set UI TNxiocon2_19
+  - first:
+      213: 5086074274723383410
+    second: Set UI TNxiocon2_20
+  - first:
+      213: 9167928789622630509
+    second: Set UI TNxiocon2_21
+  - first:
+      213: -76138896214752129
+    second: Set UI TNxiocon2_22
+  - first:
+      213: -2779389080743243887
+    second: Set UI TNxiocon2_23
+  - first:
+      213: -231364498121791856
+    second: Set UI TNxiocon2_24
+  - first:
+      213: 2376171765990148658
+    second: Set UI TNxiocon2_25
+  - first:
+      213: 3661556508011966405
+    second: Set UI TNxiocon2_26
+  - first:
+      213: -5486405952407098953
+    second: Set UI TNxiocon2_27
+  - first:
+      213: -6226225408208208885
+    second: Set UI TNxiocon2_28
+  - first:
+      213: -1933808088340503854
+    second: Set UI TNxiocon2_29
+  - first:
+      213: -7757136838646477924
+    second: Set UI TNxiocon2_30
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: -1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Set UI TNxiocon2_0
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 1036
+        width: 205
+        height: 178
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c544cb84f231d6e00800000000000000
+      internalID: 1039508182797141084
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Set UI TNxiocon2_1
+      rect:
+        serializedVersion: 2
+        x: 248
+        y: 1130
+        width: 526
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a704fdf1dddc1e50800000000000000
+      internalID: 6781539032891656099
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Set UI TNxiocon2_2
+      rect:
+        serializedVersion: 2
+        x: 807
+        y: 1204
+        width: 109
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c5ae86d2f8610d4f0800000000000000
+      internalID: -806119529101333924
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Set UI TNxiocon2_3
+      rect:
+        serializedVersion: 2
+        x: 973
+        y: 1133
+        width: 127
+        height: 110
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ae239ffaf52e20a0800000000000000
+      internalID: -6904539418752504157
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Set UI TNxiocon2_4
+      rect:
+        serializedVersion: 2
+        x: 1133
+        y: 1133
+        width: 47
+        height: 110
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7dba66b2e180a9dd0800000000000000
+      internalID: -2478659719243846697
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Set UI TNxiocon2_5
+      rect:
+        serializedVersion: 2
+        x: 1224
+        y: 1133
+        width: 47
+        height: 110
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b79ffce045ad4120800000000000000
+      internalID: 2399755874731005881
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Set UI TNxiocon2_6
+      rect:
+        serializedVersion: 2
+        x: 1304
+        y: 1133
+        width: 128
+        height: 111
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d7c03ffc5d4763560800000000000000
+      internalID: 7293145108238765181
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Set UI TNxiocon2_7
+      rect:
+        serializedVersion: 2
+        x: 799
+        y: 1126
+        width: 151
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 082a25a1a1608e390800000000000000
+      internalID: -7788968846356733312
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Set UI TNxiocon2_8
+      rect:
+        serializedVersion: 2
+        x: 261
+        y: 1060
+        width: 427
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3385be756075348b0800000000000000
+      internalID: -5169192262534735821
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Set UI TNxiocon2_9
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 1062
+        width: 416
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 96b8ce41182218650800000000000000
+      internalID: 6233301297054649193
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Set UI TNxiocon2_10
+      rect:
+        serializedVersion: 2
+        x: 1150
+        y: 825
+        width: 123
+        height: 251
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fea138be3b8654490800000000000000
+      internalID: -7762683260743509265
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Set UI TNxiocon2_11
+      rect:
+        serializedVersion: 2
+        x: 1299
+        y: 825
+        width: 123
+        height: 251
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc1a8af399ffc5620800000000000000
+      internalID: 2764365304961737163
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Set UI TNxiocon2_12
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 879
+        width: 132
+        height: 114
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 35506c141682ee970800000000000000
+      internalID: 8786004321226851667
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Set UI TNxiocon2_13
+      rect:
+        serializedVersion: 2
+        x: 190
+        y: 873
+        width: 129
+        height: 142
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b1798382671078f00800000000000000
+      internalID: 1118864639417423643
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Set UI TNxiocon2_14
+      rect:
+        serializedVersion: 2
+        x: 355
+        y: 873
+        width: 129
+        height: 142
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e668ecf18ce633b70800000000000000
+      internalID: 8877561096283522670
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Set UI TNxiocon2_15
+      rect:
+        serializedVersion: 2
+        x: 517
+        y: 886
+        width: 170
+        height: 147
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f662ef3860abbf8d0800000000000000
+      internalID: -2811449005215701393
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Set UI TNxiocon2_16
+      rect:
+        serializedVersion: 2
+        x: 725
+        y: 903
+        width: 125
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b3910f3c7925e180800000000000000
+      internalID: -9086811059540356169
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Set UI TNxiocon2_17
+      rect:
+        serializedVersion: 2
+        x: 882
+        y: 868
+        width: 201
+        height: 174
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb1b5a2ec57847020800000000000000
+      internalID: 2338642939521380798
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Set UI TNxiocon2_18
+      rect:
+        serializedVersion: 2
+        x: 1187
+        y: 874
+        width: 107
+        height: 159
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 226ba6a6e31e22ee0800000000000000
+      internalID: -1287218885284940254
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Set UI TNxiocon2_19
+      rect:
+        serializedVersion: 2
+        x: 1285
+        y: 874
+        width: 101
+        height: 159
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f38d93c84f108dc70800000000000000
+      internalID: 8995942405508814911
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Set UI TNxiocon2_20
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 726
+        width: 1403
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 278c32e0b9d559640800000000000000
+      internalID: 5086074274723383410
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Set UI TNxiocon2_21
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 668
+        width: 1351
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d68a88f09a60b3f70800000000000000
+      internalID: 9167928789622630509
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Set UI TNxiocon2_22
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 549
+        width: 1351
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f748789c31081fef0800000000000000
+      internalID: -76138896214752129
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Set UI TNxiocon2_23
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 304
+        width: 223
+        height: 223
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 19f03bd5b50ad69d0800000000000000
+      internalID: -2779389080743243887
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Set UI TNxiocon2_24
+      rect:
+        serializedVersion: 2
+        x: 289
+        y: 319
+        width: 109
+        height: 205
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 09660dbf6370accf0800000000000000
+      internalID: -231364498121791856
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Set UI TNxiocon2_25
+      rect:
+        serializedVersion: 2
+        x: 463
+        y: 304
+        width: 209
+        height: 223
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23ac725b1abd9f020800000000000000
+      internalID: 2376171765990148658
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Set UI TNxiocon2_26
+      rect:
+        serializedVersion: 2
+        x: 725
+        y: 366
+        width: 78
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5cfa2198e3670d230800000000000000
+      internalID: 3661556508011966405
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Set UI TNxiocon2_27
+      rect:
+        serializedVersion: 2
+        x: 852
+        y: 366
+        width: 223
+        height: 116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b9af21cade5cd3b0800000000000000
+      internalID: -5486405952407098953
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Set UI TNxiocon2_28
+      rect:
+        serializedVersion: 2
+        x: 1109
+        y: 397
+        width: 145
+        height: 142
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b0cfc3caaf00899a0800000000000000
+      internalID: -6226225408208208885
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Set UI TNxiocon2_29
+      rect:
+        serializedVersion: 2
+        x: 344
+        y: 302
+        width: 53
+        height: 73
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d2efa61acbb925e0800000000000000
+      internalID: -1933808088340503854
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Set UI TNxiocon2_30
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 66
+        width: 1356
+        height: 194
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c9b4162f42d195490800000000000000
+      internalID: -7757136838646477924
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: c4a61c885f447f74fb3d7695b14c5290
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

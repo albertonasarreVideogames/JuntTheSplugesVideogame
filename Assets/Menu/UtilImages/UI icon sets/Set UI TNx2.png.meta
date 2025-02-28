@@ -1,0 +1,728 @@
+fileFormatVersion: 2
+guid: aaa73db0158fd5b48ad28846dd151228
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 8992584326267037723
+    second: Set UI TNx2_0
+  - first:
+      213: -4771391747382962279
+    second: Set UI TNx2_1
+  - first:
+      213: 3193898106279664462
+    second: Set UI TNx2_2
+  - first:
+      213: -5284086168216874258
+    second: Set UI TNx2_3
+  - first:
+      213: -3862112140366166278
+    second: Set UI TNx2_4
+  - first:
+      213: 7670216005261610165
+    second: Set UI TNx2_5
+  - first:
+      213: 4476713203806655960
+    second: Set UI TNx2_6
+  - first:
+      213: 554059177716562340
+    second: Set UI TNx2_7
+  - first:
+      213: 5929988976058237069
+    second: Set UI TNx2_8
+  - first:
+      213: -7171781130689394952
+    second: Set UI TNx2_9
+  - first:
+      213: -2843430108066113023
+    second: Set UI TNx2_10
+  - first:
+      213: 4290862781221337288
+    second: Set UI TNx2_11
+  - first:
+      213: 8794675456857205957
+    second: Set UI TNx2_12
+  - first:
+      213: 6422745778997059107
+    second: Set UI TNx2_13
+  - first:
+      213: -6314445748321127162
+    second: Set UI TNx2_14
+  - first:
+      213: 8177660833890663029
+    second: Set UI TNx2_15
+  - first:
+      213: 8833046309666682045
+    second: Set UI TNx2_16
+  - first:
+      213: 3300745308543074454
+    second: Set UI TNx2_17
+  - first:
+      213: 5329543799524194741
+    second: Set UI TNx2_18
+  - first:
+      213: 5644281946722408980
+    second: Set UI TNx2_19
+  - first:
+      213: -5496737529574492058
+    second: Set UI TNx2_20
+  - first:
+      213: 9130196672116224964
+    second: Set UI TNx2_21
+  - first:
+      213: -667744356269148915
+    second: Set UI TNx2_22
+  - first:
+      213: -4022752035551125034
+    second: Set UI TNx2_23
+  - first:
+      213: 3149228209503167536
+    second: Set UI TNx2_24
+  - first:
+      213: -1426418458414796418
+    second: Set UI TNx2_25
+  - first:
+      213: -8863714748870832624
+    second: Set UI TNx2_26
+  - first:
+      213: 4178667931053236446
+    second: Set UI TNx2_27
+  - first:
+      213: 7515498006869950407
+    second: Set UI TNx2_28
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: -1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Set UI TNx2_0
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 836
+        width: 205
+        height: 177
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b1864ebccc31ccc70800000000000000
+      internalID: 8992584326267037723
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Set UI TNx2_1
+      rect:
+        serializedVersion: 2
+        x: 248
+        y: 930
+        width: 525
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99712055c7c98cdb0800000000000000
+      internalID: -4771391747382962279
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Set UI TNx2_2
+      rect:
+        serializedVersion: 2
+        x: 806
+        y: 1003
+        width: 110
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e4b9799d761035c20800000000000000
+      internalID: 3193898106279664462
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Set UI TNx2_3
+      rect:
+        serializedVersion: 2
+        x: 973
+        y: 933
+        width: 127
+        height: 110
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee2d0e450a72ba6b0800000000000000
+      internalID: -5284086168216874258
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Set UI TNx2_4
+      rect:
+        serializedVersion: 2
+        x: 1133
+        y: 933
+        width: 46
+        height: 110
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af640ce7875076ac0800000000000000
+      internalID: -3862112140366166278
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Set UI TNx2_5
+      rect:
+        serializedVersion: 2
+        x: 1224
+        y: 933
+        width: 46
+        height: 110
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5bc422871d4127a60800000000000000
+      internalID: 7670216005261610165
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Set UI TNx2_6
+      rect:
+        serializedVersion: 2
+        x: 1304
+        y: 932
+        width: 127
+        height: 111
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d55232b0fa702e30800000000000000
+      internalID: 4476713203806655960
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Set UI TNx2_7
+      rect:
+        serializedVersion: 2
+        x: 798
+        y: 926
+        width: 151
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a93758f2e960b700800000000000000
+      internalID: 554059177716562340
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Set UI TNx2_8
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 859
+        width: 428
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d800fe72e8d8b4250800000000000000
+      internalID: 5929988976058237069
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Set UI TNx2_9
+      rect:
+        serializedVersion: 2
+        x: 719
+        y: 861
+        width: 416
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f6c8623f07b87c90800000000000000
+      internalID: -7171781130689394952
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Set UI TNx2_10
+      rect:
+        serializedVersion: 2
+        x: 1149
+        y: 625
+        width: 274
+        height: 250
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 10a9111c16b1a88d0800000000000000
+      internalID: -2843430108066113023
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Set UI TNx2_12
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 678
+        width: 131
+        height: 114
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5cce1d85bb6fc0a70800000000000000
+      internalID: 8794675456857205957
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Set UI TNx2_13
+      rect:
+        serializedVersion: 2
+        x: 190
+        y: 672
+        width: 128
+        height: 142
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 32e52cfb14d222950800000000000000
+      internalID: 6422745778997059107
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Set UI TNx2_14
+      rect:
+        serializedVersion: 2
+        x: 354
+        y: 672
+        width: 129
+        height: 142
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 605f7d91c059e58a0800000000000000
+      internalID: -6314445748321127162
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Set UI TNx2_15
+      rect:
+        serializedVersion: 2
+        x: 517
+        y: 685
+        width: 169
+        height: 147
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 57a7da98333ec7170800000000000000
+      internalID: 8177660833890663029
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Set UI TNx2_16
+      rect:
+        serializedVersion: 2
+        x: 724
+        y: 702
+        width: 125
+        height: 142
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db4f144b1d8459a70800000000000000
+      internalID: 8833046309666682045
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Set UI TNx2_17
+      rect:
+        serializedVersion: 2
+        x: 881
+        y: 668
+        width: 201
+        height: 174
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6904fb9be5a9ecd20800000000000000
+      internalID: 3300745308543074454
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Set UI TNx2_20
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 525
+        width: 1403
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 668772ef65aa7b3b0800000000000000
+      internalID: -5496737529574492058
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Set UI TNx2_21
+      rect:
+        serializedVersion: 2
+        x: 46
+        y: 467
+        width: 1351
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c3f0fadf79f4be70800000000000000
+      internalID: 9130196672116224964
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Set UI TNx2_22
+      rect:
+        serializedVersion: 2
+        x: 46
+        y: 349
+        width: 1351
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d053ecbbb02bbb6f0800000000000000
+      internalID: -667744356269148915
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Set UI TNx2_23
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 104
+        width: 223
+        height: 222
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d1ee7d46505c28c0800000000000000
+      internalID: -4022752035551125034
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Set UI TNx2_24
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 101
+        width: 109
+        height: 222
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 03463180f5e44bb20800000000000000
+      internalID: 3149228209503167536
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Set UI TNx2_26
+      rect:
+        serializedVersion: 2
+        x: 463
+        y: 103
+        width: 208
+        height: 223
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01ec92bd562cdf480800000000000000
+      internalID: -8863714748870832624
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Set UI TNx2_27
+      rect:
+        serializedVersion: 2
+        x: 724
+        y: 166
+        width: 78
+        height: 140
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed0aeb0085c9df930800000000000000
+      internalID: 4178667931053236446
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Set UI TNx2_28
+      rect:
+        serializedVersion: 2
+        x: 852
+        y: 166
+        width: 222
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7cfb3a15e996c4860800000000000000
+      internalID: 7515498006869950407
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: f78ec638941707d4190e386b8ab8814b
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
