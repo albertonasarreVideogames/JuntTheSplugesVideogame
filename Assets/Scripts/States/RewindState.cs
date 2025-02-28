@@ -56,7 +56,7 @@ public class RewindState : MonoBehaviour
             if (GamingState.Instance != null)
             {         
                 // Espera a que se presione la tecla de espacio (pero evita múltiples presiones rápidas)
-                yield return new WaitUntil(() => (Input.GetKeyDown(KeyCode.Q) && !spacePressedThisFrame && GamingState.Instance.getIfPlayersStopMoving()) || stopRewind);
+                yield return new WaitUntil(() => (Input.GetKey(KeyCode.Q) && !spacePressedThisFrame && GamingState.Instance.getIfPlayersStopMoving()) || stopRewind);
 
                 if (stopRewind)
                 {
@@ -74,9 +74,6 @@ public class RewindState : MonoBehaviour
 
 
                 movementsManager.buttonspressed.RemoveAt(i);
-
-                // Espera hasta que se libere la tecla de espacio para evitar múltiples activaciones
-                yield return new WaitUntil(() => !Input.GetKey(KeyCode.Q));
 
                 // Marcar que la tecla espacio ha sido liberada
                 spacePressedThisFrame = false;

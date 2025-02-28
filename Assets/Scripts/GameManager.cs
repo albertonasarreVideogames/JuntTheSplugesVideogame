@@ -102,6 +102,7 @@ public class GameManager : MonoBehaviour
                 HandleMenu();
                 break;
             case GameState.Rewind:
+                HandleRwind();
                 break;
             default:
                 throw new ArgumentOutOfRangeException(nameof(newState), newState, null);
@@ -140,6 +141,12 @@ public class GameManager : MonoBehaviour
     {
         Time.timeScale = 1;
         SoundManager.StopOst();
+
+    }
+
+    private void HandleRwind()
+    {
+        Time.timeScale = 1.5f;
 
     }
 
