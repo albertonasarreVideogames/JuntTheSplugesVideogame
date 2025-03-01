@@ -18,6 +18,7 @@ public class MainMenu : MenuBase
     [Header("Others")]
     public CinemachineVirtualCamera transitionCam; // used to reference the MainMenuController
     public GameObject transitionLvl1;
+    private bool buttoncontollerBlocked = false;
     private enum MenuOptions
     {
         NewGame = 0,
@@ -34,14 +35,15 @@ public class MainMenu : MenuBase
     }
     void Update()
     {
-        menuButtonController.Update();
+        if (!buttoncontollerBlocked) { menuButtonController.Update(); }
         SetDefaultValues();
 
-        if (ControlsPanel.activeSelf)
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if (Input.anyKeyDown)
+            if (buttoncontollerBlocked)
             {
                 ControlsPanel.SetActive(false);
+                buttoncontollerBlocked = false;
             }
         }
 
@@ -60,7 +62,8 @@ public class MainMenu : MenuBase
             case (int)MenuOptions.Settings:
                 ExecuteButtonAction(() =>
                 {
-                    ControlsPanel.SetActive(true);
+                    ControlsPanel.SetActive(!buttoncontollerBlocked);
+                    buttoncontollerBlocked = !buttoncontollerBlocked;
                 }, settingsAnimator);
                 break;
 
@@ -68,7 +71,8 @@ public class MainMenu : MenuBase
                 ExecuteButtonAction(() =>
                 {
 					var confirm = gameObject.AddComponent<ConfirmationPanel>();
-					confirm.Initiate(surePanel, ()=>Quit());
+                    buttoncontollerBlocked = !buttoncontollerBlocked;
+                    confirm.Initiate(surePanel, ()=>Quit());
                 }, quitAnimator);
                 break;
             case (int)MenuOptions.LevelSelected:
