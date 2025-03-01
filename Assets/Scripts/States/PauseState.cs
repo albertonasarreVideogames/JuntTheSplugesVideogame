@@ -19,6 +19,7 @@ public class PauseState : MonoBehaviour
     public Animator backToMenuAnimator;
     public GameObject ControlsPanel;
     private bool button1EndSequence = false;
+    private bool buttoncontollerBlocked = false;
 
     private enum PauseOptions
     {
@@ -68,13 +69,14 @@ public class PauseState : MonoBehaviour
     // Update is called once per frame
     public void UpdateState()
     {
-        menuButtonController.Update();
+        if (!buttoncontollerBlocked) { menuButtonController.Update(); }
         SetDefaultValues();
-        if (ControlsPanel.activeSelf)
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if (Input.anyKeyDown)
+            if (buttoncontollerBlocked)
             {
                 ControlsPanel.SetActive(false);
+                buttoncontollerBlocked = false;
             }
         }
 
@@ -91,7 +93,8 @@ public class PauseState : MonoBehaviour
             case (int)PauseOptions.Settings:
                 ExecuteButtonAction(() =>
                 {
-                    ControlsPanel.SetActive(true);
+                    ControlsPanel.SetActive(!buttoncontollerBlocked);
+                    buttoncontollerBlocked = !buttoncontollerBlocked;
                 }, settingsAnimator);
                 break;
 
@@ -99,6 +102,7 @@ public class PauseState : MonoBehaviour
                 ExecuteButtonAction(() =>
                 {
                     var confirm = gameObject.AddComponent<ConfirmationPanel>();
+                    buttoncontollerBlocked = !buttoncontollerBlocked;
                     confirm.Initiate(surePanel, () => Quit());
                 }, quitAnimator);
                 break;
@@ -106,6 +110,7 @@ public class PauseState : MonoBehaviour
                 ExecuteButtonAction(() =>
                 {
                     button1EndSequence = true;
+                    buttoncontollerBlocked = false;
                     GoToMenu();
                 }, backToMenuAnimator);
                 break;
