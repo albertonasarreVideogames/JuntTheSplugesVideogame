@@ -8,6 +8,48 @@ namespace LevelTests
 {
     public class World5Test
     {
+
+        [UnityTest]
+        [Timeout(90000)]
+        public IEnumerator Level1()
+        {
+            MovementsManager movementsManager = new MovementsManager();
+            movementsManager.AddMChangePlayer(1);
+            movementsManager.AddMovementUp(3);
+            movementsManager.AddMChangePlayer(1);
+            movementsManager.AddMovementRight(1);
+            movementsManager.AddMovementUp(4);
+            movementsManager.AddMovementDown(2);
+            movementsManager.AddMovementLeft(5);
+            movementsManager.AddMChangePlayer(1);
+            movementsManager.AddMovementDown(1);
+            movementsManager.AddMChangePlayer(1);
+            movementsManager.AddMovementUp(4);
+            movementsManager.AddMovementRight(11);
+            movementsManager.AddMChangePlayer(1);
+            movementsManager.AddMovementUp(1);
+            movementsManager.AddMChangePlayer(1);
+            movementsManager.AddMovementDown(1);
+            movementsManager.AddMovementUp(1);
+            movementsManager.AddMChangePlayer(1);
+            movementsManager.AddMovementDown(1);
+            movementsManager.AddMChangePlayer(1);
+            movementsManager.AddMovementLeft(2);
+            movementsManager.AddMChangePlayer(1);
+            movementsManager.AddMovementUp(1);
+            movementsManager.AddMChangePlayer(1);
+            movementsManager.AddMovementDown(1);
+            movementsManager.AddMChangePlayer(1);
+            movementsManager.AddMovementLeft(1);
+            movementsManager.AddMovementDown(5);
+            movementsManager.AddMovementLeft(22);
+            movementsManager.AddMChangePlayer(1);
+            movementsManager.AddMovementLeft(1);
+            movementsManager.AddMovementDown(10);
+            movementsManager.AddMovementLeft(20);
+
+            yield return TestUtilities.RunTest("World5Level1", movementsManager, GameState.Victory, 10.0f);
+        }
         [UnityTest]
         [Timeout(90000)]
         public IEnumerator Level2()
