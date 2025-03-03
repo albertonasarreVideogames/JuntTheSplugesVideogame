@@ -230,4 +230,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MainMenuAndLevels/LevelSelectorMenu.unity
     guid: 8ca349c2a5d2b3a45949dc259f893809
+  - enabled: 1
+    path: Assets/Scenes/LevelEditor/WorldsAndLevels/world 5/World5level2.unity
+    guid: fa205f1c80c76b3468bdb76adaa31b8e
   m_configObjects: {}
