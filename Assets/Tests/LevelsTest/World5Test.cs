@@ -136,9 +136,6 @@ namespace LevelTests
             movementsManager.AddMovementUp(9);
             movementsManager.AddMovementLeft(1);
 
-
-
-
             yield return TestUtilities.RunTest("World5Level2", movementsManager, GameState.Victory, 10.0f);
         }
 
@@ -241,11 +238,42 @@ namespace LevelTests
             movementsManager.AddMovementRight(6);
             movementsManager.AddMovementDown(2);
 
-
-
-
-
             yield return TestUtilities.RunTest("World5Level3", movementsManager, GameState.Victory, 10.0f);
+        }
+
+        [UnityTest]
+        [Timeout(90000)]
+        public IEnumerator Level4()
+        {
+            MovementsManager movementsManager = new MovementsManager();
+            movementsManager.AddMChangePlayer(1);
+            movementsManager.AddMovementLeft(5);
+            movementsManager.AddMChangePlayer(1);
+            movementsManager.AddMovementUp(1);
+            movementsManager.AddMChangePlayer(1);
+            movementsManager.AddMovementRight(1);
+            movementsManager.AddMovementLeft(1);
+            movementsManager.AddMChangePlayer(1);
+            movementsManager.AddMovementDown(1);
+            movementsManager.AddMovementLeft(8);
+            movementsManager.AddMovementUp(3);
+            movementsManager.AddMChangePlayer(1);
+            movementsManager.AddMovementLeft(7);
+            movementsManager.AddMovementDown(5);
+            movementsManager.AddMovementLeft(1);
+            movementsManager.AddMChangePlayer(1);
+            movementsManager.AddMovementRight(6);
+            movementsManager.AddMovementUp(5);
+            movementsManager.AddMovementRight(2);
+            movementsManager.AddMovementUp(2);
+
+            movementsManager.AddMovementRight(8);
+            
+            movementsManager.AddMovementLeft(16);
+            movementsManager.AddMovementDown(5);
+            movementsManager.AddMovementLeft(1);
+
+            yield return TestUtilities.RunTest("World5Level4", movementsManager, GameState.Victory, 10.0f);
         }
     }
     }
