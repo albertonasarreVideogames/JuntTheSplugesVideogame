@@ -143,6 +143,7 @@ namespace LevelTests
         }
 
         [UnityTest]
+        [Timeout(900000)]
         public IEnumerator Level3()
         {
             MovementsManager movementsManager = new MovementsManager();
@@ -162,7 +163,87 @@ namespace LevelTests
             movementsManager.AddMovementUp(1);
             movementsManager.AddMovementDown(2);
             movementsManager.AddMChangePlayer(1);
-            movementsManager.AddMovementUp(5);
+            movementsManager.AddMovementUp(10);
+            movementsManager.AddMovementRight(3);
+
+            movementsManager.AddMovementDown(3);
+            movementsManager.AddMovementLeft(2);
+            movementsManager.AddMovementDown(5);
+            movementsManager.AddMChangePlayer(1);
+            movementsManager.AddMovementUp(1);
+            movementsManager.AddMChangePlayer(1);
+            movementsManager.AddMovementDown(3);
+
+            movementsManager.AddMChangePlayer(1);
+            movementsManager.AddMovementDown(1);
+            movementsManager.AddMovementUp(1);
+            movementsManager.AddMChangePlayer(1);
+            movementsManager.AddMovementUp(7);
+            movementsManager.AddMovementLeft(8);
+            movementsManager.AddMChangePlayer(1);
+            movementsManager.AddMovementDown(1);
+            movementsManager.AddMovementUp(1);
+            movementsManager.AddMChangePlayer(1);
+            movementsManager.AddMovementDown(7);
+
+            movementsManager.AddMovementUp(2);
+            movementsManager.AddMChangePlayer(1);
+            movementsManager.AddMovementRight(5);
+            movementsManager.AddMovementDown(2);
+            movementsManager.AddMovementRight(1);
+            movementsManager.AddMChangePlayer(1);
+            movementsManager.AddMovementUp(4);
+            movementsManager.AddMovementLeft(1);
+            movementsManager.AddMovementUp(1);
+            movementsManager.AddMovementRight(1);
+            movementsManager.AddMovementDown(4);
+            movementsManager.AddMovementLeft(1);
+
+            movementsManager.AddMChangePlayer(1);
+            movementsManager.AddMovementLeft(1);
+            movementsManager.AddMovementUp(10);
+            movementsManager.AddMovementRight(2);
+
+            movementsManager.AddMovementLeft(7);
+            movementsManager.AddMovementDown(3);
+            movementsManager.AddMovementLeft(3);
+            movementsManager.AddMovementDown(7);
+            movementsManager.AddMovementUp(1);
+            movementsManager.AddMChangePlayer(1);
+            movementsManager.AddMovementRight(1);
+            movementsManager.AddMovementLeft(1);
+            movementsManager.AddMChangePlayer(1);
+            movementsManager.AddMovementDown(1);
+            movementsManager.AddMovementRight(1);
+            movementsManager.AddMChangePlayer(1);
+            movementsManager.AddMovementRight(1);
+            movementsManager.AddMovementLeft(1);
+            movementsManager.AddMChangePlayer(1);
+            movementsManager.AddMovementLeft(1);
+
+            movementsManager.AddMChangePlayer(1);
+            movementsManager.AddMovementRight(1);
+            movementsManager.AddMovementLeft(1);
+            movementsManager.AddMovementRight(1);
+            movementsManager.AddMovementUp(6);
+            movementsManager.AddMovementLeft(1);
+            movementsManager.AddMovementDown(8);
+            movementsManager.AddMovementRight(1);
+            movementsManager.AddMovementDown(2);
+            movementsManager.AddMovementLeft(1);
+            movementsManager.AddMovementUp(1);
+            movementsManager.AddMovementRight(1);
+            movementsManager.AddMovementUp(1);
+            movementsManager.AddMovementLeft(5);
+
+            movementsManager.AddMovementDown(10);
+            movementsManager.AddMovementUp(2);
+            movementsManager.AddMovementRight(6);
+            movementsManager.AddMovementDown(2);
+
+
+
+
 
             yield return TestUtilities.RunTest("World5Level3", movementsManager, GameState.Victory, 10.0f);
         }
