@@ -8,7 +8,8 @@ public static class TestUtilities
 {
     public static IEnumerator RunTest(string sceneName, MovementsManager movementsManager, GameState expectedState,float timeBetweenmovementsMultiplicator = 2f)
     {
-        
+        bool manualTestActivated = false;
+
         yield return SceneManager.LoadSceneAsync(sceneName, LoadSceneMode.Single);
         yield return new WaitForSeconds(0.1f * timeBetweenmovementsMultiplicator);
 
@@ -17,14 +18,12 @@ public static class TestUtilities
         {
             if (GamingState.Instance != null)
             {
-                //yield return new WaitForSeconds(0.1f*timeBetweenmovementsMultiplicator);
-                while (!GamingState.Instance.getIfPlayersStopMoving())
-                {
-                    // Aquí se puede agregar un pequeño retraso para evitar que la corutina consuma demasiados recursos
-                    yield return null; // Espera hasta el siguiente frame
-                }
+                yield return new WaitUntil(() => (Input.GetKeyDown(KeyCode.T) && GamingState.Instance.getIfPlayersStopMoving()) || (!manualTestActivated && GamingState.Instance.getIfPlayersStopMoving()));
+
+
                 movementsManager.executeComand(i);
                 //Debug.Log("Me muevo");
+                yield return new WaitUntil(() => !Input.GetKey(KeyCode.T));
             }
             else
             {

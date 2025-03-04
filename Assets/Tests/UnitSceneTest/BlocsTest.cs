@@ -91,7 +91,7 @@ namespace Tests
         {
             MovementsManager movementsManager = new MovementsManager();
             movementsManager.AddMovementRight(9);
-            movementsManager.AddMovementLeft(15);
+            movementsManager.AddMovementLeft(16);
 
             yield return TestUtilities.RunTest("BlocsTestScenary3", movementsManager, GameState.Victory, 10.0f);
         }
