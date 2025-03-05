@@ -383,7 +383,11 @@ namespace LevelTests
             movementsManager.AddMovementRight(6);
             movementsManager.AddMChangePlayer(1);
             movementsManager.AddMovementUp(4);
-            movementsManager.AddMovementRight(19);
+            movementsManager.AddMovementRight(7);
+            movementsManager.AddMovementDown(2);
+            movementsManager.AddMovementRight(7);
+            movementsManager.AddMovementUp(2);
+            movementsManager.AddMovementRight(7);
             movementsManager.AddMChangePlayer(1);
             movementsManager.AddMovementUp(1);
 
