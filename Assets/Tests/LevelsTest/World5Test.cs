@@ -354,10 +354,40 @@ namespace LevelTests
         public IEnumerator Level6()
         {
             MovementsManager movementsManager = new MovementsManager();
-            movementsManager.AddMChangePlayer(1);
+            movementsManager.AddMovementRight(1);
+            movementsManager.AddMovementUp(5);
+            movementsManager.AddMovementDown(1);
+            movementsManager.AddMovementLeft(2);
+            movementsManager.AddMovementUp(1);
+            movementsManager.AddMovementLeft(1);
+            movementsManager.AddMovementUp(5);
             movementsManager.AddMovementRight(3);
+            movementsManager.AddMovementUp(2);
+            movementsManager.AddMovementLeft(2);
+            movementsManager.AddMovementDown(10);
+            movementsManager.AddMovementLeft(5);
+            movementsManager.AddMovementDown(1);
+            movementsManager.AddMovementLeft(2);
+            movementsManager.AddMovementRight(2);
+            movementsManager.AddMovementUp(1);
+            movementsManager.AddMovementRight(4);
+            movementsManager.AddMovementUp(7);
+            movementsManager.AddMovementLeft(7);
+            movementsManager.AddMovementDown(3);
+            movementsManager.AddMovementUp(2);
+            movementsManager.AddMovementRight(2);
             movementsManager.AddMChangePlayer(1);
-            movementsManager.AddMovementLeft(1);          
+            movementsManager.AddMovementUp(3);
+            movementsManager.AddMovementRight(1);
+            movementsManager.AddMovementUp(3);
+            movementsManager.AddMovementRight(6);
+            movementsManager.AddMChangePlayer(1);
+            movementsManager.AddMovementUp(4);
+            movementsManager.AddMovementRight(19);
+            movementsManager.AddMChangePlayer(1);
+            movementsManager.AddMovementUp(1);
+
+
 
             yield return TestUtilities.RunTest("World5Level6", movementsManager, GameState.Victory, 10.0f);
         }
