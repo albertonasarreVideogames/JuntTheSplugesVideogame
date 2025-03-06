@@ -401,7 +401,25 @@ namespace LevelTests
         public IEnumerator Level7()
         {
             MovementsManager movementsManager = new MovementsManager();
-            movementsManager.AddMovementRight(1);     
+            movementsManager.AddMovementUp(3);
+            movementsManager.AddMovementLeft(1);
+            movementsManager.AddMovementUp(3);
+            movementsManager.AddMovementLeft(2);
+            movementsManager.AddMovementDown(1);
+            movementsManager.AddMovementLeft(3);
+            movementsManager.AddMovementUp(1);
+
+            movementsManager.AddMovementRight(2);
+            movementsManager.AddMovementDown(1);
+            movementsManager.AddMovementRight(1);
+            movementsManager.AddMovementUp(3);
+            movementsManager.AddMovementLeft(1);
+            movementsManager.AddMovementDown(1);
+            movementsManager.AddMovementLeft(4);
+            movementsManager.AddMovementUp(1);
+            movementsManager.AddMovementRight(4);
+
+
 
 
             yield return TestUtilities.RunTest("World5Level7", movementsManager, GameState.Victory, 10.0f);
