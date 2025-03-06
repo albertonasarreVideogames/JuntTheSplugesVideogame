@@ -419,6 +419,48 @@ namespace LevelTests
             movementsManager.AddMovementUp(1);
             movementsManager.AddMovementRight(4);
 
+            movementsManager.AddMChangePlayer(1);
+            movementsManager.AddMovementUp(5);
+            movementsManager.AddMovementRight(9);
+            movementsManager.AddMovementUp(2);
+            movementsManager.AddMovementRight(1);
+
+            movementsManager.AddMChangePlayer(1);
+            movementsManager.AddMovementUp(2);
+            movementsManager.AddMovementLeft(4);
+
+            movementsManager.AddMChangePlayer(1);
+            movementsManager.AddMovementUp(4);
+            movementsManager.AddMovementRight(1);
+            movementsManager.AddMovementUp(3);
+            movementsManager.AddMovementRight(1);
+
+            movementsManager.AddMChangePlayer(1);
+            movementsManager.AddMovementUp(1);
+            movementsManager.AddMovementDown(1);
+            movementsManager.AddMovementUp(3);
+
+            movementsManager.AddMChangePlayer(1);
+            movementsManager.AddMovementLeft(1);
+            movementsManager.AddMovementDown(4);
+            movementsManager.AddMovementLeft(2);
+            movementsManager.AddMovementUp(10);
+            movementsManager.AddMovementLeft(9);
+            movementsManager.AddMovementDown(3);
+            movementsManager.AddMovementLeft(11);
+
+            movementsManager.AddMChangePlayer(1);
+            movementsManager.AddMovementRight(12);
+            movementsManager.AddMovementLeft(1);
+            movementsManager.AddMovementRight(1);
+            movementsManager.AddMovementLeft(13);  ///////////// WHAT HAPEND I NEED ONE MORE MOVEMNT . mAYBE THERE ARE TWO SPLUNGES TOGHUTHER?
+            movementsManager.AddMovementDown(4);  ///////////// WHAT HAPEND
+            movementsManager.AddMovementLeft(12);  ///////////// WHAT HAPEND
+
+
+
+
+
 
 
 
