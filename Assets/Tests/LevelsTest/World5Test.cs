@@ -481,8 +481,27 @@ namespace LevelTests
             movementsManager.AddMovementUp(1);
             movementsManager.AddMovementDown(1);
             movementsManager.AddMovementUp(1);
-            movementsManager.AddMovementRight(10);
-
+            movementsManager.AddMChangePlayer(2);
+            movementsManager.AddMovementDown(1);
+            movementsManager.AddMChangePlayer(1);
+            movementsManager.AddMovementUp(5);
+            movementsManager.AddMovementRight(8);
+            movementsManager.AddMovementDown(7);
+            movementsManager.AddMovementUp(6);
+            movementsManager.AddMChangePlayer(1);
+            movementsManager.AddMovementUp(6);
+            movementsManager.AddMovementDown(1);
+            movementsManager.AddMovementUp(4);
+            movementsManager.AddMChangePlayer(2);
+            movementsManager.AddMovementDown(1);
+            movementsManager.AddMovementUp(2);
+            movementsManager.AddMChangePlayer(2);
+            movementsManager.AddMovementUp(12);
+            movementsManager.AddMovementRight(20);
+            movementsManager.AddMChangePlayer(1);
+            movementsManager.AddMovementRight(20);
+            movementsManager.AddMChangePlayer(1);
+            movementsManager.AddMovementRight(20);
 
             yield return TestUtilities.RunTest("World5Level8", movementsManager, GameState.Victory, 10.0f);
         }
