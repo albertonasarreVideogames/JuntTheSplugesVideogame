@@ -511,8 +511,69 @@ namespace LevelTests
         {
             MovementsManager movementsManager = new MovementsManager();
             movementsManager.AddMChangePlayer(1);
+            movementsManager.AddMovementLeft(3);
             movementsManager.AddMovementUp(2);
-      
+            movementsManager.AddMovementRight(1);
+            movementsManager.AddMovementUp(2);
+            movementsManager.AddMovementRight(3);
+            movementsManager.AddMovementLeft(1);
+            movementsManager.AddMovementDown(2);
+            movementsManager.AddMovementRight(2);
+            movementsManager.AddMovementDown(2);
+
+            movementsManager.AddMChangePlayer(1);
+            movementsManager.AddMovementLeft(1);
+            movementsManager.AddMovementUp(4);
+            movementsManager.AddMovementRight(2);
+
+            movementsManager.AddMChangePlayer(1);
+            movementsManager.AddMovementLeft(2);
+
+            movementsManager.AddMChangePlayer(1);
+            movementsManager.AddMovementRight(1);
+            movementsManager.AddMovementLeft(1);
+            movementsManager.AddMovementDown(2);
+            movementsManager.AddMovementLeft(2);
+            movementsManager.AddMovementDown(2);
+            movementsManager.AddMovementRight(2);
+            movementsManager.AddMovementDown(2);
+            movementsManager.AddMovementRight(3);
+            movementsManager.AddMovementDown(3);
+            movementsManager.AddMovementRight(15);
+            movementsManager.AddMovementLeft(1);
+            movementsManager.AddMovementDown(2);
+            movementsManager.AddMovementRight(2);
+            movementsManager.AddMovementDown(3);
+            movementsManager.AddMovementRight(3);
+
+            movementsManager.AddMovementLeft(9);
+            movementsManager.AddMovementUp(3);
+            movementsManager.AddMovementRight(2);
+            movementsManager.AddMovementUp(4);
+            movementsManager.AddMovementLeft(2);
+
+            movementsManager.AddMChangePlayer(1);
+            movementsManager.AddMovementDown(2);
+            movementsManager.AddMovementLeft(2);
+            movementsManager.AddMovementDown(3);
+            movementsManager.AddMovementRight(2);
+            movementsManager.AddMovementDown(2);
+            movementsManager.AddMovementLeft(1);
+            movementsManager.AddMovementDown(3);
+            movementsManager.AddMovementRight(20);
+
+            movementsManager.AddMChangePlayer(1);
+            movementsManager.AddMovementRight(2);
+            movementsManager.AddMovementDown(4);
+            movementsManager.AddMovementLeft(3);
+            movementsManager.AddMovementDown(3);
+            movementsManager.AddMovementRight(9);
+
+
+
+
+
+
             yield return TestUtilities.RunTest("World5Level9", movementsManager, GameState.Victory, 10.0f);
         }
     }
