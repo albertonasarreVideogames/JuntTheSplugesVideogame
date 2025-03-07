@@ -565,14 +565,9 @@ namespace LevelTests
             movementsManager.AddMChangePlayer(1);
             movementsManager.AddMovementRight(2);
             movementsManager.AddMovementDown(4);
-            movementsManager.AddMovementLeft(3);
+            movementsManager.AddMovementLeft(2);
             movementsManager.AddMovementDown(3);
             movementsManager.AddMovementRight(9);
-
-
-
-
-
 
             yield return TestUtilities.RunTest("World5Level9", movementsManager, GameState.Victory, 10.0f);
         }
