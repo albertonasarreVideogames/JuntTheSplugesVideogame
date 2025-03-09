@@ -8,7 +8,7 @@ public static class TestUtilities
 {
     public static IEnumerator RunTest(string sceneName, MovementsManager movementsManager, GameState expectedState,float timeBetweenmovementsMultiplicator = 2f)
     {
-        bool manualTestActivated = false;
+        bool manualTestActivated = true;
 
         yield return SceneManager.LoadSceneAsync(sceneName, LoadSceneMode.Single);
         yield return new WaitForSeconds(0.1f * timeBetweenmovementsMultiplicator);
