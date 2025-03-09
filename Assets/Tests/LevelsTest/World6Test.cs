@@ -89,5 +89,46 @@ namespace LevelTests
 
             yield return TestUtilities.RunTest("World6Level3", movementsManager, GameState.Victory, 10.0f);
         }
+
+        [UnityTest]
+        [Timeout(900000)]
+        public IEnumerator Level4()
+        {
+            MovementsManager movementsManager = new MovementsManager();
+            movementsManager.AddMovementDown(2);
+            movementsManager.AddMovementLeft(2);
+            movementsManager.AddMChangePlayer(1);
+            movementsManager.AddMovementUp(3);
+            movementsManager.AddMovementRight(3);
+            movementsManager.AddMovementDown(3);
+            movementsManager.AddMovementLeft(4);
+            movementsManager.AddMovementDown(3);
+            movementsManager.AddMChangePlayer(1);
+            movementsManager.AddMovementRight(12);
+            movementsManager.AddMChangePlayer(1);
+            movementsManager.AddMovementUp(10);
+            movementsManager.AddMChangePlayer(1);
+            movementsManager.AddMovementLeft(21);
+            movementsManager.AddMChangePlayer(1);
+            movementsManager.AddMovementDown(12);
+            movementsManager.AddMovementRight(19);
+            movementsManager.AddMovementUp(11);
+            movementsManager.AddMChangePlayer(1);
+            movementsManager.AddMovementDown(8);
+            movementsManager.AddMovementUp(8);
+            movementsManager.AddMovementLeft(3);
+            movementsManager.AddMChangePlayer(1);
+            movementsManager.AddMovementDown(2);
+            movementsManager.AddMovementLeft(16);
+            movementsManager.AddMChangePlayer(1);
+            movementsManager.AddMovementRight(1);
+            movementsManager.AddMChangePlayer(1);
+            movementsManager.AddMovementLeft(1);
+            movementsManager.AddMovementDown(1);
+            movementsManager.AddMovementRight(6);
+            movementsManager.AddMovementLeft(5);
+
+            yield return TestUtilities.RunTest("World6Level4", movementsManager, GameState.Victory, 10.0f);
+        }
     }
 }
