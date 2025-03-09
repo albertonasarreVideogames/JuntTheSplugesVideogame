@@ -111,9 +111,12 @@ namespace LevelTests
             movementsManager.AddMovementLeft(6);
             movementsManager.AddMovementUp(1);
             movementsManager.AddMovementLeft(18);
-            movementsManager.AddMovementDown(1);
             movementsManager.AddMChangePlayer(1);
             movementsManager.AddMovementDown(12);
+            movementsManager.AddMovementUp(1);
+            movementsManager.AddMChangePlayer(1);
+            movementsManager.AddMovementDown(1);
+            movementsManager.AddMChangePlayer(1);
             movementsManager.AddMovementRight(19);
             movementsManager.AddMovementUp(11);
             movementsManager.AddMChangePlayer(1);
