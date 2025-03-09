@@ -56,5 +56,38 @@ namespace LevelTests
 
             yield return TestUtilities.RunTest("World6Level2", movementsManager, GameState.Victory, 10.0f);
         }
+
+        [UnityTest]
+        [Timeout(900000)]
+        public IEnumerator Level3()
+        {
+            MovementsManager movementsManager = new MovementsManager();
+            movementsManager.AddMovementUp(2);
+            movementsManager.AddMovementLeft(3);
+            movementsManager.AddMovementRight(1);
+            movementsManager.AddMChangePlayer(1);
+            movementsManager.AddMovementUp(7);
+            movementsManager.AddMovementRight(2);
+            movementsManager.AddMovementDown(1);
+            movementsManager.AddMovementUp(1);
+            movementsManager.AddMovementLeft(5);
+            movementsManager.AddMChangePlayer(1);
+
+            // aqui se enseña como cambiar la posicion relativa del player negro respecto a los otros es util
+            movementsManager.AddMovementDown(1);
+            movementsManager.AddMChangePlayer(1);
+            movementsManager.AddMovementUp(1);
+            movementsManager.AddMChangePlayer(1);
+            movementsManager.AddMovementRight(7);
+            movementsManager.AddMovementDown(11);
+            movementsManager.AddMovementLeft(20);
+            movementsManager.AddMovementRight(3);
+            movementsManager.AddMovementUp(10);
+            movementsManager.AddMovementRight(2);
+
+
+
+            yield return TestUtilities.RunTest("World6Level3", movementsManager, GameState.Victory, 10.0f);
+        }
     }
 }
