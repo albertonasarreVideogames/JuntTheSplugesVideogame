@@ -143,7 +143,14 @@ namespace LevelTests
         {
             MovementsManager movementsManager = new MovementsManager();
             movementsManager.AddMovementRight(9);
-                    
+            movementsManager.AddMovementUp(1);
+            movementsManager.AddMovementDown(1);
+            movementsManager.AddMovementUp(1);
+            movementsManager.AddMovementDown(3);
+            movementsManager.AddMovementRight(5);
+            movementsManager.AddMovementUp(1);
+            movementsManager.AddMovementDown(2);
+            movementsManager.AddMovementLeft(18);
 
             yield return TestUtilities.RunTest("World6Level5", movementsManager, GameState.Victory, 10.0f);
         }
