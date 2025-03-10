@@ -160,5 +160,31 @@ namespace LevelTests
 
             yield return TestUtilities.RunTest("World6Level5", movementsManager, GameState.Victory, 10.0f);
         }
+
+        [UnityTest]
+        [Timeout(900000)]
+        public IEnumerator Level6()
+        {
+            MovementsManager movementsManager = new MovementsManager();
+            movementsManager.AddMovementDown(3);
+            movementsManager.AddMovementLeft(2);
+            movementsManager.AddMovementDown(4);
+            movementsManager.AddMovementLeft(2);
+            movementsManager.AddMovementUp(5);
+            movementsManager.AddMovementDown(1);
+            movementsManager.AddMovementUp(3);
+            movementsManager.AddMovementRight(2);
+            movementsManager.AddMovementDown(7);
+            movementsManager.AddMovementLeft(2);
+            movementsManager.AddMovementUp(7);
+            movementsManager.AddMovementRight(2);
+            movementsManager.AddMovementDown(3);
+            movementsManager.AddMovementRight(2);
+            movementsManager.AddMovementUp(3);
+            movementsManager.AddMovementRight(12);
+
+
+            yield return TestUtilities.RunTest("World6Level6", movementsManager, GameState.Victory, 10.0f);
+        }
     }
 }
