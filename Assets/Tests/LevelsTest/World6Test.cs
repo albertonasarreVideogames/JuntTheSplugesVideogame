@@ -334,6 +334,47 @@ namespace LevelTests
             movementsManager.AddMovementRight(2);
 
             movementsManager.AddMovementUp(6);
+            movementsManager.AddMovementRight(10);
+            movementsManager.AddMovementDown(6);
+            movementsManager.AddMovementRight(2);
+            movementsManager.AddMovementLeft(2);
+            movementsManager.AddMovementRight(5);
+            movementsManager.AddMovementUp(4);
+
+            movementsManager.AddMovementRight(1);
+            movementsManager.AddMovementUp(3);
+            movementsManager.AddMovementLeft(1);
+            movementsManager.AddMovementRight(1);
+            movementsManager.AddMovementLeft(1);
+            movementsManager.AddMovementUp(3);
+            movementsManager.AddMovementLeft(1);
+            movementsManager.AddMovementUp(1);
+            movementsManager.AddMovementLeft(3);
+            movementsManager.AddMovementRight(2);
+            movementsManager.AddMovementLeft(10);
+
+            movementsManager.AddMovementRight(2);
+            movementsManager.AddMovementLeft(2);
+            movementsManager.AddMovementDown(2);
+            movementsManager.AddMovementLeft(6);
+            movementsManager.AddMovementRight(6);
+            movementsManager.AddMovementDown(9);
+            movementsManager.AddMovementUp(6);
+
+            movementsManager.AddMovementRight(7);
+            movementsManager.AddMovementDown(6);
+            movementsManager.AddMovementLeft(5);
+            movementsManager.AddMovementRight(1);
+            movementsManager.AddMovementLeft(1);
+            movementsManager.AddMovementRight(5);
+            movementsManager.AddMovementUp(6);
+            movementsManager.AddMovementLeft(7);
+            movementsManager.AddMovementUp(3);
+            movementsManager.AddMovementLeft(6);
+            movementsManager.AddMovementDown(3);
+            movementsManager.AddMovementLeft(3);
+            movementsManager.AddMovementUp(5);
+
 
 
             yield return TestUtilities.RunTest("World6Level10", movementsManager, GameState.Victory, 10.0f);
