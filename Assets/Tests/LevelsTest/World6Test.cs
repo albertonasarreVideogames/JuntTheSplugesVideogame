@@ -266,19 +266,44 @@ namespace LevelTests
         public IEnumerator Level9()
         {
             MovementsManager movementsManager = new MovementsManager();
+            movementsManager.AddMovementRight(2);
+            movementsManager.AddMovementDown(2);
+            movementsManager.AddMovementLeft(1);
+            movementsManager.AddMovementUp(2);
+            movementsManager.AddMovementLeft(1);
+
             movementsManager.AddMovementDown(1);
             movementsManager.AddMovementLeft(1);
             movementsManager.AddMovementDown(1);
-            movementsManager.AddMovementRight(2);
+            movementsManager.AddMovementRight(1);//
+            movementsManager.AddMovementUp(4);
+            movementsManager.AddMovementLeft(1);
+            movementsManager.AddMovementDown(3);
+            movementsManager.AddMovementRight(1);
+            movementsManager.AddMovementUp(1);
+            movementsManager.AddMovementLeft(1);
+            movementsManager.AddMovementDown(2);
+            movementsManager.AddMovementRight(1);
+            movementsManager.AddMovementRight(1);//
 
             movementsManager.AddMovementUp(1);
             movementsManager.AddMovementRight(1);
             movementsManager.AddMovementDown(2);
             movementsManager.AddMovementLeft(4);
             movementsManager.AddMovementDown(1);
-            movementsManager.AddMovementRight(4);
+            movementsManager.AddMovementRight(1);
+            movementsManager.AddMovementDown(1);
+            movementsManager.AddMovementRight(3);
             movementsManager.AddMovementLeft(3);
 
+            movementsManager.AddMovementUp(3);
+            movementsManager.AddMovementRight(3);
+            movementsManager.AddMovementDown(2);
+            movementsManager.AddMovementUp(2);
+            movementsManager.AddMovementLeft(3);
+            movementsManager.AddMovementDown(4);
+
+            movementsManager.AddMovementLeft(1);
 
             yield return TestUtilities.RunTest("World6Level9", movementsManager, GameState.Victory, 10.0f);
         }
