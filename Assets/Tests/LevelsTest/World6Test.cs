@@ -303,7 +303,10 @@ namespace LevelTests
             movementsManager.AddMovementLeft(3);
             movementsManager.AddMovementDown(4);
 
-            movementsManager.AddMovementLeft(1);
+            movementsManager.AddMovementLeft(2);
+            movementsManager.AddMovementLeft(19);
+            movementsManager.AddMovementRight(4);
+            movementsManager.AddMovementRight(13);
 
             yield return TestUtilities.RunTest("World6Level9", movementsManager, GameState.Victory, 10.0f);
         }
