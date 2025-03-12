@@ -266,21 +266,19 @@ namespace LevelTests
         public IEnumerator Level9()
         {
             MovementsManager movementsManager = new MovementsManager();
-            movementsManager.AddMovementDown(4);
-            movementsManager.AddMovementUp(1);
+            movementsManager.AddMovementDown(1);
             movementsManager.AddMovementLeft(1);
             movementsManager.AddMovementDown(1);
             movementsManager.AddMovementRight(2);
-            movementsManager.AddMovementUp(1);
-            movementsManager.AddMovementLeft(2);
-            movementsManager.AddMovementUp(5);
-            movementsManager.AddMovementRight(2);
+
             movementsManager.AddMovementUp(1);
             movementsManager.AddMovementRight(1);
-            movementsManager.AddMovementLeft(1);
-            movementsManager.AddMovementDown(7);
+            movementsManager.AddMovementDown(2);
+            movementsManager.AddMovementLeft(4);
+            movementsManager.AddMovementDown(1);
             movementsManager.AddMovementRight(4);
-            movementsManager.AddMovementUp(8);
+            movementsManager.AddMovementLeft(3);
+
 
             yield return TestUtilities.RunTest("World6Level9", movementsManager, GameState.Victory, 10.0f);
         }
