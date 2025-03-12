@@ -318,8 +318,8 @@ namespace LevelTests
         public IEnumerator Level10()
         {
             MovementsManager movementsManager = new MovementsManager();
-            movementsManager.AddMovementRight(2);
-            movementsManager.AddMovementDown(2);
+            movementsManager.AddMovementLeft(2);
+            movementsManager.AddMovementUp(3);
             movementsManager.AddMovementLeft(1);
 
             yield return TestUtilities.RunTest("World6Level10", movementsManager, GameState.Victory, 10.0f);
