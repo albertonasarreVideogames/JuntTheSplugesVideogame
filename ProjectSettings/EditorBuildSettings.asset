@@ -296,4 +296,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/LevelEditor/WorldsAndLevels/world 7/World7level1.unity
     guid: fe535f50a5790294696dbe604b643ed1
+  - enabled: 1
+    path: Assets/Scenes/LevelEditor/WorldsAndLevels/world 7/World7level2.unity
+    guid: 78cc2aeba3129a045bde14e7bee657ba
   m_configObjects: {}
