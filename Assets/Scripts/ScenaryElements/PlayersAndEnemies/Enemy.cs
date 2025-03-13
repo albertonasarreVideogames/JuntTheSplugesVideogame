@@ -29,7 +29,7 @@ public class Enemy : Player
 
         movePointCheker.position += offset;
 
-        if (enemyMovement != EnemyMovement.Reverse) // Solo hacer flip si no es Reverse
+        if (enemyMovement == EnemyMovement.Normal || enemyMovement == EnemyMovement.ReverseVertical) // Solo hacer flip si no es Reverse
         {
             if (Generalmovement.x > 0 && !facingRight)
             {
