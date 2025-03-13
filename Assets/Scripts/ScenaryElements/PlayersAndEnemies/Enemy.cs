@@ -9,6 +9,7 @@ public class Enemy : Player
         Normal,
         Reverse,
         ReverseVertical,
+        ReverseHorizontal
     }
 
     public EnemyMovement enemyMovement;
@@ -22,6 +23,8 @@ public class Enemy : Player
 
         if (enemyMovement == EnemyMovement.Reverse) { offset = -new Vector3(Generalmovement.x, Generalmovement.y, 0f); }
         if (enemyMovement == EnemyMovement.ReverseVertical) { offset = new Vector3(Generalmovement.x, -Generalmovement.y, 0f); }
+        if (enemyMovement == EnemyMovement.ReverseHorizontal) { offset = new Vector3(-Generalmovement.x, Generalmovement.y, 0f); }
+
         playerAnimation.SetNextAnimationTrigger(AnimationHandler.AnimationState.Running);
 
         movePointCheker.position += offset;
