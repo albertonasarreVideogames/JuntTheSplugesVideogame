@@ -14,14 +14,14 @@ namespace LevelTests
         public IEnumerator Level1()
         {
             MovementsManager movementsManager = new MovementsManager();
-            movementsManager.AddMovementLeft(2);
+            movementsManager.AddMovementDown(1);
             movementsManager.AddMovementRight(5);
-            movementsManager.AddMovementDown(4);
-            movementsManager.AddMovementLeft(14);
-            movementsManager.AddMovementUp(11);
-            movementsManager.AddMovementDown(11);
-            movementsManager.AddMovementRight(23);
-
+            movementsManager.AddMovementLeft(2);
+            movementsManager.AddMovementUp(9);
+            movementsManager.AddMovementRight(5);
+            movementsManager.AddMovementDown(1);
+            movementsManager.AddMovementRight(2);
+            movementsManager.AddMovementUp(2);
 
             yield return TestUtilities.RunTest("World7Level1", movementsManager, GameState.Victory, 10.0f);
         }
