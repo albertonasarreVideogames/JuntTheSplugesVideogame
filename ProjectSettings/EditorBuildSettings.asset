@@ -302,4 +302,25 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/LevelEditor/WorldsAndLevels/world 7/World7level3.unity
     guid: aab7721f0740cb34e901831c90112f42
+  - enabled: 1
+    path: Assets/Scenes/LevelEditor/WorldsAndLevels/world 7/World7level4.unity
+    guid: f41679bb787967b42945f5c0779cda6d
+  - enabled: 1
+    path: Assets/Scenes/LevelEditor/WorldsAndLevels/world 7/World7level5.unity
+    guid: 382c5db09c4a2f54bbfe659bfcca562a
+  - enabled: 1
+    path: Assets/Scenes/LevelEditor/WorldsAndLevels/world 7/World7level6.unity
+    guid: 2d0261fc7f0f58745881b51d41725bfa
+  - enabled: 1
+    path: Assets/Scenes/LevelEditor/WorldsAndLevels/world 7/World7level7.unity
+    guid: 7b5044efe74eb4246831e8cdc27cb593
+  - enabled: 1
+    path: Assets/Scenes/LevelEditor/WorldsAndLevels/world 7/World7level8.unity
+    guid: cf6b819375658bf468d022e6fa45d4a3
+  - enabled: 1
+    path: Assets/Scenes/LevelEditor/WorldsAndLevels/world 7/World7level9.unity
+    guid: 1fde42b43a5fa514384bfbc6f13240bc
+  - enabled: 1
+    path: Assets/Scenes/LevelEditor/WorldsAndLevels/world 7/World7level10.unity
+    guid: c0d2dd6469f0d6f45b09b158f728e387
   m_configObjects: {}
