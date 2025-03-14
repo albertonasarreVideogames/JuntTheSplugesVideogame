@@ -68,15 +68,23 @@ namespace LevelTests
         public IEnumerator Level4()
         {
             MovementsManager movementsManager = new MovementsManager();
+            movementsManager.AddMovementRight(3);
+            movementsManager.AddMovementDown(4);
             movementsManager.AddMovementRight(1);
-            movementsManager.AddMovementUp(3);
-            movementsManager.AddMovementDown(1);
+            movementsManager.AddMovementDown(2);
+            movementsManager.AddMovementLeft(3);
+            movementsManager.AddMovementUp(6);
+            movementsManager.AddMovementRight(2);
+            movementsManager.AddMovementDown(4);
             movementsManager.AddMovementRight(2);
             movementsManager.AddMovementUp(2);
-            movementsManager.AddMovementRight(2);
-            movementsManager.AddMovementUp(3);
+            movementsManager.AddMovementRight(4);
+            movementsManager.AddMovementUp(2);
+            movementsManager.AddMovementRight(1);
+            movementsManager.AddMovementUp(2);
             movementsManager.AddMovementRight(3);
             movementsManager.AddMovementUp(2);
+
 
             yield return TestUtilities.RunTest("World7Level4", movementsManager, GameState.Victory, 10.0f);
         }
