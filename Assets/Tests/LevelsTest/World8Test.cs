@@ -52,10 +52,19 @@ namespace LevelTests
             movementsManager.AddMovementLeft(2);
             movementsManager.AddMovementUp(11);
 
-
-
-
             yield return TestUtilities.RunTest("World8Level1", movementsManager, GameState.Victory, 10.0f);
+        }
+
+        [UnityTest]
+        [Timeout(900000)]
+        public IEnumerator Level2()
+        {
+            MovementsManager movementsManager = new MovementsManager();
+            movementsManager.AddMovementLeft(5);
+            movementsManager.AddMChangePlayer(2);
+            movementsManager.AddMovementRight(1);
+
+            yield return TestUtilities.RunTest("World8Level2", movementsManager, GameState.Victory, 10.0f);
         }
 
     }
