@@ -196,15 +196,16 @@ namespace LevelTests
             movementsManager.AddMovementLeft(1);
             movementsManager.AddMovementDown(1);
 
+            movementsManager.AddMChangePlayer(1);
             movementsManager.AddMovementRight(1);
             movementsManager.AddMChangePlayer(1);
-            movementsManager.AddMovementUp(6);
-            movementsManager.AddMovementDown(1);
+            movementsManager.AddMovementUp(5);
             movementsManager.AddMovementLeft(6);
             movementsManager.AddMChangePlayer(1);
+            movementsManager.AddMovementRight(6);
             movementsManager.AddMovementDown(8);
             movementsManager.AddMovementUp(8);
-            movementsManager.AddMovementLeft(5);
+            movementsManager.AddMovementLeft(6);
 
 
             yield return TestUtilities.RunTest("World8Level2", movementsManager, GameState.Victory, 10.0f);
