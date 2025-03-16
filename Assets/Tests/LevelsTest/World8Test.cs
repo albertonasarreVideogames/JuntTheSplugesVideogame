@@ -256,12 +256,26 @@ namespace LevelTests
         public IEnumerator Level4()
         {
             MovementsManager movementsManager = new MovementsManager();
-            movementsManager.AddMovementUp(3);
+            movementsManager.AddMovementRight(2);
+            movementsManager.AddMovementLeft(3);
+            movementsManager.AddMovementUp(4);
             movementsManager.AddMovementRight(4);
-            movementsManager.AddMovementDown(1);
-            movementsManager.AddMovementLeft(5);
             movementsManager.AddMovementDown(4);
-            movementsManager.AddMovementRight(8);
+            movementsManager.AddMovementLeft(4);
+            movementsManager.AddMovementUp(4);
+            movementsManager.AddMovementDown(1);
+            movementsManager.AddMovementUp(1);
+            movementsManager.AddMovementDown(4);
+            movementsManager.AddMovementUp(2);
+            movementsManager.AddMovementDown(2);
+            movementsManager.AddMovementRight(2);
+            movementsManager.AddMovementDown(4);
+            movementsManager.AddMovementLeft(21);
+            movementsManager.AddMovementRight(1);
+            movementsManager.AddMovementUp(2);
+            movementsManager.AddMovementDown(2);
+            movementsManager.AddMovementRight(22);
+            movementsManager.AddMovementUp(2);
 
             yield return TestUtilities.RunTest("World8Level4", movementsManager, GameState.Victory, 10.0f);
         }
