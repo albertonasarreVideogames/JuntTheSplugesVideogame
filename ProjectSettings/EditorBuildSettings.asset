@@ -335,4 +335,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/LevelEditor/WorldsAndLevels/world 8/World8level4.unity
     guid: 5fb6eac820c7e2b4ab238245e10e5f38
+  - enabled: 1
+    path: Assets/Scenes/LevelEditor/WorldsAndLevels/world 8/World8level5.unity
+    guid: 1403946e9d680c340b420e756eebcf77
   m_configObjects: {}
