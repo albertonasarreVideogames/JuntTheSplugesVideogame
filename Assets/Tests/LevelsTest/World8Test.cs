@@ -347,10 +347,30 @@ namespace LevelTests
         [Timeout(900000)]
         public IEnumerator Level6()
         {
-            MovementsManager movementsManager = new MovementsManager();
+            MovementsManager movementsManager = new MovementsManager();          
+            movementsManager.AddMovementLeft(2);
+            movementsManager.AddMovementDown(2);
+            movementsManager.AddMovementRight(1);
+
+            movementsManager.AddMovementUp(1);
             movementsManager.AddMovementRight(2);
             movementsManager.AddMovementLeft(3);
-            movementsManager.AddMovementUp(4);
+            movementsManager.AddMovementUp(1);
+
+            movementsManager.AddMovementDown(1);
+            movementsManager.AddMovementUp(1);
+            movementsManager.AddMovementRight(3);
+            movementsManager.AddMovementDown(2);
+            movementsManager.AddMovementLeft(2);
+
+            movementsManager.AddMovementUp(2);
+            movementsManager.AddMovementRight(2);
+            movementsManager.AddMovementLeft(3);
+            movementsManager.AddMovementDown(1);
+            movementsManager.AddMovementUp(1);
+
+            movementsManager.AddMovementLeft(16);
+
 
             yield return TestUtilities.RunTest("World8Level6", movementsManager, GameState.Victory, 10.0f);
         }
