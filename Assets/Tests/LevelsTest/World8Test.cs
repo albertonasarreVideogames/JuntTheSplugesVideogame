@@ -377,6 +377,16 @@ namespace LevelTests
             yield return TestUtilities.RunTest("World8Level6", movementsManager, GameState.Victory, 10.0f);
         }
 
+        [UnityTest]
+        [Timeout(900000)]
+        public IEnumerator Level7()
+        {
+            MovementsManager movementsManager = new MovementsManager();
+            movementsManager.AddMovementLeft(2);
+
+            yield return TestUtilities.RunTest("World8Level7", movementsManager, GameState.Victory, 10.0f);
+        }
+
     }
 }
 
