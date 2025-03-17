@@ -369,7 +369,9 @@ namespace LevelTests
             movementsManager.AddMovementDown(1);
             movementsManager.AddMovementUp(1);
 
-            movementsManager.AddMovementLeft(16);
+            movementsManager.AddMovementLeft(19);
+            movementsManager.AddMovementDown(5);
+            movementsManager.AddMovementUp(11);
 
 
             yield return TestUtilities.RunTest("World8Level6", movementsManager, GameState.Victory, 10.0f);
