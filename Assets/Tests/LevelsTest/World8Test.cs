@@ -285,10 +285,60 @@ namespace LevelTests
         public IEnumerator Level5()
         {
             MovementsManager movementsManager = new MovementsManager();
-            movementsManager.AddMovementRight(2);
-            movementsManager.AddMovementLeft(3);
+            movementsManager.AddMovementUp(1);
+            movementsManager.AddMovementLeft(1);
+            movementsManager.AddMovementDown(1);
+            movementsManager.AddMChangePlayer(2);
+            movementsManager.AddMovementLeft(2);
+            movementsManager.AddMovementUp(1);
+
+            // mirar como el de la izquierda esta subido a los bloques aqui, se podria hacer un vibel de ter que construir un puente, o buscarse la vida para ir a l otro lado
+            movementsManager.AddMChangePlayer(1);
+            movementsManager.AddMovementDown(1);
+            movementsManager.AddMChangePlayer(1);
+            movementsManager.AddMovementDown(6);
+            movementsManager.AddMovementRight(1);
+            movementsManager.AddMovementUp(1);
+            movementsManager.AddMovementLeft(1);
+            movementsManager.AddMovementUp(1);
+            movementsManager.AddMovementRight(3);
+
+            movementsManager.AddMChangePlayer(2);
+            movementsManager.AddMovementRight(1);
+            movementsManager.AddMovementDown(2);
+            movementsManager.AddMovementRight(3);
             movementsManager.AddMovementUp(4);
-            movementsManager.AddMovementRight(4);
+
+            movementsManager.AddMChangePlayer(1);
+            movementsManager.AddMovementUp(1);
+            movementsManager.AddMovementRight(7);
+            movementsManager.AddMChangePlayer(1);
+            movementsManager.AddMovementRight(1);
+            movementsManager.AddMovementDown(11);
+            movementsManager.AddMovementLeft(14);
+            movementsManager.AddMovementRight(9);
+            movementsManager.AddMovementUp(5);
+
+            movementsManager.AddMChangePlayer(1);
+            movementsManager.AddMovementRight(1);
+            movementsManager.AddMovementLeft(1);
+            movementsManager.AddMChangePlayer(1);
+            movementsManager.AddMovementLeft(1);
+            movementsManager.AddMChangePlayer(2);
+            movementsManager.AddMovementLeft(19);
+            movementsManager.AddMovementUp(3);
+            movementsManager.AddMovementRight(19);
+
+            movementsManager.AddMChangePlayer(1);
+            movementsManager.AddMovementLeft(1);
+            movementsManager.AddMovementUp(8);
+            movementsManager.AddMChangePlayer(1);
+            movementsManager.AddMovementRight(6);
+            movementsManager.AddMovementUp(6);
+            movementsManager.AddMChangePlayer(1);
+            movementsManager.AddMovementRight(1);
+            movementsManager.AddMovementLeft(5);
+
 
             yield return TestUtilities.RunTest("World8Level5", movementsManager, GameState.Victory, 10.0f);
         }
