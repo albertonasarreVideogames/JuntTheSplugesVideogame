@@ -544,6 +544,25 @@ namespace LevelTests
         public IEnumerator Level10()
         {
             MovementsManager movementsManager = new MovementsManager();
+            movementsManager.AddMovementUp(5);
+            movementsManager.AddMovementLeft(3);
+            movementsManager.AddMovementRight(4);
+            movementsManager.AddMovementDown(2);
+            movementsManager.AddMovementLeft(3);
+            movementsManager.AddMovementRight(2);
+            movementsManager.AddMovementUp(2);
+            movementsManager.AddMovementLeft(3);
+            movementsManager.AddMovementRight(3);
+            movementsManager.AddMovementDown(3);
+            movementsManager.AddMovementRight(3);
+            movementsManager.AddMovementLeft(2);
+            movementsManager.AddMovementDown(2);
+            movementsManager.AddMovementLeft(3);
+            movementsManager.AddMovementRight(4);
+            movementsManager.AddMovementLeft(2);
+
+
+
             movementsManager.AddMovementDown(4);
             movementsManager.AddMovementLeft(11);
             movementsManager.AddMovementUp(7);
