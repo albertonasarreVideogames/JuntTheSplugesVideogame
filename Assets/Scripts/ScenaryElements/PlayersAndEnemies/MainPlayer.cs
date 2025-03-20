@@ -8,6 +8,12 @@ public class MainPlayer : Player
 
     public bool checkNextmovementIsPossible(Vector2 Generalmovement)
     {
+     
+        if (Physics2D.OverlapCircle(movePoint.position + new Vector3(Generalmovement.x, Generalmovement.y, 0f), .2f, whatstopMovmeetBorder))
+        {          
+            return false;
+        }
+
         if (currentPlayerFloorLevel == PlayerFloorLevel.Down)
         {
             if (!Physics2D.OverlapCircle(movePoint.position + new Vector3(Generalmovement.x, Generalmovement.y, 0f), .2f, whatstopMovmeet))
