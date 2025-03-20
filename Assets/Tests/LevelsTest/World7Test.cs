@@ -205,11 +205,11 @@ namespace LevelTests
             movementsManager.AddMovementRight(1);
             movementsManager.AddMovementLeft(1);
             movementsManager.AddMovementDown(2);
-            movementsManager.AddMovementRight(11);
+            movementsManager.AddMovementRight(2);
             movementsManager.AddMovementUp(2);
             movementsManager.AddMovementLeft(1);
             movementsManager.AddMovementUp(2);
-            movementsManager.AddMovementDown(12);
+            movementsManager.AddMovementDown(8);
             movementsManager.AddMovementRight(10);
             movementsManager.AddMovementUp(11);
             movementsManager.AddMovementRight(5);
