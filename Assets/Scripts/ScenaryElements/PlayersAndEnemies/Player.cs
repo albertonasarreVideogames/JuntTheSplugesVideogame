@@ -27,6 +27,7 @@ public class Player : MonoBehaviour
     public float moveSpeed = 5f;
 
     public LayerMask whatstopMovmeet;
+    public LayerMask whatstopMovmeetBorder;
 
     public PlayerType playerType;
 
@@ -140,6 +141,15 @@ public class Player : MonoBehaviour
     // Pensar en mover esto a ScenarioConditionsUpdater
     public virtual void checkCollisions()
     {
+        Collider2D collisionBorder = Physics2D.OverlapCircle(movePointCheker.position, .2f, whatstopMovmeetBorder);
+
+        if (collisionBorder)
+        {
+            movePointCheker.position = this.transform.position;
+            if (checkIfPlayerIsNOTStrillMoveent()) { playerAnimation.SetNextAnimationTrigger(AnimationHandler.AnimationState.hit); }
+            return;
+        }
+
         Collider2D collision = Physics2D.OverlapCircle(movePointCheker.position, .2f, whatstopMovmeet);
 
         if (currentPlayerFloorLevel == PlayerFloorLevel.Down)

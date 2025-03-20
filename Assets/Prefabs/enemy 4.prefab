@@ -135,7 +135,10 @@ MonoBehaviour:
   moveSpeed: 5
   whatstopMovmeet:
     serializedVersion: 2
-    m_Bits: 8448
+    m_Bits: 2105600
+  whatstopMovmeetBorder:
+    serializedVersion: 2
+    m_Bits: 2097152
   playerType: 0
   enemyMovement: 3
   test: 0

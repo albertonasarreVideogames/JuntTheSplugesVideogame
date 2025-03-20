@@ -133,7 +133,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -2071675551
-  m_SortingLayer: 10
+  m_SortingLayer: 15
   m_SortingOrder: 0
   m_Sprite: {fileID: 1576031485842391493, guid: 3102560dca7adbc44b5ef005788deccd,
     type: 3}
@@ -165,6 +165,9 @@ MonoBehaviour:
   whatstopMovmeet:
     serializedVersion: 2
     m_Bits: 256
+  whatstopMovmeetBorder:
+    serializedVersion: 2
+    m_Bits: 2097152
   playerType: 0
 --- !u!95 &-6551366648808554512
 Animator:

@@ -65,6 +65,14 @@ public class Enemy : Player
 
     public override void checkCollisions()
     {
+        Collider2D collisionBorder = Physics2D.OverlapCircle(movePointCheker.position, .2f, whatstopMovmeetBorder);
+
+        if (collisionBorder)
+        {
+            movePointCheker.position = this.transform.position;         
+            return;
+        }
+
         Collider2D collision = Physics2D.OverlapCircle(movePointCheker.position, .2f, whatstopMovmeet);
 
         if (currentPlayerFloorLevel == PlayerFloorLevel.Down)
