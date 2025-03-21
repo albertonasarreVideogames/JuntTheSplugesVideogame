@@ -5,6 +5,7 @@ using UnityEngine;
 public class RewindState : MonoBehaviour
 {
     [SerializeField] private GameObject _text;
+    [SerializeField] private GameObject _vhsEffect;
     public static RewindState Instance;
     private bool stopRewind = false;
 
@@ -31,6 +32,7 @@ public class RewindState : MonoBehaviour
     private void GameManagerOnGameStateChanged(GameState state)
     {
         _text.SetActive(state == GameState.Rewind);
+        _vhsEffect.SetActive(state == GameState.Rewind);
         if (state == GameState.Rewind){ StartCoroutine(RunRewind(GamingState.PlayerMovementsStored)); }
 
     }
