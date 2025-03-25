@@ -13,6 +13,7 @@ public class MainMenu : MenuBase
     public Animator quitAnimator;
     public Animator levelSelectedAnimator;
     public GameObject ControlsPanel;
+    public GameObject LevelSelector;
     private bool button1EndSequence = false;
 
     [Header("Others")]
@@ -78,7 +79,8 @@ public class MainMenu : MenuBase
             case (int)MenuOptions.LevelSelected:
                 ExecuteButtonAction(() =>
                 {
-                    SceneManager.LoadScene("LevelSelectorMenu");
+                    LevelSelector.SetActive(true);
+                    this.gameObject.SetActive(false);
                 }, levelSelectedAnimator);
                 break;
         }
