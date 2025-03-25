@@ -15,6 +15,7 @@ public class MainMenu : MenuBase
     public GameObject ControlsPanel;
     public GameObject LevelSelector;
     private bool button1EndSequence = false;
+    private bool menuBlocked = false;
 
     [Header("Others")]
     public CinemachineVirtualCamera transitionCam; // used to reference the MainMenuController
@@ -48,42 +49,19 @@ public class MainMenu : MenuBase
             }
         }
 
-        switch (menuButtonController.index)
+
+        if (!menuBlocked) { executeSwitch(); } else
         {
-            case (int)MenuOptions.NewGame:
-                ExecuteButtonAction(() =>
-                {
-                    transitionCam.gameObject.SetActive(true);
-                    transitionLvl1.SetActive(true);
-                    StartCoroutine(LoadFirstLevel(1.7f));
-                    button1EndSequence = true;
-                }, newGameAnimator);
-                break;
+            
 
-            case (int)MenuOptions.Settings:
-                ExecuteButtonAction(() =>
-                {
-                    ControlsPanel.SetActive(!buttoncontollerBlocked);
-                    buttoncontollerBlocked = !buttoncontollerBlocked;
-                }, settingsAnimator);
-                break;
-
-            case (int)MenuOptions.Quit:
-                ExecuteButtonAction(() =>
-                {
-					var confirm = gameObject.AddComponent<ConfirmationPanel>();
-                    buttoncontollerBlocked = !buttoncontollerBlocked;
-                    confirm.Initiate(surePanel, ()=>Quit());
-                }, quitAnimator);
-                break;
-            case (int)MenuOptions.LevelSelected:
-                ExecuteButtonAction(() =>
-                {
-                    LevelSelector.SetActive(true);
-                    this.gameObject.SetActive(false);
-                }, levelSelectedAnimator);
-                break;
+            if (LevelSelector.active == false)
+            {
+                buttoncontollerBlocked = false;          
+                menuBlocked = false;
+            }
         }
+
+
     }
 
     private void SetDefaultValues()
@@ -130,6 +108,47 @@ public class MainMenu : MenuBase
         {
             Debug.Log("No se encontró progreso guardado.");
             // Si no hay progreso guardado, quizás iniciar en el primer mundo/primer nivel
+        }
+    }
+
+    private void executeSwitch()
+    {
+        switch (menuButtonController.index)
+        {
+            case (int)MenuOptions.NewGame:
+                ExecuteButtonAction(() =>
+                {
+                    transitionCam.gameObject.SetActive(true);
+                    transitionLvl1.SetActive(true);
+                    StartCoroutine(LoadFirstLevel(1.7f));
+                    button1EndSequence = true;
+                }, newGameAnimator);
+                break;
+
+            case (int)MenuOptions.Settings:
+                ExecuteButtonAction(() =>
+                {
+                    ControlsPanel.SetActive(!buttoncontollerBlocked);
+                    buttoncontollerBlocked = !buttoncontollerBlocked;
+                }, settingsAnimator);
+                break;
+
+            case (int)MenuOptions.Quit:
+                ExecuteButtonAction(() =>
+                {
+                    var confirm = gameObject.AddComponent<ConfirmationPanel>();
+                    buttoncontollerBlocked = !buttoncontollerBlocked;
+                    confirm.Initiate(surePanel, () => Quit());
+                }, quitAnimator);
+                break;
+            case (int)MenuOptions.LevelSelected:
+                ExecuteButtonAction(() =>
+                {
+                    buttoncontollerBlocked = !buttoncontollerBlocked;
+                    LevelSelector.SetActive(true);
+                    menuBlocked = true;
+                }, levelSelectedAnimator);
+                break;
         }
     }
 

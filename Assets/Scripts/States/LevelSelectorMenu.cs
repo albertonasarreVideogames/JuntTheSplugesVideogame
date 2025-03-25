@@ -46,6 +46,12 @@ public class LevelSelectorMenu : MonoBehaviour
     {
         SetDefaultValues();
 
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            menuButtonController.Update();
+            GoToMenu();
+        }
+
         // Manejo de selección de mundo
         if (worldChoose.activeSelf)
         {
@@ -156,7 +162,6 @@ public class LevelSelectorMenu : MonoBehaviour
         {
             if (world == "BackToMenu")
             {
-                button1EndSequence = true;
                 GoToMenu();
             }
             else
@@ -206,8 +211,7 @@ public class LevelSelectorMenu : MonoBehaviour
 
     private void GoToMenu()
     {
-        GameManager.Instance.UpdateGameState(GameState.Menu);
-        SceneManager.LoadScene(0);
+        this.gameObject.SetActive(false);
     }
 
     protected void ExecuteButtonAction(Action actionToExecute, Animator anim)
