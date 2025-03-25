@@ -53,9 +53,9 @@ public class MainMenu : MenuBase
         if (!menuBlocked) { executeSwitch(); } else
         {
             
-
             if (LevelSelector.active == false)
             {
+                transitionCam.gameObject.SetActive(false);
                 buttoncontollerBlocked = false;          
                 menuBlocked = false;
             }
@@ -144,6 +144,7 @@ public class MainMenu : MenuBase
             case (int)MenuOptions.LevelSelected:
                 ExecuteButtonAction(() =>
                 {
+                    transitionCam.gameObject.SetActive(true);
                     buttoncontollerBlocked = !buttoncontollerBlocked;
                     LevelSelector.SetActive(true);
                     menuBlocked = true;
