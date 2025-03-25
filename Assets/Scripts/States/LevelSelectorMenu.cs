@@ -211,6 +211,12 @@ public class LevelSelectorMenu : MonoBehaviour
 
     private void GoToMenu()
     {
+        foreach (Transform hijo in LevelChoose.transform)
+        {
+            hijo.gameObject.SetActive(false);
+        }
+        LevelChoose.SetActive(false);
+        worldChoose.SetActive(true);
         this.gameObject.SetActive(false);
     }
 
