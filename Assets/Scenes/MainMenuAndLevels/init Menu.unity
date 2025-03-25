@@ -2176,6 +2176,28 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 314673820669373126, guid: 3bbe4c7ba0b0a7c48b2bc4732425bce5,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 4972263798996253912, guid: cb896a8a83695a544aef95b5ac33d62f,
+        type: 3}
+    - target: {fileID: 314673820669373126, guid: 3bbe4c7ba0b0a7c48b2bc4732425bce5,
+        type: 3}
+      propertyPath: m_Type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4340656492715496835, guid: 3bbe4c7ba0b0a7c48b2bc4732425bce5,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -1674582662546009944, guid: cb896a8a83695a544aef95b5ac33d62f,
+        type: 3}
+    - target: {fileID: 4340656492715496835, guid: 3bbe4c7ba0b0a7c48b2bc4732425bce5,
+        type: 3}
+      propertyPath: m_Type
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5942977380207393097, guid: 3bbe4c7ba0b0a7c48b2bc4732425bce5,
         type: 3}
       propertyPath: transitionCam
@@ -3904,9 +3926,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -7383752892883055271, guid: 4f26952f83450274bb0fc39f5a49b538,
+  m_Sprite: {fileID: 4972263798996253912, guid: cb896a8a83695a544aef95b5ac33d62f,
     type: 3}
-  m_Type: 0
+  m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -4420,9 +4442,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -5114061317473907116, guid: 4f26952f83450274bb0fc39f5a49b538,
+  m_Sprite: {fileID: -1674582662546009944, guid: cb896a8a83695a544aef95b5ac33d62f,
     type: 3}
-  m_Type: 0
+  m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
