@@ -32,8 +32,12 @@ public class LevelSelectorMenu : MonoBehaviour
         // Llenar el diccionario de mundos y niveles
         worldLevels.Add("World1", new List<string> { "Level1", "Level2", "Level3", "Level4", "Level5", "Level6", "Level7", "Level8", "Level9", "Level10" });
         worldLevels.Add("World2", new List<string> { "Level1", "Level2", "Level3", "Level4", "Level5", "Level6", "Level7", "Level8", "Level9", "Level10" });
-        worldLevels.Add("World3", new List<string> { "Level1", "Level2" });
-        worldLevels.Add("World4", new List<string> { "Level1", "Level2", "Level3", "Level4" });
+        worldLevels.Add("World3", new List<string> { "Level1", "Level2", "Level3", "Level4", "Level5", "Level6", "Level7", "Level8", "Level9", "Level10" });
+        worldLevels.Add("World4", new List<string> { "Level1", "Level2", "Level3", "Level4", "Level5", "Level6", "Level7", "Level8", "Level9", "Level10" });
+        worldLevels.Add("World5", new List<string> { "Level1", "Level2", "Level3", "Level4", "Level5", "Level6", "Level7", "Level8", "Level9", "Level10" });
+        worldLevels.Add("World6", new List<string> { "Level1", "Level2", "Level3", "Level4", "Level5", "Level6", "Level7", "Level8", "Level9", "Level10" });
+        worldLevels.Add("World7", new List<string> { "Level1", "Level2", "Level3", "Level4", "Level5", "Level6", "Level7", "Level8", "Level9", "Level10" });
+        worldLevels.Add("World8", new List<string> { "Level1", "Level2", "Level3", "Level4", "Level5", "Level6", "Level7", "Level8", "Level9", "Level10" });
         worldLevels.Add("BackToMenu", new List<string> {});
 
         // Crear los animadores de mundos y niveles
@@ -79,8 +83,8 @@ public class LevelSelectorMenu : MonoBehaviour
 
             int numberOfWorlds = worldLevels.Count;
 
-            float minPositionY = -736f;
-            float maxPositionY = 512f;
+            float minPositionY = -636f;
+            float maxPositionY = 612f;
 
             float spaceBetweenButtons = (maxPositionY - minPositionY) / (numberOfWorlds + 1);
             GameObject worldButton;
@@ -113,8 +117,8 @@ public class LevelSelectorMenu : MonoBehaviour
             int numberOfLevels = worldLevels[world].Count;
 
             // Calculamos el rango de distribución
-            float minPositionY = -736f;
-            float maxPositionY = 512f;
+            float minPositionY = -636f;
+            float maxPositionY = 612f;
 
             // Si hay niveles, distribuimos la distancia entre ellos
             float spaceBetweenButtons = (maxPositionY - minPositionY) / (numberOfLevels + 1);
