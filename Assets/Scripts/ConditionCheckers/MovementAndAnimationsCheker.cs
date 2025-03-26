@@ -17,7 +17,14 @@ public class MovementAndAnimationsCheker : IConditionCheck
 
     public void CheckCondition()
     {
-        if (GameManager.Instance.State == GameState.Lose) { PlayerAnimation.SetAnimationForAllPlayers(AnimationHandler.AnimationState.Dying, player => player.NextAnimationTrigger != AnimationHandler.AnimationState.DieOnHole); }
+        if (GameManager.Instance.State == GameState.Lose)
+        {
+            PlayerAnimation.SetAnimationForAllPlayers(
+                AnimationHandler.AnimationState.Dying,
+                player => player.NextAnimationTrigger != AnimationHandler.AnimationState.DieOnHole &&
+                         player.NextAnimationTrigger != AnimationHandler.AnimationState.Electricity
+            );
+        }
 
         //if (GameManager.Instance.State == GameState.Gaming) { GameManager.Instance.UpdateGameState(GameState.Procesing); }
 

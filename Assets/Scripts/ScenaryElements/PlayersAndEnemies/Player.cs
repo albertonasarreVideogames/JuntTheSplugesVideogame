@@ -67,13 +67,20 @@ public class Player : MonoBehaviour
 
     public virtual bool CheckSwitchContactAndSetAnimation(string switchLayerName)
     {
+
         if (CkeckLayerContact(switchLayerName))
         {
-           
-            if(switchLayerName == "lava")
+            CheckTagContact("Pincho");
+            if (switchLayerName == "lava")
             {
-
+                bool joder = CheckTagContact("Pincho");
                 playerAnimation.SetNextAnimationTrigger(AnimationHandler.AnimationState.DieOnHole);
+                if (joder)
+                {
+                    Debug.Log("animacion detected");
+                    playerAnimation.SetNextAnimationTrigger(AnimationHandler.AnimationState.Electricity);
+
+                }
 
             } else {
 
@@ -94,8 +101,24 @@ public class Player : MonoBehaviour
     {
         int layerIndex = LayerMask.NameToLayer(layerName);
         LayerMask layerMask = 1 << layerIndex;
-
+ 
         return Physics2D.OverlapCircle(movePointCheker.position, 0.2f, layerMask);
+    }
+
+    private bool CheckTagContact(string tagName)
+    {
+
+        Collider2D[] hits = Physics2D.OverlapCircleAll(movePointCheker.position, 0.2f, Physics2D.AllLayers);
+
+        foreach (Collider2D hit in hits)
+        {
+            if (hit.CompareTag(tagName))
+            {
+                return true; // Se encontró un objeto con la tag especificada
+            }
+        }
+
+        return false; // No se encontró ningún objeto con la tag
     }
 
     public virtual void updateMovepointChecker(Vector2 Generalmovement)
