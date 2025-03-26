@@ -50,8 +50,14 @@ public class PlayerAnimation : MonoBehaviour, AnimationHandler.IAnimationManager
        {
           if (animation.NextAnimationTrigger == AnimationHandler.AnimationState.Dying) {
 
-              animation.myAnimator.SetTrigger("Death");
-           };
+                AnimatorStateInfo stateInfo = animation.myAnimator.GetCurrentAnimatorStateInfo(0);
+
+                // Verifica si ya está en la animación "Death" y si ha terminado
+                if (!stateInfo.IsName("Enemy Death"))
+                {
+                    animation.myAnimator.SetTrigger("Death");
+                }
+            };
        }
 
         if (NextAnimationTrigger == AnimationHandler.AnimationState.DieOnHole) { myAnimator.SetTrigger("fallInHole"); SetNextAnimationTrigger(AnimationHandler.AnimationState.Idle); SoundManager.PlaySoundONCE(SoundType.SPLINGEFALLING); }
