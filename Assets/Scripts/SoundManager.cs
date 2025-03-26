@@ -13,7 +13,8 @@ public enum SoundType
     MENUCHANGE,
     MENUSELECTED,
     MENUDENIED,
-    ENEMYBITE
+    ENEMYBITE,
+    ELECTRICITY
 }
 
 [RequireComponent(typeof(AudioSource))]
@@ -108,7 +109,7 @@ public class SoundManager : MonoBehaviour
         foreach (SoundType sound in instance.soundstoPlayOntheNextturn)
         {
             if (sound == SoundType.SPLUNGESRUN && (Array.Exists(instance.soundstoPlayOntheNextturn, thisSound => thisSound == SoundType.SPLUGEHITONWALL|| Array.Exists(instance.soundstoPlayOntheNextturn, thisSound2 => thisSound2 == SoundType.SPUNGEJUMP)))) { continue; }
-            if (GameManager.Instance.State == GameState.Lose && sound != SoundType.ENEMYBITE) { continue; } 
+            if (GameManager.Instance.State == GameState.Lose && sound != SoundType.ENEMYBITE && sound != SoundType.ELECTRICITY) { continue; } 
             PlaySound(sound);
         }
 

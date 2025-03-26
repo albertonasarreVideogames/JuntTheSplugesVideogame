@@ -78,7 +78,7 @@ public class PlayerAnimation : MonoBehaviour, AnimationHandler.IAnimationManager
             case AnimationHandler.AnimationState.DieOnHole:
                 myAnimator.SetTrigger("Attack");
                 SetNextAnimationTrigger(AnimationHandler.AnimationState.DieOnHole);
-                SoundManager.AddSoundToNextTurn(SoundType.SPUNGEJUMP);
+                SoundManager.PlaySoundONCE(SoundType.SPUNGEJUMP);
                 break;
 
             case AnimationHandler.AnimationState.Running:
@@ -95,7 +95,7 @@ public class PlayerAnimation : MonoBehaviour, AnimationHandler.IAnimationManager
             case AnimationHandler.AnimationState.Electricity:
                 myAnimator.SetTrigger("Attack 2");
                 SetNextAnimationTrigger(AnimationHandler.AnimationState.Idle);
-                SoundManager.AddSoundToNextTurn(SoundType.SPUNGEJUMP);
+                SoundManager.AddSoundToNextTurn(SoundType.ELECTRICITY);
                 break;
 
 
