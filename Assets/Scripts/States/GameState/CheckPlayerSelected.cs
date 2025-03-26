@@ -24,11 +24,16 @@ public class CheckPlayerSelected
             GameObject splunje2 = splunges.GetChild(1).gameObject; 
             GameObject splunje3 = splunges.GetChild(2).gameObject;
 
+            Canvas canvasHija = splunje1.transform.GetChild(0).gameObject.GetComponent<Canvas>();
+            canvasHija.overrideSorting = true;
+
             splunje1.transform.GetChild(0).gameObject.SetActive(Player.currentAllowedType == Player.PlayerType.Type1);
             splunje2.transform.GetChild(0).gameObject.SetActive(Player.currentAllowedType == Player.PlayerType.Type2);
             splunje3.transform.GetChild(0).gameObject.SetActive(Player.currentAllowedType == Player.PlayerType.Type3);
 
-            
+            canvasHija.overrideSorting = true;
+
+
         }
     }
 
