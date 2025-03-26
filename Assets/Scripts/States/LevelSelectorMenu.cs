@@ -218,6 +218,7 @@ public class LevelSelectorMenu : MonoBehaviour
         foreach (Transform hijo in LevelChoose.transform)
         {
             hijo.gameObject.SetActive(false);
+            if(hijo.gameObject.name == "Quit") { hijo.gameObject.SetActive(true); }
         }
         LevelChoose.SetActive(false);
         worldChoose.SetActive(true);
