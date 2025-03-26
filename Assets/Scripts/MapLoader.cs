@@ -14,6 +14,7 @@ public class MapLoader : MonoBehaviour
     private Tilemap map;
     private Tilemap backgroundTilemap;
     private Tilemap lavaTilemap;
+    public GameObject SplungesTypesPanel;
 
     [SerializeField]
     private List<TileInfo> tiledatas;
@@ -85,6 +86,7 @@ public class MapLoader : MonoBehaviour
 
         }
         // hide objects layer
+        SplungesTypesPanel.SetActive(NumberKindPlayers > 1);
         map.GetComponent<TilemapRenderer>().sortingLayerName = "Default";
         SwitchManager.Initialize();
         CheckAndRemoveOverlappingTiles();

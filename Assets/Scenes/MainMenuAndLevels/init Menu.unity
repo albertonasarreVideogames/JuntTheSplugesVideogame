@@ -1472,6 +1472,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: MapManager
       objectReference: {fileID: 0}
+    - target: {fileID: 1997491182526115949, guid: 2c8e85dbd56c1a44ca8faa11379272f6,
+        type: 3}
+      propertyPath: SplungesTypesPanel
+      value: 
+      objectReference: {fileID: 1826259674}
     - target: {fileID: 1997491182526115950, guid: 2c8e85dbd56c1a44ca8faa11379272f6,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4695,7 +4700,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1826259675
 RectTransform:
   m_ObjectHideFlags: 0
