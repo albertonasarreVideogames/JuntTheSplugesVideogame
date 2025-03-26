@@ -87,6 +87,13 @@ public class MapLoader : MonoBehaviour
         }
         // hide objects layer
         SplungesTypesPanel.SetActive(NumberKindPlayers > 1);
+        Transform splunges = SplungesTypesPanel.transform.GetChild(0); // Obtiene "Splunges"
+        GameObject splunje1 = splunges.GetChild(0).gameObject;
+        GameObject splunje2 = splunges.GetChild(1).gameObject;
+        GameObject splunje3 = splunges.GetChild(2).gameObject;
+        if (NumberKindPlayers == 2) { splunje3.SetActive(false); }
+        if (NumberKindPlayers == 3) { splunje3.SetActive(true); }
+
         map.GetComponent<TilemapRenderer>().sortingLayerName = "Default";
         SwitchManager.Initialize();
         CheckAndRemoveOverlappingTiles();
