@@ -24,8 +24,11 @@ public class CheckPlayerSelected
             GameObject splunje2 = splunges.GetChild(1).gameObject; 
             GameObject splunje3 = splunges.GetChild(2).gameObject;
 
-            if (MapLoader.Instance.NumberKindPlayers == 2) { splunje3.SetActive(false); }
-            if (MapLoader.Instance.NumberKindPlayers == 3) { splunje3.SetActive(true); }
+            splunje1.transform.GetChild(0).gameObject.SetActive(Player.currentAllowedType == Player.PlayerType.Type1);
+            splunje2.transform.GetChild(0).gameObject.SetActive(Player.currentAllowedType == Player.PlayerType.Type2);
+            splunje3.transform.GetChild(0).gameObject.SetActive(Player.currentAllowedType == Player.PlayerType.Type3);
+
+            
         }
     }
 

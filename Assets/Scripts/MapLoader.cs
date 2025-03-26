@@ -91,6 +91,12 @@ public class MapLoader : MonoBehaviour
         GameObject splunje1 = splunges.GetChild(0).gameObject;
         GameObject splunje2 = splunges.GetChild(1).gameObject;
         GameObject splunje3 = splunges.GetChild(2).gameObject;
+        splunje1.transform.GetChild(0).SetSiblingIndex(0);
+        splunje2.transform.GetChild(0).SetSiblingIndex(0);
+        splunje3.transform.GetChild(0).SetSiblingIndex(0);
+        splunje1.transform.GetChild(0).gameObject.SetActive(true);
+        splunje2.transform.GetChild(0).gameObject.SetActive(false);
+        splunje3.transform.GetChild(0).gameObject.SetActive(false);
         if (NumberKindPlayers == 2) { splunje3.SetActive(false); }
         if (NumberKindPlayers == 3) { splunje3.SetActive(true); }
 
