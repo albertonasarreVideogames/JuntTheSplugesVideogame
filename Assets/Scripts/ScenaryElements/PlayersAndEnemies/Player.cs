@@ -73,9 +73,13 @@ public class Player : MonoBehaviour
             CheckTagContact("Pincho");
             if (switchLayerName == "lava")
             {
+
                 bool joder = CheckTagContact("Pincho");
+                bool joder2 = CheckTagContact("GreenPincho");
+                bool joder3 = CheckTagContact("PinkPincho");
+                bool joder4 = CheckTagContact("BluePincho");
                 playerAnimation.SetNextAnimationTrigger(AnimationHandler.AnimationState.DieOnHole);
-                if (joder)
+                if (joder || joder2 || joder3 || joder4)
                 {
                     playerAnimation.SetNextAnimationTrigger(AnimationHandler.AnimationState.Electricity);
                 }
