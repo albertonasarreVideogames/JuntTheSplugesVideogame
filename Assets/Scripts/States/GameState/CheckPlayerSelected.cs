@@ -12,7 +12,7 @@ public class CheckPlayerSelected
 
     public void Execute()
     {
-        if (Input.GetKeyDown(KeyCode.Z))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             Player.changePlayerTypeToMove();
             GamingState.PlayerMovementsStored.AddMChangePlayer(1);

@@ -14,6 +14,7 @@ public class MainMenu : MenuBase
     public Animator levelSelectedAnimator;
     public GameObject ControlsPanel;
     public GameObject LevelSelector;
+    public GameObject GameDescriptor;
     private bool button1EndSequence = false;
     private bool menuBlocked = false;
 
@@ -113,6 +114,8 @@ public class MainMenu : MenuBase
 
     private void executeSwitch()
     {
+        GameDescriptor.SetActive(menuButtonController.index == (int)MenuOptions.NewGame);
+
         switch (menuButtonController.index)
         {
             case (int)MenuOptions.NewGame:
