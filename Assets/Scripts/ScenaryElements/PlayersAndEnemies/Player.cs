@@ -77,9 +77,7 @@ public class Player : MonoBehaviour
                 playerAnimation.SetNextAnimationTrigger(AnimationHandler.AnimationState.DieOnHole);
                 if (joder)
                 {
-                    Debug.Log("animacion detected");
                     playerAnimation.SetNextAnimationTrigger(AnimationHandler.AnimationState.Electricity);
-
                 }
 
             } else {

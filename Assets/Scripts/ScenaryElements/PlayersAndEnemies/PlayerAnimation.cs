@@ -61,7 +61,6 @@ public class PlayerAnimation : MonoBehaviour, AnimationHandler.IAnimationManager
 
     public void executetriggeranimations()
     {
-        Debug.Log("NextAnimationTrigger " + NextAnimationTrigger);
         switch (NextAnimationTrigger)
         {
             case AnimationHandler.AnimationState.Attacking:
@@ -71,7 +70,6 @@ public class PlayerAnimation : MonoBehaviour, AnimationHandler.IAnimationManager
                 break;
 
             case AnimationHandler.AnimationState.DieOnHole:
-                Debug.Log("lalalalala");
                 myAnimator.SetTrigger("Attack");
                 SetNextAnimationTrigger(AnimationHandler.AnimationState.DieOnHole);
                 SoundManager.AddSoundToNextTurn(SoundType.SPUNGEJUMP);
@@ -89,7 +87,6 @@ public class PlayerAnimation : MonoBehaviour, AnimationHandler.IAnimationManager
                 SoundManager.AddSoundToNextTurn(SoundType.SPLUGEHITONWALL);   
                 break;
             case AnimationHandler.AnimationState.Electricity:
-                Debug.Log("joputa");
                 myAnimator.SetTrigger("Attack 2");
                 SetNextAnimationTrigger(AnimationHandler.AnimationState.Idle);
                 SoundManager.AddSoundToNextTurn(SoundType.SPUNGEJUMP);
