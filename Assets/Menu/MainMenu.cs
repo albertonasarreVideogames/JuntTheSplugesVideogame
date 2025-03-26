@@ -15,6 +15,7 @@ public class MainMenu : MenuBase
     public GameObject ControlsPanel;
     public GameObject LevelSelector;
     public GameObject GameDescriptor;
+    public GameObject LevelDescriptor;
     private bool button1EndSequence = false;
     private bool menuBlocked = false;
 
@@ -53,7 +54,9 @@ public class MainMenu : MenuBase
 
         if (!menuBlocked) { executeSwitch(); } else
         {
-            
+            LevelDescriptor.SetActive(false);
+
+
             if (LevelSelector.active == false)
             {
                 transitionCam.gameObject.SetActive(false);
@@ -115,6 +118,7 @@ public class MainMenu : MenuBase
     private void executeSwitch()
     {
         GameDescriptor.SetActive(menuButtonController.index == (int)MenuOptions.NewGame);
+        LevelDescriptor.SetActive(menuButtonController.index == (int)MenuOptions.LevelSelected);
 
         switch (menuButtonController.index)
         {
