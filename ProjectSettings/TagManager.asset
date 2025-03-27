@@ -71,6 +71,9 @@ TagManager:
   - name: BlocsDown
     uniqueID: 672087699
     locked: 0
+  - name: foreground
+    uniqueID: 1730443739
+    locked: 0
   - name: playerBehindBlocs
     uniqueID: 1254333005
     locked: 0
@@ -79,9 +82,6 @@ TagManager:
     locked: 0
   - name: playerBehind3Blocs
     uniqueID: 1599773389
-    locked: 0
-  - name: foreground
-    uniqueID: 1730443739
     locked: 0
   - name: Blocs
     uniqueID: 3507056951
