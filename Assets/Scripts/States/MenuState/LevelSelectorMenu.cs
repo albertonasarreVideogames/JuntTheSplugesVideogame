@@ -105,6 +105,7 @@ public class LevelSelectorMenu : MonoBehaviour
             worldButton.GetComponent<RectTransform>().anchoredPosition = new Vector2(0, buttonPositionY);
             worldAnimators.Add(world, worldButton.GetComponent<Animator>());
             SetButtonRed(worldButton);
+            SetStartsOnWorlds(worldButton, worldLevels[world]);
             i++;
 
         }
@@ -308,12 +309,39 @@ public class LevelSelectorMenu : MonoBehaviour
             }
             else
             {
-                Debug.Log("No se encontró el objeto 'Red' como hijo.");
+                Debug.Log("No se encontró el objeto 'startfull' como hijo.");
             }
         }
 
     }
 
+    private void SetStartsOnWorlds(GameObject worldbutton, List<string> worldlevels)
+    {
+  
+        // Añadir worldbuttonName a cada string en worldlevels
+        List<string> modifiedWorldLevels = worldlevels.Select(level => worldbutton.name + level).ToList();
+
+        // Cargar los niveles completados desde el LevelManager
+        List<string> levels = levelManager.CargarProgreso().nivelesCompletados;
+
+        // Verificar si todos los elementos de modifiedWorldLevels están en levels
+        bool allLevelsCompleted = modifiedWorldLevels.All(level => levels.Contains(level));
+
+        if (allLevelsCompleted)
+        {
+            Transform startfullTransform = worldbutton.transform.Find("startfull");
+
+            // Si lo encontramos, activamos el GameObject
+            if (startfullTransform != null)
+            {
+                startfullTransform.gameObject.SetActive(true);
+            }
+            else
+            {
+                Debug.Log("No se encontró el objeto 'startfull' como hijo.");
+            }
+        }
+    }
 
     private (int, int) LoadPlayerProgress()
     {
