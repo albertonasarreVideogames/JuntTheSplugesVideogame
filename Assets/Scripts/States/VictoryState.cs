@@ -10,6 +10,7 @@ public class VictoryState : MonoBehaviour
 {
     [SerializeField] private GameObject _text;
     public static VictoryState Instance;
+    private LevelManager levelManager;
 
     private void Awake()
     {
@@ -23,6 +24,8 @@ public class VictoryState : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+        levelManager = new LevelManager();
     }
 
     private void OnDestroy()
@@ -101,6 +104,9 @@ public class VictoryState : MonoBehaviour
         {
             Debug.Log("El nivel actual no es más avanzado que el guardado. No se guardó progreso.");
         }
+
+        levelManager.AgregarNivelCompletado(SceneManager.GetActiveScene().name);
+
     }
 
     private (int, int) LoadPlayerProgress()

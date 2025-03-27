@@ -26,6 +26,7 @@ public class LevelSelectorMenu : MonoBehaviour
     private MenuButtonController menuButtonControllerLevels;
     private string worldSelected = "";
     private bool button1EndSequence = false;
+    private LevelManager levelManager;
 
     void Start()
     {
@@ -41,9 +42,11 @@ public class LevelSelectorMenu : MonoBehaviour
         worldLevels.Add("BackToMenu", new List<string> {});
 
         // Crear los animadores de mundos y niveles
+        levelManager = new LevelManager();
         InitializeWorldsAndLevels();
 
         menuButtonController = new MenuButtonController(worldLevels.Count - 1);
+        
     }
 
     void Update()
@@ -126,7 +129,7 @@ public class LevelSelectorMenu : MonoBehaviour
             foreach (var (index, level) in worldLevels[world].Select((level, index) => (index, level)))
             {
                 GameObject levelButton = Instantiate(levelButtonPrefab, LevelChoose.transform);
-                levelButton.name = world + "_Level" + (index + 1);  // Asignamos un nombre único
+                levelButton.name = world + "Level" + (index + 1);  // Asignamos un nombre único
 
                 // Asignamos el texto del nivel al botón
                 levelButton.transform.GetComponentInChildren<Text>().text = level;
@@ -142,6 +145,7 @@ public class LevelSelectorMenu : MonoBehaviour
                 Animator levelAnimator = levelButton.GetComponent<Animator>();
                 animators.Add(levelAnimator);
                 SetButtonRed(levelButton);
+                SetStarts(levelButton);
                 levelButton.SetActive(false);
             }
 
@@ -184,7 +188,7 @@ public class LevelSelectorMenu : MonoBehaviour
         ExecuteButtonAction(() =>
         {
             string selectedLevel = worldLevels[world][levelIndex];
-            if (LevelChoose.transform.Find(worldSelected + "_" + selectedLevel).gameObject.transform.Find("Red").gameObject.activeSelf) { SoundManager.PlaySound(SoundType.MENUDENIED); return; }
+            if (LevelChoose.transform.Find(worldSelected + selectedLevel).gameObject.transform.Find("Red").gameObject.activeSelf) { SoundManager.PlaySound(SoundType.MENUDENIED); return; }
             SoundManager.PlaySound(SoundType.MENUSELECTED);
             Debug.Log(worldSelected + selectedLevel);
             GameManager.Instance.UpdateGameState(GameState.Gaming);
@@ -252,7 +256,7 @@ public class LevelSelectorMenu : MonoBehaviour
 
         for (int i = 0; i < levelsForWorld.Count; i++)
         {
-            string buttonName = world + "_Level" + (i + 1);  // El nombre dinámico
+            string buttonName = world + "Level" + (i + 1);  // El nombre dinámico
             GameObject levelButton = LevelChoose.transform.Find(buttonName)?.gameObject;
 
             if (levelButton != null)
@@ -290,6 +294,27 @@ public class LevelSelectorMenu : MonoBehaviour
         }
     }
 
+    private void SetStarts(GameObject levelButton)
+    {
+        List<string> levels = levelManager.CargarProgreso().nivelesCompletados;
+        if (levels.Contains(levelButton.name))
+        {
+            Transform startfullTransform = levelButton.transform.Find("startfull");
+
+            // Si lo encontramos, activamos el GameObject
+            if (startfullTransform != null)
+            {
+                startfullTransform.gameObject.SetActive(true);
+            }
+            else
+            {
+                Debug.Log("No se encontró el objeto 'Red' como hijo.");
+            }
+        }
+
+    }
+
+
     private (int, int) LoadPlayerProgress()
     {
         // Si no se ha guardado nunca progreso, retornar un valor predeterminado (por ejemplo, mundo 0, nivel 0)
@@ -305,8 +330,8 @@ public class LevelSelectorMenu : MonoBehaviour
         world = -1;
         level = -1;
 
-        // Usamos una expresión regular para capturar el formato 'WorldX_LevelY' o 'WorldX'
-        Regex regex = new Regex(@"World(\d+)(_Level(\d+))?");
+        // Usamos una expresión regular para capturar el formato 'WorldXLevelY' o 'WorldX'
+        Regex regex = new Regex(@"World(\d+)(Level(\d+))?");
         Match match = regex.Match(sceneName);
 
         if (match.Success)
