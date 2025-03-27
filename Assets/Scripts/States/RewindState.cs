@@ -8,6 +8,7 @@ public class RewindState : MonoBehaviour
     [SerializeField] private GameObject _vhsEffect;
     public static RewindState Instance;
     private bool stopRewind = false;
+    public GameObject rewindEffects;
 
 
     private void Awake()
@@ -31,6 +32,7 @@ public class RewindState : MonoBehaviour
 
     private void GameManagerOnGameStateChanged(GameState state)
     {
+        rewindEffects.SetActive(state == GameState.Rewind); 
         _text.SetActive(state == GameState.Rewind);
         _vhsEffect.SetActive(state == GameState.Rewind);
         if (state == GameState.Rewind){ StartCoroutine(RunRewind(GamingState.PlayerMovementsStored)); }
