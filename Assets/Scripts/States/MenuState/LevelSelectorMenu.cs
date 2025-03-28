@@ -290,7 +290,7 @@ public class LevelSelectorMenu : MonoBehaviour
             }
             else
             {
-                Debug.Log("No se encontró el objeto 'Red' como hijo.");
+                Debug.Log("No se encontró el objeto 'Red' como hijo en " + levelButton.name);
             }
         }
     }
@@ -309,7 +309,7 @@ public class LevelSelectorMenu : MonoBehaviour
             }
             else
             {
-                Debug.Log("No se encontró el objeto 'startfull' como hijo.");
+                Debug.Log("No se encontró el objeto 'startfull' como hijo en"+ levelButton.name);
             }
         }
 
@@ -338,7 +338,7 @@ public class LevelSelectorMenu : MonoBehaviour
             }
             else
             {
-                Debug.Log("No se encontró el objeto 'startfull' como hijo.");
+                Debug.Log("No se encontró el objeto 'startfull' como hijo en" + worldbutton.name);
             }
         }
     }
@@ -377,7 +377,7 @@ public class LevelSelectorMenu : MonoBehaviour
         }
         else
         {
-            Debug.Log("El nombre de la escena no sigue el formato esperado.");
+            Debug.Log("El nombre de la escena no sigue el formato esperado." + sceneName);
             return false;
         }
     }

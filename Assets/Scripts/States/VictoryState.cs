@@ -139,7 +139,7 @@ public class VictoryState : MonoBehaviour
         }
         else
         {
-            Debug.Log("El nombre de la escena no sigue el formato esperado.");
+            Debug.Log("El nombre de la escena no sigue el formato esperado." + sceneName);
             return false;
         }
     }
