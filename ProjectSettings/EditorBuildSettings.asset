@@ -240,7 +240,7 @@ EditorBuildSettings:
     path: Assets/Scenes/LevelEditor/WorldsAndLevels/world 5/World5Level1.unity
     guid: 47ff79c051c7e07489b4e7b27990552d
   - enabled: 1
-    path: Assets/Scenes/LevelEditor/WorldsAndLevels/world 5/World5Level3.unity
+    path: Assets/Scenes/LevelEditor/WorldsAndLevels/world 5/World5Level10.unity
     guid: 4909aae935d95f546a0401f41b24d638
   - enabled: 1
     path: Assets/Scenes/LevelEditor/WorldsAndLevels/world 5/World5Level4.unity
@@ -252,7 +252,7 @@ EditorBuildSettings:
     path: Assets/Scenes/LevelEditor/WorldsAndLevels/world 5/World5Level6.unity
     guid: 52223e1f43a70bc4da169467ec918930
   - enabled: 1
-    path: Assets/Scenes/LevelEditor/WorldsAndLevels/world 5/World5Level7.unity
+    path: Assets/Scenes/LevelEditor/WorldsAndLevels/world 5/World5Level3.unity
     guid: ae9622b3171d060408cde822b8fc91e6
   - enabled: 1
     path: Assets/Scenes/LevelEditor/WorldsAndLevels/world 5/World5Level8.unity
@@ -261,7 +261,7 @@ EditorBuildSettings:
     path: Assets/Scenes/LevelEditor/WorldsAndLevels/world 5/World5Level2.unity
     guid: 1ce076ac733d03c45a637b579573601c
   - enabled: 1
-    path: Assets/Scenes/LevelEditor/WorldsAndLevels/world 5/World5Level10.unity
+    path: Assets/Scenes/LevelEditor/WorldsAndLevels/world 5/World5Level7.unity
     guid: 52bad8ab7d9995f4b8eefafb3059423b
   - enabled: 1
     path: Assets/Scenes/LevelEditor/WorldsAndLevels/world 6/World6Level1.unity
