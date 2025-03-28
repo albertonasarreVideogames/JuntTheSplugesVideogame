@@ -279,7 +279,7 @@ public class LevelSelectorMenu : MonoBehaviour
         // Solo se pone en rojo si el jugador no ha llegado hasta ahi.
         if (world > savedWorld || (world == savedWorld && level > savedLevel + 1))
         {
-            if((world == savedWorld + 1 && savedLevel >= 8 && (level == -1 || level == 1)) || (world == savedWorld && savedLevel >= 8)) { return; }
+            if((world == savedWorld + 1 && savedLevel >= 7 && (level == -1 || level == 1)) || (world == savedWorld && savedLevel >= 7)) { return; }
             // Buscar el hijo llamado "Red" dentro de levelButton
             Transform redTransform = levelButton.transform.Find("Red");
 
