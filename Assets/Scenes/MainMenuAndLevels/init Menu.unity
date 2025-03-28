@@ -3155,6 +3155,11 @@ PrefabInstance:
       propertyPath: m_Type
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5942977379555938875, guid: 3bbe4c7ba0b0a7c48b2bc4732425bce5,
+        type: 3}
+      propertyPath: m_Name
+      value: Settingstxt1
+      objectReference: {fileID: 0}
     - target: {fileID: 5942977380207393097, guid: 3bbe4c7ba0b0a7c48b2bc4732425bce5,
         type: 3}
       propertyPath: transitionCam
@@ -3165,6 +3170,16 @@ PrefabInstance:
       propertyPath: levelSelectedAnimator
       value: 
       objectReference: {fileID: 980994020}
+    - target: {fileID: 5942977380228029250, guid: 3bbe4c7ba0b0a7c48b2bc4732425bce5,
+        type: 3}
+      propertyPath: m_Name
+      value: Quittxt1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5942977380523388294, guid: 3bbe4c7ba0b0a7c48b2bc4732425bce5,
+        type: 3}
+      propertyPath: m_Name
+      value: NewGametxt1
+      objectReference: {fileID: 0}
     - target: {fileID: 5942977381002369936, guid: 3bbe4c7ba0b0a7c48b2bc4732425bce5,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5014,7 +5029,7 @@ GameObject:
   - component: {fileID: 1914370961}
   - component: {fileID: 1914370960}
   m_Layer: 5
-  m_Name: Quittxt
+  m_Name: Quittxt1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
