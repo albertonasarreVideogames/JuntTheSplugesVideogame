@@ -3829,7 +3829,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: This game consist on put toguther all the splunges
+  m_Text: This game consists of putting together all the splunges
 --- !u!222 &1522195697
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3960,10 +3960,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'When you reach the level 8 of each world
-
-    You can go to the next world
-    or play levels 9 and 10'
+  m_Text: When you reach level 8 of each world, you can either go to the next world
+    or play levels 9 and 10.
 --- !u!222 &1582226299
 CanvasRenderer:
   m_ObjectHideFlags: 0
