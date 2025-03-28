@@ -38,6 +38,7 @@ public class GameManager : MonoBehaviour
     {
 
         //DEBUG
+        /*
         if (Input.GetKeyDown(KeyCode.P))
             {
             int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
@@ -50,6 +51,7 @@ public class GameManager : MonoBehaviour
             SceneManager.LoadScene(currentSceneIndex - 1);
             UpdateGameState(GameState.Gaming);
         }
+        */
         //FINISHDEBUG
         switch (State)
         {
@@ -162,3 +164,4 @@ public enum GameState
     Menu,
     Rewind
 }
+ 
