@@ -57,7 +57,7 @@ namespace LevelTests
 
         [UnityTest]
         [Timeout(900000)]
-        public IEnumerator Level2()
+        public IEnumerator Level10()
         {
             MovementsManager movementsManager = new MovementsManager();
             //movementsManager.AddMovementDown(2);
@@ -208,7 +208,7 @@ namespace LevelTests
             movementsManager.AddMovementLeft(6);
 
 
-            yield return TestUtilities.RunTest("World8Level2", movementsManager, GameState.Victory, 10.0f);
+            yield return TestUtilities.RunTest("World8Level10", movementsManager, GameState.Victory, 10.0f);
         }
 
         [UnityTest]
@@ -282,7 +282,7 @@ namespace LevelTests
 
         [UnityTest]
         [Timeout(900000)]
-        public IEnumerator Level5()
+        public IEnumerator Level2()
         {
             MovementsManager movementsManager = new MovementsManager();
             movementsManager.AddMovementUp(1);
@@ -340,7 +340,7 @@ namespace LevelTests
             movementsManager.AddMovementLeft(5);
 
 
-            yield return TestUtilities.RunTest("World8Level5", movementsManager, GameState.Victory, 10.0f);
+            yield return TestUtilities.RunTest("World8Level2", movementsManager, GameState.Victory, 10.0f);
         }
 
         [UnityTest]
@@ -541,7 +541,7 @@ namespace LevelTests
 
         [UnityTest]
         [Timeout(900000)]
-        public IEnumerator Level10()
+        public IEnumerator Level5()
         {
             MovementsManager movementsManager = new MovementsManager();
             movementsManager.AddMovementUp(5);
@@ -573,7 +573,7 @@ namespace LevelTests
             movementsManager.AddMovementLeft(6);
             movementsManager.AddMovementUp(7);
 
-            yield return TestUtilities.RunTest("World8Level10", movementsManager, GameState.Victory, 10.0f);
+            yield return TestUtilities.RunTest("World8Level5", movementsManager, GameState.Victory, 10.0f);
         }
 
     }
