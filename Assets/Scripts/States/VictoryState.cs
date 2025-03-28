@@ -48,7 +48,7 @@ public class VictoryState : MonoBehaviour
     public void UpdateState()
     {
 
-        if (Input.GetKeyDown(KeyCode.Space) && GameManager.Instance.State == GameState.Victory)
+        if ((Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Return)) && GameManager.Instance.State == GameState.Victory)
         {
             SaveLevel();
             GoToNextLevel();
@@ -78,7 +78,7 @@ public class VictoryState : MonoBehaviour
         }
         else
         {
-            Debug.Log("No se pudo parsear el nombre de la escena.");
+            Debug.Log("No se pudo parsear el nombre de la escena." + sceneName);
         }
     }
 

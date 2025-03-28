@@ -41,7 +41,7 @@ public class LoseState : MonoBehaviour
     // Update is called once per frame
     public void UpdateState()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && GameManager.Instance.State == GameState.Lose)
+        if ((Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Return)) && GameManager.Instance.State == GameState.Lose)
         {
             RestartLevel();
         }
