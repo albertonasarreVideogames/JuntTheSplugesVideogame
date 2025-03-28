@@ -52,7 +52,7 @@ namespace LevelTests
         }
         [UnityTest]
         [Timeout(90000)]
-        public IEnumerator Level2()
+        public IEnumerator Level9()
         {
             MovementsManager movementsManager = new MovementsManager();
             movementsManager.AddMovementRight(1);
@@ -136,7 +136,7 @@ namespace LevelTests
             movementsManager.AddMovementUp(9);
             movementsManager.AddMovementLeft(1);
 
-            yield return TestUtilities.RunTest("World5Level2", movementsManager, GameState.Victory, 10.0f);
+            yield return TestUtilities.RunTest("World5Level9", movementsManager, GameState.Victory, 10.0f);
         }
 
         [UnityTest]
@@ -507,7 +507,7 @@ namespace LevelTests
         }
         [UnityTest]
         [Timeout(900000)]
-        public IEnumerator Level9()
+        public IEnumerator Level2()
         {
             MovementsManager movementsManager = new MovementsManager();
             movementsManager.AddMChangePlayer(1);
@@ -569,7 +569,7 @@ namespace LevelTests
             movementsManager.AddMovementDown(3);
             movementsManager.AddMovementRight(9);
 
-            yield return TestUtilities.RunTest("World5Level9", movementsManager, GameState.Victory, 10.0f);
+            yield return TestUtilities.RunTest("World5Level2", movementsManager, GameState.Victory, 10.0f);
         }
 
         [UnityTest]
