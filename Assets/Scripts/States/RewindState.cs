@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class RewindState : MonoBehaviour
 {
@@ -45,7 +46,7 @@ public class RewindState : MonoBehaviour
         {
             stopRewind = true; // Interrumpe la corutina
         }
-        if (Input.GetKeyUp(KeyCode.Q)) { SoundManager.ChangeOSTpitch(1f); }
+        if (Input.GetKeyUp(KeyCode.Q)) { SoundManager.ChangeOSTpitch(1f); _vhsEffect.GetComponent<Image>().material.SetFloat("_Velocity", 3); }
     }
 
     public IEnumerator RunRewind(MovementsManagerPlay movementsManager)
@@ -72,6 +73,7 @@ public class RewindState : MonoBehaviour
 
                 GamingState.Instance.SimulatemovementAtPlayerLevel();
                 SoundManager.ChangeOSTpitch(-1.5f);
+                _vhsEffect.GetComponent<Image>().material.SetFloat("_Velocity", 1);
                 movementsManager.buttonspressed.RemoveAt(i);              
 
             }
