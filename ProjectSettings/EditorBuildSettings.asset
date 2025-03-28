@@ -153,13 +153,13 @@ EditorBuildSettings:
     path: Assets/Scenes/LevelEditor/WorldsAndLevels/World 2/World2Level6.unity
     guid: 7c8e56f3d64b94749afb055b5f52051f
   - enabled: 1
-    path: Assets/Scenes/LevelEditor/WorldsAndLevels/World 2/World2Level7.unity
+    path: Assets/Scenes/LevelEditor/WorldsAndLevels/World 2/World2Level9.unity
     guid: 4a464da3dbb7a184d8a9719bebb4866d
   - enabled: 1
     path: Assets/Scenes/LevelEditor/WorldsAndLevels/World 2/World2Level8.unity
     guid: 9baccfbdbbcf90b4096973a28d21e438
   - enabled: 1
-    path: Assets/Scenes/LevelEditor/WorldsAndLevels/World 2/World2Level9.unity
+    path: Assets/Scenes/LevelEditor/WorldsAndLevels/World 2/World2Level7.unity
     guid: 49b425e84ff179e409580effac47235b
   - enabled: 1
     path: Assets/Scenes/LevelEditor/WorldsAndLevels/World 2/World2Level10.unity
