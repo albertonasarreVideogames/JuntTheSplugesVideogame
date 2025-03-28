@@ -965,6 +965,11 @@ PrefabInstance:
       propertyPath: m_ChunkCullingBounds.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1949184611735104671, guid: 3a124dd410741fb4e98320b7ef6b308b,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: -1
+      objectReference: {fileID: 0}
     - target: {fileID: 4571107168225629066, guid: 3a124dd410741fb4e98320b7ef6b308b,
         type: 3}
       propertyPath: m_MaximumTileChangeCount
@@ -9192,7 +9197,7 @@ PrefabInstance:
     - target: {fileID: 5609512882994183523, guid: 3a124dd410741fb4e98320b7ef6b308b,
         type: 3}
       propertyPath: m_ChunkCullingBounds.y
-      value: 0.016129017
+      value: 0.22580647
       objectReference: {fileID: 0}
     - target: {fileID: 5609512883119102161, guid: 3a124dd410741fb4e98320b7ef6b308b,
         type: 3}
