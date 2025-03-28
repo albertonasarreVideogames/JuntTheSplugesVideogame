@@ -51,6 +51,11 @@ public class GamingState : MonoBehaviour
                 }
             }
         }
+
+        if(state == GameState.Victory)
+        {
+             allPlayers = null;
+        }
     }
   
     void OnLevelFinishedLoading(Scene scene, LoadSceneMode mode)
