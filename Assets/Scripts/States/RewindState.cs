@@ -33,10 +33,10 @@ public class RewindState : MonoBehaviour
 
     private void GameManagerOnGameStateChanged(GameState state)
     {
-        rewindEffects.SetActive(state == GameState.Rewind); 
-        _text.SetActive(state == GameState.Rewind);
-        _vhsEffect.SetActive(state == GameState.Rewind);
-        if (state == GameState.Rewind && GamingState.PlayerMovementsStored.buttonspressed.Count > 0) { StartCoroutine(RunRewind(GamingState.PlayerMovementsStored)); }
+        rewindEffects.SetActive(state == GameState.Rewind && GamingState.PlayerMovementsStored.buttonspressed.Count > 0); 
+        _text.SetActive(state == GameState.Rewind && GamingState.PlayerMovementsStored.buttonspressed.Count > 0);
+        _vhsEffect.SetActive(state == GameState.Rewind && GamingState.PlayerMovementsStored.buttonspressed.Count > 0);
+        if (state == GameState.Rewind && GamingState.PlayerMovementsStored.buttonspressed.Count > 0) { StartCoroutine(RunRewind(GamingState.PlayerMovementsStored)); } else if(state == GameState.Rewind) { SoundManager.PlaySound(SoundType.MENUDENIED); GameManager.Instance.UpdateGameState(GameState.Gaming); }
 
     }
 
