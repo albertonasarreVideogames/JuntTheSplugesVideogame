@@ -36,7 +36,7 @@ public class RewindState : MonoBehaviour
         rewindEffects.SetActive(state == GameState.Rewind); 
         _text.SetActive(state == GameState.Rewind);
         _vhsEffect.SetActive(state == GameState.Rewind);
-        if (state == GameState.Rewind){ StartCoroutine(RunRewind(GamingState.PlayerMovementsStored)); }
+        if (state == GameState.Rewind && GamingState.PlayerMovementsStored.buttonspressed.Count > 0) { StartCoroutine(RunRewind(GamingState.PlayerMovementsStored)); }
 
     }
 
