@@ -87,8 +87,8 @@ public class MainMenu : MenuBase
         yield return new WaitForSeconds(time);
 
         //LevelManager.Instance.LoadFirstLevel();
-        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
-        SceneManager.LoadScene(currentSceneIndex + 1);
+        //int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+        //SceneManager.LoadScene(currentSceneIndex + 1);
         GameManager.Instance.UpdateGameState(GameState.Gaming);
 
         LoadPlayerProgress();
@@ -106,12 +106,17 @@ public class MainMenu : MenuBase
             Debug.Log("Último mundo: " + lastWorld);
             Debug.Log("Último nivel: " + lastLevel);
 
+            int leveltoChrage = lastLevel + 1;
+
+            SceneManager.LoadScene("World" + lastWorld + "Level" + leveltoChrage);
+
             // Aquí puedes usar lastWorld y lastLevel para cargar la escena correspondiente
         }
         else
         {
             Debug.Log("No se encontró progreso guardado.");
             // Si no hay progreso guardado, quizás iniciar en el primer mundo/primer nivel
+            SceneManager.LoadScene("World1Level1");
         }
     }
 
