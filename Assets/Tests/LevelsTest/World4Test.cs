@@ -153,7 +153,7 @@ namespace LevelTests
 
         [UnityTest]
         [Timeout(150000)]
-        public IEnumerator Level6()
+        public IEnumerator Level8()
         {
             MovementsManager movementsManager = new MovementsManager();
             movementsManager.AddMovementDown(5);
@@ -185,7 +185,7 @@ namespace LevelTests
             movementsManager.AddMovementDown(4);
             movementsManager.AddMovementLeft(7);
 
-            yield return TestUtilities.RunTest("World4Level6", movementsManager, GameState.Victory, 10.0f);
+            yield return TestUtilities.RunTest("World4Level8", movementsManager, GameState.Victory, 10.0f);
         }
 
         [UnityTest]
@@ -209,7 +209,7 @@ namespace LevelTests
 
         [UnityTest]
         [Timeout(120000)]
-        public IEnumerator Level8()
+        public IEnumerator Level6()
         {
             MovementsManager movementsManager = new MovementsManager();
             movementsManager.AddMovementRight(4);
@@ -221,7 +221,7 @@ namespace LevelTests
             movementsManager.AddMovementRight(23);
             movementsManager.AddMovementDown(13);
 
-            yield return TestUtilities.RunTest("World4Level8", movementsManager, GameState.Victory, 10.0f);
+            yield return TestUtilities.RunTest("World4Level6", movementsManager, GameState.Victory, 10.0f);
         }
 
         [UnityTest]
