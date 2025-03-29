@@ -5,111 +5,15 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Scenes/MainMenuAndLevels/init Menu.unity
     guid: 3ba12ab71d9fb7e49b8c9dc893070774
   - enabled: 1
-    path: Assets/Scenes/MainMenuAndLevels/SampleScene.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
-  - enabled: 1
-    path: Assets/Scenes/MainMenuAndLevels/Level 2.unity
-    guid: f8da611bdfdb82742931a905efb92cc3
-  - enabled: 1
-    path: Assets/Scenes/MainMenuAndLevels/Level 3-1.unity
-    guid: d3c0de4a0e5e426468c77bd32745fce7
-  - enabled: 1
-    path: Assets/Scenes/MainMenuAndLevels/Level 3-2.unity
-    guid: 9797863a95f77074ea7b64d4cd9d37f0
-  - enabled: 1
-    path: Assets/Scenes/MainMenuAndLevels/Level 3.unity
-    guid: 3db508caa96da334599841dbd399fe78
-  - enabled: 1
-    path: Assets/Scenes/MainMenuAndLevels/level 4.unity
-    guid: 60814ba5f90f9c74181e122e44f5849d
-  - enabled: 1
-    path: Assets/Scenes/MainMenuAndLevels/level 4-2.unity
-    guid: 0c74aee40c477844e9ebbd4f0b777a3b
-  - enabled: 1
-    path: Assets/Scenes/MainMenuAndLevels/level 5.unity
-    guid: 38dc758354160e147920bea319f5a1c0
-  - enabled: 1
-    path: Assets/Scenes/Test/BasicPlayerFeaturesTest/BasicPlayerFeaturesTestScenary1.unity
-    guid: 51681724923e28e41bc44dd28fc1debb
-  - enabled: 1
-    path: Assets/Scenes/Test/BasicPlayerFeaturesTest/BasicPlayerFeaturesTestScenary2.unity
-    guid: 959c47660d3db2540b997ccd18454075
-  - enabled: 1
-    path: Assets/Scenes/Test/EnemiesTest/EnemiesTestScenary1.unity
-    guid: a70b389a92d30154a83b1f0516475468
-  - enabled: 1
-    path: Assets/Scenes/Test/BasicPlayerFeaturesTest/BasicPlayerFeaturesTestScenary3.unity
-    guid: 89b7fc7dd0925494eaa0122422f764a7
-  - enabled: 1
-    path: Assets/Scenes/Test/BasicPlayerFeaturesTest/BasicPlayerFeaturesTestScenary4.unity
-    guid: 592fd5d26f1c09640aaa5167f9cf3f2f
-  - enabled: 1
-    path: Assets/Scenes/Test/BasicPlayerFeaturesTest/BasicPlayerFeaturesTestScenary5.unity
-    guid: 480b3932f444b544a842ac8e39da1e4f
-  - enabled: 1
-    path: Assets/Scenes/Test/EnemiesTest/EnemiesTestScenary2.unity
-    guid: 4bc20c5de0d9aee4c9df2d082e3f6d84
-  - enabled: 1
-    path: Assets/Scenes/Test/EnemiesTest/EnemiesTestScenary3.unity
-    guid: d729351ebad54284abca19026f2e4dfa
-  - enabled: 1
-    path: Assets/Scenes/Test/EnemiesTest/EnemiesTestScenary4.unity
-    guid: 84dfe0ad953e5ec4989628f9c2a71c2c
-  - enabled: 1
-    path: Assets/Scenes/Test/Pinchos/PinchosTestScenary1.unity
-    guid: 449253c0aa891ef4cab0fb1429157883
-  - enabled: 1
-    path: Assets/Scenes/Test/Pinchos/PinchosTestScenary2.unity
-    guid: 80f8a469b3cd7dc4d9c1802559c7769f
-  - enabled: 1
-    path: Assets/Scenes/Test/Pinchos/PinchosTestScenary3.unity
-    guid: af843922245d2f64bbc21065e645675d
-  - enabled: 1
-    path: Assets/Scenes/Test/Blocs/BlocsTestScenary1.unity
-    guid: 27bdbaf904567f04cbabddb083766ea4
-  - enabled: 1
-    path: Assets/Scenes/Test/Blocs/BlocsTestScenary2.unity
-    guid: c71d19c61df750b449a9a0a50f128c50
-  - enabled: 1
-    path: Assets/Scenes/Test/Blocs/BlocsTestScenary3.unity
-    guid: c866c870836a143458ddacad1f4dc476
-  - enabled: 1
-    path: Assets/Scenes/Test/EnemiesAndBlocsTEst/EnemiesAndBlocsScenary1.unity
-    guid: 3700ffc7ee6d86240854bc6780eda9c1
-  - enabled: 1
-    path: Assets/Scenes/Test/EnemiesTest/EnemiesTestScenary5.unity
-    guid: 5c23ad7f2cb963a46a7d1a7652fda414
-  - enabled: 1
-    path: Assets/Scenes/Test/EnemiesAndBlocsTEst/EnemiesAndBlocsScenary2.unity
-    guid: 60ae3f4e9f8e1ec48a29f77bb5ec2609
-  - enabled: 1
-    path: Assets/Scenes/Test/EnemiesAndBlocsTEst/EnemiesAndBlocsScenary3.unity
-    guid: 7d1e530a7fc7edc4e8ed35480f800392
-  - enabled: 1
-    path: Assets/Scenes/Test/EnemiesAndBlocsTEst/EnemiesAndBlocsScenary4.unity
-    guid: 339b8ca974dfd764bb524b63c82b74bb
-  - enabled: 1
-    path: Assets/Scenes/Test/EnemiesAndBlocsTEst/EnemiesAndBlocsScenary5.unity
-    guid: 21dd0d579f974014799f04185b4910dc
-  - enabled: 1
-    path: Assets/Scenes/Test/EnemiesAndBlocsTEst/EnemiesAndBlocsScenary6.unity
-    guid: c995670094265b74ca614302ef49ec80
-  - enabled: 1
-    path: Assets/Scenes/Test/AllcolorsToguether/AllcolorsScenarytest1.unity
-    guid: 757f4e3bf3adcdb40938225ad9aa2076
+    path: Assets/Scenes/LevelEditor/WorldsAndLevels/World 1 Totorial/World1Level1.unity
+    guid: f339132ab997d6841a1a2c01d625e9b2
   - enabled: 1
     path: Assets/Scenes/LevelEditor/WorldsAndLevels/World 1 Totorial/World1Level2.unity
     guid: 804e289d533a2014bb67289bd9fb89c6
-  - enabled: 1
-    path: Assets/Scenes/LevelEditor/WorldsAndLevels/World 1 Totorial/World1Level1.unity
-    guid: f339132ab997d6841a1a2c01d625e9b2
   - enabled: 1
     path: Assets/Scenes/LevelEditor/WorldsAndLevels/World 1 Totorial/World1Level3.unity
     guid: 624fa1717b4f8534db4aa9be080f74ee
@@ -153,14 +57,14 @@ EditorBuildSettings:
     path: Assets/Scenes/LevelEditor/WorldsAndLevels/World 2/World2Level6.unity
     guid: 7c8e56f3d64b94749afb055b5f52051f
   - enabled: 1
-    path: Assets/Scenes/LevelEditor/WorldsAndLevels/World 2/World2Level9.unity
-    guid: 4a464da3dbb7a184d8a9719bebb4866d
+    path: Assets/Scenes/LevelEditor/WorldsAndLevels/World 2/World2Level7.unity
+    guid: 49b425e84ff179e409580effac47235b
   - enabled: 1
     path: Assets/Scenes/LevelEditor/WorldsAndLevels/World 2/World2Level8.unity
     guid: 9baccfbdbbcf90b4096973a28d21e438
   - enabled: 1
-    path: Assets/Scenes/LevelEditor/WorldsAndLevels/World 2/World2Level7.unity
-    guid: 49b425e84ff179e409580effac47235b
+    path: Assets/Scenes/LevelEditor/WorldsAndLevels/World 2/World2Level9.unity
+    guid: 4a464da3dbb7a184d8a9719bebb4866d
   - enabled: 1
     path: Assets/Scenes/LevelEditor/WorldsAndLevels/World 2/World2Level10.unity
     guid: 68a9cddcc83fff74f8fc8ed6f01f2d95
@@ -213,14 +117,14 @@ EditorBuildSettings:
     path: Assets/Scenes/LevelEditor/WorldsAndLevels/World 4/World4Level5.unity
     guid: 0f09be4e4d997a34e8471d1282609d54
   - enabled: 1
-    path: Assets/Scenes/LevelEditor/WorldsAndLevels/World 4/World4Level8.unity
-    guid: fe25b21c4b59bb7439fc8372519b68a5
+    path: Assets/Scenes/LevelEditor/WorldsAndLevels/World 4/World4Level6.unity
+    guid: 2880cf94e294e2c4e85be4e29c280957
   - enabled: 1
     path: Assets/Scenes/LevelEditor/WorldsAndLevels/World 4/World4Level7.unity
     guid: 3977c3b4565c1ab458cc9e2c138985e1
   - enabled: 1
-    path: Assets/Scenes/LevelEditor/WorldsAndLevels/World 4/World4Level6.unity
-    guid: 2880cf94e294e2c4e85be4e29c280957
+    path: Assets/Scenes/LevelEditor/WorldsAndLevels/World 4/World4Level8.unity
+    guid: fe25b21c4b59bb7439fc8372519b68a5
   - enabled: 1
     path: Assets/Scenes/LevelEditor/WorldsAndLevels/World 4/World4Level9.unity
     guid: 8b701f58ea55842468fa9938f61ca800
@@ -231,17 +135,14 @@ EditorBuildSettings:
     path: 
     guid: 00000000000000000000000000000000
   - enabled: 1
-    path: Assets/Scenes/MainMenuAndLevels/LevelSelectorMenu.unity
-    guid: 8ca349c2a5d2b3a45949dc259f893809
-  - enabled: 1
-    path: Assets/Scenes/LevelEditor/WorldsAndLevels/world 5/World5Level9.unity
-    guid: fa205f1c80c76b3468bdb76adaa31b8e
-  - enabled: 1
     path: Assets/Scenes/LevelEditor/WorldsAndLevels/world 5/World5Level1.unity
     guid: 47ff79c051c7e07489b4e7b27990552d
   - enabled: 1
-    path: Assets/Scenes/LevelEditor/WorldsAndLevels/world 5/World5Level10.unity
-    guid: 4909aae935d95f546a0401f41b24d638
+    path: Assets/Scenes/LevelEditor/WorldsAndLevels/world 5/World5Level2.unity
+    guid: 1ce076ac733d03c45a637b579573601c
+  - enabled: 1
+    path: Assets/Scenes/LevelEditor/WorldsAndLevels/world 5/World5Level3.unity
+    guid: ae9622b3171d060408cde822b8fc91e6
   - enabled: 1
     path: Assets/Scenes/LevelEditor/WorldsAndLevels/world 5/World5Level4.unity
     guid: 1ec18fa1823bf244e9fc40479fc3709b
@@ -252,17 +153,17 @@ EditorBuildSettings:
     path: Assets/Scenes/LevelEditor/WorldsAndLevels/world 5/World5Level6.unity
     guid: 52223e1f43a70bc4da169467ec918930
   - enabled: 1
-    path: Assets/Scenes/LevelEditor/WorldsAndLevels/world 5/World5Level3.unity
-    guid: ae9622b3171d060408cde822b8fc91e6
+    path: Assets/Scenes/LevelEditor/WorldsAndLevels/world 5/World5Level7.unity
+    guid: 52bad8ab7d9995f4b8eefafb3059423b
   - enabled: 1
     path: Assets/Scenes/LevelEditor/WorldsAndLevels/world 5/World5Level8.unity
     guid: 8784e5d2afe965546a2e771cefc48b11
   - enabled: 1
-    path: Assets/Scenes/LevelEditor/WorldsAndLevels/world 5/World5Level2.unity
-    guid: 1ce076ac733d03c45a637b579573601c
+    path: Assets/Scenes/LevelEditor/WorldsAndLevels/world 5/World5Level9.unity
+    guid: fa205f1c80c76b3468bdb76adaa31b8e
   - enabled: 1
-    path: Assets/Scenes/LevelEditor/WorldsAndLevels/world 5/World5Level7.unity
-    guid: 52bad8ab7d9995f4b8eefafb3059423b
+    path: Assets/Scenes/LevelEditor/WorldsAndLevels/world 5/World5Level10.unity
+    guid: 4909aae935d95f546a0401f41b24d638
   - enabled: 1
     path: Assets/Scenes/LevelEditor/WorldsAndLevels/world 6/World6Level1.unity
     guid: 27f451a91b214f14dbe1a04967e72710
@@ -288,11 +189,11 @@ EditorBuildSettings:
     path: Assets/Scenes/LevelEditor/WorldsAndLevels/world 6/World6Level8.unity
     guid: a87ed52de4241f844b309142928f8fa8
   - enabled: 1
-    path: Assets/Scenes/LevelEditor/WorldsAndLevels/world 6/World6Level10.unity
-    guid: 7f8e432026403944f816778f3942db2a
-  - enabled: 1
     path: Assets/Scenes/LevelEditor/WorldsAndLevels/world 6/World6Level9.unity
     guid: a4b7522e5ab0a0948b8c8a34ca9f2608
+  - enabled: 1
+    path: Assets/Scenes/LevelEditor/WorldsAndLevels/world 6/World6Level10.unity
+    guid: 7f8e432026403944f816778f3942db2a
   - enabled: 1
     path: Assets/Scenes/LevelEditor/WorldsAndLevels/world 7/World7Level1.unity
     guid: fe535f50a5790294696dbe604b643ed1
@@ -327,8 +228,8 @@ EditorBuildSettings:
     path: Assets/Scenes/LevelEditor/WorldsAndLevels/world 8/World8Level1.unity
     guid: dbbc07f04a1c4674dbbf40db3f8a839b
   - enabled: 1
-    path: Assets/Scenes/LevelEditor/WorldsAndLevels/world 8/World8Level10.unity
-    guid: ff5f3296544748b4c929c9b7c244c51a
+    path: Assets/Scenes/LevelEditor/WorldsAndLevels/world 8/World8Level2.unity
+    guid: 1403946e9d680c340b420e756eebcf77
   - enabled: 1
     path: Assets/Scenes/LevelEditor/WorldsAndLevels/world 8/World8Level3.unity
     guid: 13c5856b3a639f74681dca1ef2643c82
@@ -336,8 +237,8 @@ EditorBuildSettings:
     path: Assets/Scenes/LevelEditor/WorldsAndLevels/world 8/World8Level4.unity
     guid: 5fb6eac820c7e2b4ab238245e10e5f38
   - enabled: 1
-    path: Assets/Scenes/LevelEditor/WorldsAndLevels/world 8/World8Level2.unity
-    guid: 1403946e9d680c340b420e756eebcf77
+    path: Assets/Scenes/LevelEditor/WorldsAndLevels/world 8/World8Level5.unity
+    guid: 609ab723de3762b40b166968737d8df7
   - enabled: 1
     path: Assets/Scenes/LevelEditor/WorldsAndLevels/world 8/World8Level6.unity
     guid: 04c877165d6459f47bdc06ccc136939a
@@ -351,6 +252,6 @@ EditorBuildSettings:
     path: Assets/Scenes/LevelEditor/WorldsAndLevels/world 8/World8Level9.unity
     guid: 40e03da6243227447af1921a82595369
   - enabled: 1
-    path: Assets/Scenes/LevelEditor/WorldsAndLevels/world 8/World8Level5.unity
-    guid: 609ab723de3762b40b166968737d8df7
+    path: Assets/Scenes/LevelEditor/WorldsAndLevels/world 8/World8Level10.unity
+    guid: ff5f3296544748b4c929c9b7c244c51a
   m_configObjects: {}
