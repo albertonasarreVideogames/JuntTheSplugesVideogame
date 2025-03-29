@@ -6,9 +6,18 @@ using System.Collections;
 
 public static class TestUtilities
 {
+    private static bool persistenobjectinicializated = false;
     public static IEnumerator RunTest(string sceneName, MovementsManager movementsManager, GameState expectedState,float timeBetweenmovementsMultiplicator = 2f)
     {
         bool manualTestActivated = false;
+
+
+        if (!persistenobjectinicializated) {
+            yield return SceneManager.LoadSceneAsync("init Menu", LoadSceneMode.Single);
+            persistenobjectinicializated = true;
+            yield return new WaitForSeconds(0.1f * timeBetweenmovementsMultiplicator);
+            GameManager.Instance.UpdateGameState(GameState.Gaming);
+        }
 
         yield return SceneManager.LoadSceneAsync(sceneName, LoadSceneMode.Single);
         yield return new WaitForSeconds(0.1f * timeBetweenmovementsMultiplicator);
@@ -31,17 +40,11 @@ public static class TestUtilities
             }
         }
 
-        // Destruir los objetos persistentes
-        GameObject[] persistentObjects = GameObject.FindGameObjectsWithTag("Persistent");
-        foreach (GameObject obj in persistentObjects)
-        {
-            UnityEngine.Object.Destroy(obj);
-        }
-
         // Esperar un poco más para asegurarse de que ha acabado
         yield return new WaitForSeconds(1f);
 
         // Verificar el estado final
         Assert.AreEqual(GameManager.Instance.State, expectedState);
+        GameManager.Instance.UpdateGameState(GameState.Gaming);
     }
 }
