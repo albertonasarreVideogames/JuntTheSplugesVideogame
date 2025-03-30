@@ -107,6 +107,7 @@ public class MainMenu : MenuBase
             Debug.Log("Último nivel: " + lastLevel);
 
             int leveltoChrage = lastLevel + 1;
+            if (leveltoChrage > 10) { leveltoChrage = 1; lastWorld = lastWorld + 1; }
 
             SceneManager.LoadScene("World" + lastWorld + "Level" + leveltoChrage);
 
