@@ -161,7 +161,7 @@ public class MapLoader : MonoBehaviour
         // Ajustar el tamaño de las celdas
         Grid gridLayout = GameObject.Find("Grid").GetComponent<Grid>();
 
-        gridLayout.cellSize = new Vector2(cellSize, cellSize);
+        //gridLayout.cellSize = new Vector2(cellSize, cellSize);
         Camera.main.transform.position = new Vector3(Camera.main.transform.position.x, 0.35f, Camera.main.transform.position.z);
     }
 
