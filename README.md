@@ -1,10 +1,35 @@
-# 🎮 [JuntTheSpluges]
+# 🎮 JuntTheSpluges
 
 *A puzzle game built with Unity and C#.*
 
-This is a personal game development project created to explore the creation of a full videogame from scratch.
+## 🕹️ Project Description
 
-It’s part of my portfolio as I transition from backend software engineering into professional game development.
+This is a personal game development project created to explore the full process of building a complete video game from scratch.
+
+As part of my transition from backend software engineering into professional game development, this project showcases not only gameplay but also a strong technical foundation.
+
+### ✨ Key Features
+
+- 🧰 **Custom Level Editor**  
+  Built my own map editor to simplify and speed up the level design process.
+
+- 📈 **Well-Designed Difficulty Progression**  
+  Special attention was given to balancing challenge and learning curve throughout the game.
+
+- 🧠 **Clean Architecture & Scalable Code**  
+  The codebase is organized using clean architecture principles with an emphasis on modularity and maintainability.
+
+- 🧩 **Use of Design Patterns & Polymorphism**  
+  Applied patterns like Strategy and Command to structure game logic in a flexible, extensible way.
+
+- 🔁 **Rewind Mechanic**  
+  Implemented a rewind feature that lets the player undo actions — adding both gameplay depth and technical challenge.
+
+- 🧪 **Unit Testing**  
+  Automated tests were written to ensure feature stability and allow confident iteration. Adding new features without breaking existing ones is fast and safe.
+
+This project represents my commitment to writing solid, testable, and scalable code — even in a creative and fast-paced environment like game development.
+
 
 ---
 
@@ -22,7 +47,7 @@ thing to improve:
 
 - Unity [2019.4.3f1] (URP)
 - C#
-- Shader Graph, Unity Tilemap, ScriptableObjects
+- Shader Graph, Unity Tilemap, ScriptableObjects, shaders, unit testing, integration testing.
 
 ---
 
@@ -30,7 +55,8 @@ thing to improve:
 
 - **Move**: WASD / Arrow Keys
 - **Change Player**: Spacebar
-- **Rewind**: Z/S
+- **Rewind**: Q/E
+- **Pause/Menu**: Enter
 
 ---
 
@@ -40,7 +66,7 @@ thing to improve:
 
 1. Clone this repository
 2. Open the project in **2019.4.3f1**
-3. Open and run the scene: `Assets/Scenes/Main.unity`
+3. Open and run the scene: `Assets/Scenes/MainMenuAndLevels/init Menu.unity`
 
 > ⚠️ Unity version matters. Using a different version may cause compilation issues.
 
@@ -56,14 +82,20 @@ thing to improve:
 ```plaintext
 Assets/
 ├── Scripts/                # Game logic scripts
-│   ├── Player/             # Movement, input, character logic
-│   ├── UI/                 # Menus, HUD elements
-│   └── Systems/            # GameManager, AudioManager, etc.
+│   ├── ConditionCheckes/   # Strategy patters dedicated to manage al the elemnts on the scenary after a movement
+│   ├── ScenaryElements/    # All elements on the scenary (including players)
+│   └── States/             # All the states on the game (menu with UI, playing, lose screen etc...). all managed with the GameManager
+├── Animators/              # Unity animations controllers
+├── Prefabs/                # Reusable objects
 ├── Scenes/                 # Unity scenes
 ├── Prefabs/                # Reusable objects
-├── Art/                    # Sprites and animations
+├── ScriptableObjects/      # ScriptableObjects uder for map editor
+├── Sound/                  # Sound effects and music
+├── Shaders/                # Graphical shaders
+├── Sprites/                # Sprites and art
 ├── Audio/                  # Sound effects and music
-└── Resources/              # ScriptableObjects and data files
+├── Tiles/                  # Tiles used for map editor (relate a tiles and prefab with scriptableObject)
+└── Test/                   # Scripts for unit test and e2e level test
 
 ```
 🔗 [See this project on my portfolio](https://albertonasarre.dev/game-1/)
