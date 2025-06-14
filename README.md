@@ -65,6 +65,7 @@ Assets/
 ├── Audio/                  # Sound effects and music
 └── Resources/              # ScriptableObjects and data files
 
+```
 🔗 [See this project on my portfolio](https://albertonasarre.dev/game-1/)
 
  
