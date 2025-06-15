@@ -39,14 +39,14 @@ Beta Finished
 
 thing to improve: 
 - Menu navigations
-- Graphics and animations
+- Graphics, UI stetics and animations
 
 ---
 
 ## 🛠️ Technologies Used
 
 - Unity [2019.4.3f1] (URP)
-- C#
+- C# with modular, component-based structure
 - Shader Graph, Unity Tilemap, ScriptableObjects, shaders, unit testing, integration testing.
 
 ---
@@ -98,6 +98,18 @@ Assets/
 └── Test/                   # Scripts for unit test and e2e level test
 
 ```
+## 🛠️ How to Read the code
+
+The main class, **GameManager**, executes the only **Update** function in the game, which handles the current game state.
+The most important state is **gameState**, where we call **managePlayerMovemen**t. This function manages the players' behavior when an arrow key is pressed.
+
+After the players move, we execute the **Strategy pattern** through **ScenarioConditionsUpdater**, which allows us to control the behavior of each scenario element individually—how they interact with each other, and whether the interaction happens in the current or the next position.
+
+Controlling the order of these operations is very important. For example, we check if the player has won or lost only at the end of the entire process.
+
+A very important part is the Player class, specifically the movePointChecker attribute. We use it to store the player's future position and check interactions with other scenario elements before actually updating the movement.
+
+
 🔗 [See this project on my portfolio](https://albertonasarre.dev/game-1/)
 
  
