@@ -104,7 +104,7 @@ public class LevelSelectorMenu : MonoBehaviour
             // Asignamos la posición del botón
             worldButton.GetComponent<RectTransform>().anchoredPosition = new Vector2(0, buttonPositionY);
             worldAnimators.Add(world, worldButton.GetComponent<Animator>());
-            SetButtonRed(worldButton);
+            //SetButtonRed(worldButton);
             SetStartsOnWorlds(worldButton, worldLevels[world]);
             i++;
 
@@ -145,7 +145,7 @@ public class LevelSelectorMenu : MonoBehaviour
                 // Obtén el Animator y lo agregamos a la lista
                 Animator levelAnimator = levelButton.GetComponent<Animator>();
                 animators.Add(levelAnimator);
-                SetButtonRed(levelButton);
+                //SetButtonRed(levelButton);
                 SetStarts(levelButton);
                 levelButton.SetActive(false);
             }

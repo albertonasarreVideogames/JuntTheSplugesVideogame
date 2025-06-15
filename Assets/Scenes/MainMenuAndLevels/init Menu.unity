@@ -4409,8 +4409,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: When you reach level 8 of each world, you can either go to the next world
-    or play levels 9 and 10.
+  m_Text: Level Selector
 --- !u!222 &1582226299
 CanvasRenderer:
   m_ObjectHideFlags: 0
