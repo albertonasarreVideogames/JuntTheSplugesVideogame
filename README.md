@@ -8,6 +8,8 @@ This is a personal game development project created to explore the full process 
 
 As part of my transition from backend software engineering into professional game development, this project showcases not only gameplay but also a strong technical foundation.
 
+For more media information you can check [my portfolio](https://albertonasarre.dev/game-1/)
+
 ### ✨ Key Features
 
 - 🧰 **Custom Level Editor**  
@@ -72,8 +74,7 @@ thing to improve:
 
 ### Option 2 — Playable Build (if available)
 
-[👉 Download from Itch.io](https://your-game.itch.io)  
-*(Or include instructions to run .exe)*
+[👉 Download from Itch.io](https://albertonasare.itch.io/junt-the-spluges)  
 
 ---
 
