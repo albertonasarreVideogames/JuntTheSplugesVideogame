@@ -77,6 +77,28 @@ thing to improve:
 
 ---
 
+### 🧪 How to Run Tests
+
+To run the unit and integration tests included in this project:
+
+1. Open the project in **Unity 2019.4.3f1**.
+2. From the top menu, go to:  
+   **Window** → **General** → **Test Runner**
+3. In the **Test Runner** window:
+   - Switch to **PlayMode** .
+   - Click **Run All** to execute the available tests, or just click a indidiual one.
+4. Check the results in the Test Runner log.
+
+📁 Tests are located in the `Assets/Test/` directory and include:
+- ✅ Unit tests for core gameplay logic.
+- 🎯 End-to-end level tests to validate win/loss conditions and progression.
+- ⚙️ Utility tests for components like the Rewind System and player movement validation.
+
+These tests ensure the game remains stable and maintainable while adding new features.
+
+
+---
+
 ## 📁 Project Structure Overview
 
 ```plaintext
