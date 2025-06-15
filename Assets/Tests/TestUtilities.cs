@@ -9,7 +9,7 @@ public static class TestUtilities
     private static bool persistenobjectinicializated = false;
     public static IEnumerator RunTest(string sceneName, MovementsManager movementsManager, GameState expectedState,float timeBetweenmovementsMultiplicator = 2f)
     {
-        bool manualTestActivated = false;
+        bool manualTestActivated = true;
 
 
         if (!persistenobjectinicializated) {

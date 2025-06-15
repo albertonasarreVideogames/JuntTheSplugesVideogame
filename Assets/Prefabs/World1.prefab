@@ -320,7 +320,7 @@ GameObject:
   - component: {fileID: 1976709253649992175}
   - component: {fileID: 1976709253649992174}
   m_Layer: 5
-  m_Name: NewGametxt
+  m_Name: NewGametxtMenu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

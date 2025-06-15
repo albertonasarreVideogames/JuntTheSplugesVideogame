@@ -3416,7 +3416,7 @@ PrefabInstance:
     - target: {fileID: 5942977379555938875, guid: 3bbe4c7ba0b0a7c48b2bc4732425bce5,
         type: 3}
       propertyPath: m_Name
-      value: Settingstxt
+      value: SettingstxtMenu
       objectReference: {fileID: 0}
     - target: {fileID: 5942977380207393097, guid: 3bbe4c7ba0b0a7c48b2bc4732425bce5,
         type: 3}
@@ -3431,12 +3431,12 @@ PrefabInstance:
     - target: {fileID: 5942977380228029250, guid: 3bbe4c7ba0b0a7c48b2bc4732425bce5,
         type: 3}
       propertyPath: m_Name
-      value: Quittxt
+      value: QuittxtMenu
       objectReference: {fileID: 0}
     - target: {fileID: 5942977380523388294, guid: 3bbe4c7ba0b0a7c48b2bc4732425bce5,
         type: 3}
       propertyPath: m_Name
-      value: NewGametxt
+      value: NewGametxtMenu
       objectReference: {fileID: 0}
     - target: {fileID: 5942977381002369936, guid: 3bbe4c7ba0b0a7c48b2bc4732425bce5,
         type: 3}
@@ -5634,7 +5634,7 @@ GameObject:
   - component: {fileID: 1914370961}
   - component: {fileID: 1914370960}
   m_Layer: 5
-  m_Name: Quittxt
+  m_Name: QuittxtMenu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

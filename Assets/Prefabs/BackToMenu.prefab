@@ -87,7 +87,7 @@ GameObject:
   - component: {fileID: 831820166108888928}
   - component: {fileID: 831820166108888935}
   m_Layer: 5
-  m_Name: Quittxt
+  m_Name: QuittxtMenu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
