@@ -16,10 +16,11 @@ public static class TestUtilities
             yield return SceneManager.LoadSceneAsync("init Menu", LoadSceneMode.Single);
             persistenobjectinicializated = true;
             yield return new WaitForSeconds(0.1f * timeBetweenmovementsMultiplicator);
-            GameManager.Instance.UpdateGameState(GameState.Gaming);
+            
         }
 
         yield return SceneManager.LoadSceneAsync(sceneName, LoadSceneMode.Single);
+        GameManager.Instance.UpdateGameState(GameState.Gaming);
         yield return new WaitForSeconds(0.1f * timeBetweenmovementsMultiplicator);
 
         // Realizar las acciones específicas del test

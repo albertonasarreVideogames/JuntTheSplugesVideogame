@@ -61,25 +61,23 @@ public class GamingState : MonoBehaviour
     void OnLevelFinishedLoading(Scene scene, LoadSceneMode mode)
     {
 
-        if (GameManager.Instance.State == GameState.Gaming)
-        {
-            Player.currentAllowedType = Player.PlayerType.Type1;
-            MapLoader.Instance.LoadLevel();
+        Player.currentAllowedType = Player.PlayerType.Type1;
+        MapLoader.Instance.LoadLevel();
 
-            Player[] players = GameObject.FindGameObjectsWithTag("Player").Select(playerObject => playerObject.GetComponent<Player>()).ToArray();
-            Enemy[] enemies = GameObject.FindGameObjectsWithTag("Enemy").Select(playerObject => playerObject.GetComponent<Enemy>()).ToArray();
-            MainPlayer[] mainPlayesrs = GameObject.FindGameObjectsWithTag("MainPlayer").Select(playerObject => playerObject.GetComponent<MainPlayer>()).ToArray();
+        Player[] players = GameObject.FindGameObjectsWithTag("Player").Select(playerObject => playerObject.GetComponent<Player>()).ToArray();
+        Enemy[] enemies = GameObject.FindGameObjectsWithTag("Enemy").Select(playerObject => playerObject.GetComponent<Enemy>()).ToArray();
+        MainPlayer[] mainPlayesrs = GameObject.FindGameObjectsWithTag("MainPlayer").Select(playerObject => playerObject.GetComponent<MainPlayer>()).ToArray();
        
-            allPlayers = players
-                .Concat(enemies)
-                .Concat(mainPlayesrs)
-                .ToArray();
-            Player[] playersWithMain = players.Concat(mainPlayesrs).ToArray();
+        allPlayers = players
+            .Concat(enemies)
+            .Concat(mainPlayesrs)
+            .ToArray();
+        Player[] playersWithMain = players.Concat(mainPlayesrs).ToArray();
      
-            managePlayerMovement = new ManagePlayersMovement(allPlayers, mainPlayesrs, enemies, CheckSceneConditionsAfterMove);
-            checkPlayerSelected = new CheckPlayerSelected();
-            scenarioConditionsUpdater = new ScenarioConditionsUpdater(playersWithMain, enemies, getKeeperObjects(), getPulseObjects(), getswitchTypeMap());
-        }
+        managePlayerMovement = new ManagePlayersMovement(allPlayers, mainPlayesrs, enemies, CheckSceneConditionsAfterMove);
+        checkPlayerSelected = new CheckPlayerSelected();
+        scenarioConditionsUpdater = new ScenarioConditionsUpdater(playersWithMain, enemies, getKeeperObjects(), getPulseObjects(), getswitchTypeMap());
+
     }
 
     // Update is called once per frame

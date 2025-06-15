@@ -61,7 +61,15 @@ public class MapLoader : MonoBehaviour
         Instantiate(StartsBackgound, Vector3.zero, Quaternion.identity);
         Instantiate(GlobalVolume, Vector3.zero, Quaternion.identity);
         NumberKindPlayers = 1;
-        map = GameObject.Find("objects").GetComponent<Tilemap>();
+        GameObject mapObject = GameObject.Find("objects");
+
+        if (mapObject == null)
+        {
+            Debug.LogWarning("Map object not found!");
+            return;
+        }
+        map = mapObject.GetComponent<Tilemap>();
+        if (map == null) { return; }
         //full map with gameobjects
         foreach (var position in map.cellBounds.allPositionsWithin)
         {
@@ -168,10 +176,10 @@ public class MapLoader : MonoBehaviour
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         // Cuando la escena esté cargada, llamamos a AdjustCameraAndGrid
-        //if (GameManager.Instance.State == GameState.Gaming)
-        //{
+        if (GameManager.Instance.State == GameState.Gaming)
+        {
             AdjustCameraAndGrid();
-        //}
+        }
     }
 
 }
