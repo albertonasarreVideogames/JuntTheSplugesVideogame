@@ -72,7 +72,7 @@ thing to improve:
 
 > ⚠️ Unity version matters. Using a different version may cause compilation issues.
 
-### Option 2 — Playable Build (if available)
+### Option 2 — Playable Build
 
 [👉 Download from Itch.io](https://albertonasare.itch.io/junt-the-spluges)  
 
