@@ -97,6 +97,26 @@ To run the unit and integration tests included in this project:
 
 These tests ensure the game remains stable and maintainable while adding new features.
 
+🧪 How to test and play a specific level
+
+On the script Test/TestUtilities.cs, you can set the variable manualTestActivated to true, after that on the **Test Runner** window play any level, and you can play it manually.
+The T key execute the solution step by step
+
+---
+
+### 🧪 How Edit levels
+To **edit levels manually**:
+
+1. Open the scene of any level scene, or create a new scene cloning the template on the folder Scenes/levelEditor.
+2. Go to **Window > 2D > Tile Palette** to open the tile painting interface.
+3. In the **Hierarchy**, select the **Grid** object. Then, choose a layer such as:
+   - `Foreground` (for tiles that appear in front),
+   - `Objects` (for interactive elements),
+   - `Ground` (for base terrain).
+4. In the Tile Palette, select the desired tile and paint directly onto the correct **Tilemap layer** in the Scene view.
+
+> 💡 Tip: Make sure you're painting on the **correct layer**, or the elements won’t be registered properly during gameplay. Each tile corresponds to a prefab or behavior defined via ScriptableObjects in the custom map editor.
+
 
 ---
 
