@@ -8,7 +8,7 @@ This is a personal game development project created to explore the full process 
 
 As part of my transition from backend software engineering into professional game development, this project showcases not only gameplay but also a strong technical foundation.
 
-For more media information you can check [my portfolio](https://albertonasarre.dev/game-1/)
+For more media information you can check [my portfolio](https://albertonasarre.dev/juntthespluges/)
 
 ### ✨ Key Features
 
@@ -153,6 +153,6 @@ Controlling the order of these operations is very important. For example, we che
 A very important part is the Player class, specifically the movePointChecker attribute. We use it to store the player's future position and check interactions with other scenario elements before actually updating the movement.
 
 
-🔗 [See this project on my portfolio](https://albertonasarre.dev/game-1/)
+🔗 [See this project on my portfolio](https://albertonasarre.dev/juntthespluges/)
 
  
